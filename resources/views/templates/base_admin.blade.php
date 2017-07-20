@@ -107,22 +107,38 @@
                     </ul>
 
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="@lang('index.MenuGroupLeyend')">
-                        <span class="glyphicon glyphicon-cog"></span>
-                        <!--img  style="height: 20px; background: #f8f8f8;" src="{{ asset('img/confi.svg') }}"--><b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @foreach ($modulos as $mod)
+                @php
+                    $control = 0;
+                @endphp
+                @foreach ($modulos as $mod)
+                    @if($mod->pivot->rread > 0 or $mod->pivot->eedit > 0 or $mod->pivot->wwrite > 0 or $mod->pivot->ddelete > 0)
+                        @if($mod->id < 4)
+                            @php
+                                $control = 1;
+                            @endphp
+                        @endif
+                    @endif
+                @endforeach
 
-                            @if($mod->pivot->rread > 0 or $mod->pivot->eedit > 0 or $mod->pivot->wwrite > 0 or $mod->pivot->ddelete > 0)
-                                @if($mod->id < 4)
-                                    <li><a href="{{ URL::to($mod->links) }}"> @lang('index.Menu'.$mod->id) </a></li>
+                @if ($control == 1)
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="@lang('index.MenuGroupLeyend')">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        <!--img  style="height: 20px; background: #f8f8f8;" src="{{ asset('img/confi.svg') }}"--><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach ($modulos as $mod)
+
+                                @if($mod->pivot->rread > 0 or $mod->pivot->eedit > 0 or $mod->pivot->wwrite > 0 or $mod->pivot->ddelete > 0)
+                                    @if($mod->id < 4)
+                                        <li><a href="{{ URL::to($mod->links) }}"> @lang('index.Menu'.$mod->id) </a></li>
+                                    @endif
                                 @endif
-                            @endif
-                        @endforeach
-                    </ul>
-                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
+
 
 
                 @foreach (Config::get('languages') as $lang => $language)
