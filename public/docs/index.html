@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost:8000/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_0d5559dd04c331bd14e76c15071978bc -->
+<h2>art/location/index</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000/art/location/index" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/location/index",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET art/location/index</code></p>
+<p><code>HEAD art/location/index</code></p>
+<!-- END_0d5559dd04c331bd14e76c15071978bc -->
+<!-- START_3794cef310e375d17a43833ae8f509d1 -->
+<h2>art/location/delete</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/location/delete" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/location/delete",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/location/delete</code></p>
+<!-- END_3794cef310e375d17a43833ae8f509d1 -->
+<!-- START_9a258b6d675a5db85ab99be90f3bbee4 -->
+<h2>art/location/create</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/location/create" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/location/create",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/location/create</code></p>
+<!-- END_9a258b6d675a5db85ab99be90f3bbee4 -->
+<!-- START_246f1ea08d2b12e927374e615e9079f2 -->
+<h2>art/location/edit</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/location/edit" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/location/edit",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/location/edit</code></p>
+<!-- END_246f1ea08d2b12e927374e615e9079f2 -->
+<!-- START_4db8d330f54c22d0077a1bbf217bfcd0 -->
+<h2>art/obra/index</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000/art/obra/index" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/obra/index",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET art/obra/index</code></p>
+<p><code>HEAD art/obra/index</code></p>
+<!-- END_4db8d330f54c22d0077a1bbf217bfcd0 -->
+<!-- START_a34cdb59bd909f06b2e0d40ce54aeac2 -->
+<h2>art/obra/delete</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/obra/delete" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/obra/delete",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/obra/delete</code></p>
+<!-- END_a34cdb59bd909f06b2e0d40ce54aeac2 -->
+<!-- START_5ad6a99874e00197935b3957189b9140 -->
+<h2>art/obra/create</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/obra/create" \
+-H "Accept: application/json" \
+    -d "n_inv"="iusto" \
+    -d "titulo"="iusto" \
+    -d "tecnica"="iusto" \
+    -d "dimension"="iusto" \
+    -d "ano"="iusto" \
+    -d "edicion"="iusto" \
+    -d "procedencia"="iusto" \
+    -d "catalogo"="iusto" \
+    -d "certificacion"="iusto" \
+    -d "valoracion"="iusto" \
+    -d "foto1"="iusto" \
+    -d "foto2"="iusto" \
+</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/obra/create",
+    "method": "POST",
+    "data": {
+        "n_inv": "iusto",
+        "titulo": "iusto",
+        "tecnica": "iusto",
+        "dimension": "iusto",
+        "ano": "iusto",
+        "edicion": "iusto",
+        "procedencia": "iusto",
+        "catalogo": "iusto",
+        "certificacion": "iusto",
+        "valoracion": "iusto",
+        "foto1": "iusto",
+        "foto2": "iusto"
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/obra/create</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n_inv</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>10</code></td>
+</tr>
+<tr>
+<td>titulo</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>100</code></td>
+</tr>
+<tr>
+<td>tecnica</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>200</code></td>
+</tr>
+<tr>
+<td>dimension</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>200</code></td>
+</tr>
+<tr>
+<td>ano</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>20</code></td>
+</tr>
+<tr>
+<td>edicion</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>200</code></td>
+</tr>
+<tr>
+<td>procedencia</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>100</code></td>
+</tr>
+<tr>
+<td>catalogo</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>200</code></td>
+</tr>
+<tr>
+<td>certificacion</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>100</code></td>
+</tr>
+<tr>
+<td>valoracion</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>100</code></td>
+</tr>
+<tr>
+<td>foto1</td>
+<td>image</td>
+<td>optional</td>
+<td>Must be an image (jpeg, png, bmp, gif, or svg) Allowed mime types: <code>jpeg</code>, <code>bmp</code>, <code>png</code> or <code>jpg</code> Maximum: <code>5120</code></td>
+</tr>
+<tr>
+<td>foto2</td>
+<td>image</td>
+<td>optional</td>
+<td>Must be an image (jpeg, png, bmp, gif, or svg) Allowed mime types: <code>tif</code></td>
+</tr>
+</tbody>
+</table>
+<!-- END_5ad6a99874e00197935b3957189b9140 -->
+<!-- START_d5bc77a38c7594498af35f62ce8c8714 -->
+<h2>art/obra/edit</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/obra/edit" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/obra/edit",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/obra/edit</code></p>
+<!-- END_d5bc77a38c7594498af35f62ce8c8714 -->
+<!-- START_30914c1e521a23ceaf7bc146f827489d -->
+<h2>art/artist/index</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000/art/artist/index" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/index",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET art/artist/index</code></p>
+<p><code>HEAD art/artist/index</code></p>
+<!-- END_30914c1e521a23ceaf7bc146f827489d -->
+<!-- START_75f9733aa3214786a202b3428d705013 -->
+<h2>art/artist/delete</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/artist/delete" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/delete",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/artist/delete</code></p>
+<!-- END_75f9733aa3214786a202b3428d705013 -->
+<!-- START_57a35d5b8221514d1c2c2c29d0dd935c -->
+<h2>art/artist/create</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/artist/create" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/create",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/artist/create</code></p>
+<!-- END_57a35d5b8221514d1c2c2c29d0dd935c -->
+<!-- START_a8d6a69cfa19df04ef07871d1a63d962 -->
+<h2>art/artist/edit</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost:8000/art/artist/edit" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/edit",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST art/artist/edit</code></p>
+<!-- END_a8d6a69cfa19df04ef07871d1a63d962 -->
+<!-- START_0918ca90cae3dbeba564c614a2ed6e3b -->
+<h2>art/artist/export/{id}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000/art/artist/export/{id}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/export/{id}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET art/artist/export/{id}</code></p>
+<p><code>HEAD art/artist/export/{id}</code></p>
+<!-- END_0918ca90cae3dbeba564c614a2ed6e3b -->
+<!-- START_f7868e7428496e42ad8101bb3e5f65df -->
+<h2>art/artist/pdfexport</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost:8000/art/artist/pdfexport" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8000/art/artist/pdfexport",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET art/artist/pdfexport</code></p>
+<p><code>HEAD art/artist/pdfexport</code></p>
+<!-- END_f7868e7428496e42ad8101bb3e5f65df -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

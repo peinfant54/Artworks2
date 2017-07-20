@@ -1,0 +1,507 @@
+@charset "UTF-8";
+/* CSS Document */
+/*Reset*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+	display:block}
+body{
+	line-height:1;}
+ol,ul{
+	list-style:none;
+	/*background: #fff;*/
+}
+blockquote,q{
+	quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none}
+table{
+	border-collapse:collapse;
+	border-spacing:0}
+/**/
+html {
+/*	background-image: url("../img/fondo.jpg");*/
+	background: #fff;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: 50% 50%;
+
+  font-family: "Perpetua", sans-serif;
+}
+
+.contenido {
+  width: 100%;
+  min-height: 500px;
+  	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.posicion_contenedor{
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+/*titulo grande de la izquiersa*/
+.titulo{
+	/* padding-top: 10px; */
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	/* margin-top: 10px; */
+}
+.titulo_galeria{
+	font: 3.4em/98px "Perpetua", sans-serif;
+  color: #595959;
+	line-height: 1em;
+	text-align: center;
+}
+
+.permisos-perfil{
+	min-width: auto;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.Mayuscula{
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+/*formulario login*/
+.login {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	/* width: 90%; */
+}
+
+.titulo_login {
+  font: 1.2em/40px "Perpetua", sans-serif;
+  color: #595959;
+	text-align: center;
+}
+
+.formulario{
+	text-align: center;
+}
+
+.EditModal{
+	display: flex;
+}
+.BotonFoto{
+	height: 70px;
+	background: transparent;
+	border: none;
+	text-align: left;
+	width: 100%;
+	outline: none;
+	color:#8c8c8c;
+}
+.BotonFoto h3{
+	text-transform:uppercase;
+}
+
+.tz-gallery .caption .BotonFoto h3{
+	font-family: Sans-Serif;
+	font-weight:400;
+}
+.BotonFoto:hover {
+	color: #373737;
+	font-weight:700;
+}
+.BotonFoto:focus {
+	color: #1883ba;
+	font-weight:700;
+}
+
+.contrasena_btn {
+	/* float: none; */
+	margin-left: auto;
+	margin-right: auto;
+	/* overflow: hidden; */
+	overflow: visible;
+	width: 100%;
+	color: #595959;
+	font-size: 1em;
+	line-height: 1em;
+	text-align: right;
+	/*	display:grid;*/
+}
+
+
+.InfoImg{
+	width: 200px;
+}
+
+.img_seleccion{
+	height: 100px;
+	width: auto;
+}
+.p_selecion{
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+
+}
+
+.p_selecion label:checked
+{
+	font-weight: 700;
+	font-size: 30px;
+}
+
+
+input[type="checkbox"] {
+	display:inital;
+}
+
+input[type="checkbox"] + label {
+	color:#4C4C4C;
+}
+
+input[type="checkbox"] + label span {
+	display:inline-block;
+	width:19px;
+	height:19px;
+	margin:-2px -2px 0 0;
+	vertical-align:middle;
+	background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+	cursor:pointer;
+	font-size: 10px;
+	font-weight: 100;
+}
+
+input[type="checkbox"]:checked + label span {
+	background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+
+/*Footer*/
+footer{
+	align-self: flex-end;
+	background:#f7f7f7;
+	margin-bottom:0;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	bottom:0;
+	width: 100%;
+	height: 28px;
+	position: fixed;
+	z-index: 2;
+	padding-left: 10px;
+		text-align: center;
+	color: #989898;
+	font-size: 12px;
+}
+footer a {
+	color:#595959;
+	text-decoration: none;
+}
+
+/**Lo ultimo agregado el  10/07 */
+.gallery-container .titulo_artistas h1{
+	color:#8f8f8f;
+	font-family: "Perpetua", sans-serif;
+	text-transform:uppercase;
+	font-weight: 100;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.img_seleccion{
+	height: 100px;
+	width: auto;
+}
+.p_selecion{
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+}
+
+.p_selecion input[type=checkbox]:checked + label { color: blue;}
+
+input[type="checkbox"] {
+	display:initial;
+}
+
+input[type="checkbox"] +
+label {
+	/*color:#4C4C4C;*/
+	font-size:10px;
+	margin-top:3px;
+	margin-bottom:0px;
+}
+
+input[type="checkbox"] + label span {
+	display:inline-block;
+	width:19px;
+	height:25px;
+	margin:-2px -2px 0 0;
+	vertical-align:middle;
+	background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+	cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+	background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+	/*margin-bottom: 5px;*/
+}
+
+button.btn-danger {
+	color: #fff;
+	/*background-color: #025850;
+	border-color: #025850;*/
+}
+
+button.btn-danger:hover, button.btn-danger:focus, button.btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger{
+	background-color:#428bca;
+	border-color: #428bca;
+}
+
+
+button.btn-warning{
+	color: #fff;
+	background-color: #428bca;
+	border-color: #428bca;
+}
+
+button.btn-warning:hover, button.btn-warning:focus, button.btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-danger{
+	background-color:#025850;
+	border-color: #025850;
+}
+
+button.btn-success{
+	color: #fff;
+	background-color: #428bca;
+	border-color: #428bca;
+}
+
+button.btn-success:hover, button.btn-success:focus, button.btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-danger{
+	background-color:#025850;
+	border-color: #025850;
+}
+
+/**TErmino d elo ultimo agregado*/
+
+/* Prueba Tooltip diferente **/
+
+.ttooltip{
+	display: inline;
+	position: relative;
+}
+.ttooltip:hover:after{
+	background: #333;
+	background: rgba(0,0,0,.8);
+	border-radius: 5px;
+	bottom: 26px;
+	color: #fff;
+	content: attr(title);
+	left: 20%;
+	padding: 5px 15px;
+	position: absolute;
+	z-index: 98;
+	width: 220px;
+}
+
+.ttooltip:hover:before{
+	border: solid;
+	border-color: #333 transparent;
+	border-width: 6px 6px 0 6px;
+	bottom: 20px;
+	content: "";
+	left: 50%;
+	position: absolute;
+	z-index: 99;
+}
+
+/* Termino Prueba Tooltip diferente **/
+/*inputs login - usuario y contraseña*/
+.input-txt {
+	margin-bottom: 10px;
+	box-shadow: 1px 1px 3px #8b8b8b;
+  width: 100%;
+  padding: 8px 10px;
+  background: #fff;
+  border: none;
+  font-size: 1em;
+  color: #bbb;
+  border-bottom: 1px dotted rgba(250, 250, 250, 0.4);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+.input-txt:-moz-placeholder {
+  color: #ccc;
+}
+.input-txt:-ms-input-placeholder {
+  color: #ccc;
+}
+.input-txt::-webkit-input-placeholder {
+  color: #ccc;
+}
+.input-txt:focus {
+  background-color: #eee;
+}
+
+
+
+
+/*Estilos propios*/
+
+.fright {
+  float: right;
+}
+.fleft{
+	float:left;
+}
+.mt5{
+	margin-top: 5px;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mt30{
+	margin-top: 30px;
+}
+
+.mt100{
+	margin-top: 100px;
+}
+.mt200{
+	margin-top: 200px;
+}
+
+
+/*h1{font-size: 32px;
+margin-top: 0;}
+
+*/
+
+@media (min-width: 992px){
+.col-md-2 {
+    width: 20%;
+	}}
+
+
+/*RESPONSIVE*/
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*Móviles en horizontal o tablets en vertical*/
+
+
+
+
+@media (min-width: 768px) { 
+
+.contenido {
+  width: 90%;
+  min-height: 320px;
+}
+.posicion_contenedor{
+	margin-top: 10px;
+}
+/*titulo grande de la izquiersa*/
+.titulo{
+	/* padding-top: 40px; */
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	/* margin-top: 40px; */
+}
+.titulo_galeria{
+	text-align: center;
+}
+
+
+}
+ 
+
+
+
+/*Tablets en horizonal y escritorios normales*/
+@media (min-width: 1024px) { 
+
+.contenido {
+  width: 90%;
+  height: 220px;
+}
+.posicion_contenedor{
+	margin-top: 30px;
+}
+/*titulo grande de la izquiersa*/
+.titulo{
+	/* padding-top: 30px; */
+	float: left;
+	/* margin-left: 40px; */
+	/* margin-right: auto; */
+	/* width: 100%; */
+	margin-bottom: 20px;
+	/* margin-top: 20px; */
+}
+.titulo_galeria{
+	font: 3.4em/1em "Perpetua", sans-serif;
+	text-align: left;
+	font-size: 4.4em;
+}
+
+
+
+/*Footer*/
+footer{
+		text-align: center;
+}
+
+
+}
+ 
+/*Escritorios muy anchos*/
+@media (min-width: 1200px) { 
+
+.contenido {
+  width: 100%;
+  min-height: 500px;
+}
+.posicion_contenedor{
+	margin-top: 0;
+}
+/*titulo grande de la izquiersa*/
+.titulo{
+	/* padding-top: 30px; */
+	float: left;
+	/* margin-left: 40px; */
+	margin-right: auto;
+	/* width: 260px; */
+	/* margin-top: 20px; */
+}
+.titulo_galeria{
+	text-align: left;
+	font-size: 4.4em;
+}
+
+
+
+/*Footer*/
+footer{
+		text-align: center;
+}
+
+}

@@ -1,0 +1,148 @@
+<?php
+
+use App\User;
+//use App;
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    $artist = \App\Models\SysModel\SysObra::all();
+    //DebugBar::info($artist);
+    //dd(Request::ip());
+    app('debugbar')->info($artist);
+    return view('auth.login');
+});
+
+Route::get('index', function(){
+    //dd(Request::ip());
+   return view('auth.login');
+});
+
+Route::get('admin/logout', function()
+{
+    Auth::logout();
+    return view('admin/logout');
+});
+
+Route::get('/logout', function()
+{
+    Auth::logout();
+    return view('auth.login');
+});
+
+
+Route::get('/register', function()
+{
+    return view('auth.register');
+});
+Route::post('/register', 'RegisterController@create');
+/*
+Route::post('/register', function()
+{
+    $user = new User;
+    $user->email = Input::get('email');
+    $user->username = Input::get('username');
+    $user->password = Hash::make(Input::get('password'));
+
+    $user->save();
+    $theEmail = Input::get('email');
+
+    return view('thanks')->with('theEmail', $theEmail);
+});*/
+
+/*-********************** Links de Administración************************/
+
+
+
+Route::post('admin/login', function()
+{
+
+    return Redirect::to('admin/index');
+
+    //return view('admin/login');
+});
+Route::get('admin/localization/{lang?}', 'LanguageLocalizationController@inbdex');
+Route::get('admin/index', 'HomeController@AdminIndex')->middleware('auth');
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageLocalizationController@index']);
+
+/* Inicio Rutas Modulo User */
+Route::get('admin/user/index', 'admin\user\UserController@UserIndex')->middleware('auth');
+Route::post('admin/user/delete','admin\user\UserController@UserDestroy')->middleware('auth');
+Route::post('admin/user/create','admin\user\UserController@UserCreate')->middleware('auth');
+Route::put('admin/user/edit','admin\user\UserController@UserEdit')->middleware('auth');
+Route::put('admin/user/pass2','admin\user\UserController@UserEditPass')->middleware('auth');
+Route::put('admin/user/pass3','admin\user\UserController@UserEditPassUser')->middleware('auth');
+Route::post('admin/user/pass','admin\user\UserController@UserCheckPass')->middleware('auth');
+Route::get('admin/user/changepassword','admin\user\UserController@UserChangePassword')->middleware('auth');
+/* Termino Rutas Modulo User */
+/* Incio Rutas modulo Perfiles*/
+Route::get('admin/profile/index', 'admin\profile\ProfileController@ProfileIndex')->middleware('auth');
+Route::post('admin/profile/delete','admin\profile\ProfileController@ProfileDestroy')->middleware('auth');
+Route::post('admin/profile/create','admin\profile\ProfileController@ProfileCreate')->middleware('auth');
+Route::post('admin/profile/edit','admin\profile\ProfileController@ProfileEdit')->middleware('auth');
+Route::post('admin/profile/permissions','admin\profile\ProfileController@ProfilePermissions')->middleware('auth');
+
+/* Terminop Rutas modulo Perfiles*/
+
+/* Incio Rutas modulo Log*/
+
+Route::get('admin/log/index', 'admin\log\LogController@LogIndex')->middleware('auth');
+
+/* Termino Rutas modulo Log*/
+
+/* Incio Rutas modulo Ubicaciones*/
+Route::get('art/location/index', 'art\location\LocationController@LocationIndex')->middleware('auth');
+Route::post('art/location/delete','art\location\LocationController@LocationDestroy')->middleware('auth');
+Route::post('art/location/create','art\location\LocationController@LocationCreate')->middleware('auth');
+Route::post('art/location/edit','art\location\LocationController@LocationEdit')->middleware('auth');
+
+
+
+/* Terminop Rutas modulo Ubicaciones*/
+
+/* Incio Rutas modulo Obras*/
+Route::get('art/obra/index', 'art\obra\ObraController@ObraIndex')->middleware('auth');
+Route::post('art/obra/delete','art\obra\ObraController@ObraDestroy')->middleware('auth');
+Route::post('art/obra/create','art\obra\ObraController@ObraCreate')->middleware('auth');
+Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');
+//Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');
+/* Terminop Rutas modulo Obras*/
+
+/* Incio Rutas modulo Artista*/
+Route::get('art/artist/index', 'art\artist\ArtistController@ArtistIndex')->middleware('auth');
+Route::post('art/artist/delete','art\artist\ArtistController@ArtistDestroy')->middleware('auth');
+Route::post('art/artist/create','art\artist\ArtistController@ArtistCreate')->middleware('auth');
+Route::post('art/artist/edit','art\artist\ArtistController@ArtistEdit')->middleware('auth');
+Route::get('art/artist/export/{id}','art\artist\ArtistController@ArtistExport')->middleware('auth');
+Route::get('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')->middleware('auth');
+
+/* Terminop Rutas modulo Artista*/
+
+
+/* Inicio Rutas modulo Search*/
+Route::get('art/search','art\search\SearchController@SearchIndex')->middleware('auth');
+Route::get('art/search/details/{opc}/{textsearch}','art\search\SearchController@SearchDetails')->middleware('auth');
+Route::get('art/search/details2/{opc}/{id}/{textsearch}','art\search\SearchController@SearchDetails2')->middleware('auth');
+/* Termino Rutas modulo Search*/
+
+
+/*-********************** Termino Links de Administración************************/
+Auth::routes();
+
+/* Ver el tema de las urles correctamente */
+
+Route::any('/ff', function()
+{
+    echo "Hello Wolrd";
+});
