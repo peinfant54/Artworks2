@@ -41,13 +41,13 @@
                     </div>
                 </div-->
 
-                <button type="submit" name="Update" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> @lang('user.Update')</button>
 
-                </form>
             </div>
 
             <div class="modal-footer ">
+                <button type="submit" name="Update" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> @lang('user.Update')</button>
 
+                </form>
             </div>
 
         </div>

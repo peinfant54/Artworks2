@@ -1,4 +1,4 @@
-@extends('templates.base')
+@extends('templates.base2')
 
 @section('titulo')
     {{ $title }}
