@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Auth;
 class SearchController extends Controller
 {
     //
-    public function SearchIndex(SearchForm $request)
+    public function SearchIndex()
     {
         try{
 
             $texto = Input::get('textsearch');
+            //dd($texto);
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
 
@@ -182,5 +183,7 @@ class SearchController extends Controller
             //return redirect("admin/index");
         }
     }
+
+
 
 }

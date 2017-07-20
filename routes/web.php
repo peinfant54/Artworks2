@@ -131,7 +131,13 @@ Route::get('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')
 
 
 /* Inicio Rutas modulo Search*/
-Route::get('art/search','art\search\SearchController@SearchIndex')->middleware('auth');
+Route::post('art/search','art\search\SearchController@SearchIndex')->middleware('auth');
+/*Route::post('art/search', function()
+{
+    $texto = Input::get('textsearch');
+    dd($texto);
+});*/
+
 Route::get('art/search/details/{opc}/{textsearch}','art\search\SearchController@SearchDetails')->middleware('auth');
 Route::get('art/search/details2/{opc}/{id}/{textsearch}','art\search\SearchController@SearchDetails2')->middleware('auth');
 /* Termino Rutas modulo Search*/

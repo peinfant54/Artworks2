@@ -66,14 +66,14 @@ class Handler extends ExceptionHandler
             {
                 // not found
                 case 404:
-                    return redirect()->guest('admin/index');
-                    //return response()->view('errors.404',['exception' => $e], $e->getStatusCode(), $e->getHeaders());
+                    //return redirect()->guest('admin/index');
+                    return response()->view('errors.404',['exception' => $e], $e->getStatusCode(), $e->getHeaders());
                     break;
 
                 // internal error
                 case '500':
-                    return redirect()->guest('admin/index');
-                    //return response()->view('errors.500', ['exception' => $e], $e->getStatusCode(), $e->getHeaders());
+                    //return redirect()->guest('admin/index');
+                    return response()->view('errors.500', ['exception' => $e], $e->getStatusCode(), $e->getHeaders());
                     break;
 
                 default:

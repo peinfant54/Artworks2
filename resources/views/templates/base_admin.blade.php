@@ -75,7 +75,7 @@
              otro elemento que se pueda ocultar al minimizar la barra -->
         <div class="navbar-collapse navbar-ex1-collapse collapse" style="height: 1px;">
 
-            <form class="navbar-form navbar-right" role="search" style="margin-right: -30px;" action="{{ url('art/search/') }}" method="GET">
+            <form class="navbar-form navbar-right" role="search" style="margin-right: -30px;" action="{{ url('art/search/') }}" method="POST">
                 <div class="form-group">
                     <input type="text" name="textsearch" class="form-control" placeholder="@lang('index.SearchPlaceHolder')" title="@lang('index.SearchLeyend')" required>
                 </div>
