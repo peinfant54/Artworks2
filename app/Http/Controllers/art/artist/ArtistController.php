@@ -192,8 +192,15 @@ class ArtistController extends Controller
                 //dd(Input::get('listartworks'));
             $pdf =  PDF::loadView('art.artist.pdf', compact(['title', 'obras']))
                         ->setPaper('a4', 'portrait')
-                        ->setWarnings(false);
-            return $pdf->download('test.pdf');
+                        ->setWarnings(false)
+                        ->setOptions(['isHtml5ParserEnabled' => true,'isRemoteEnabled' => true]);
+//dd($pdf);
+            //return $pdf->stream();
+            return $pdf->download('export.pdf');
+
+            /*return view('art.artist.pdf')
+                ->with('title', $title)
+                ->with('obras', $obras);*/
 
         }
         catch(\Exception $e)
@@ -203,8 +210,8 @@ class ArtistController extends Controller
             LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
             Session::flash('msg_access2', $e);
-            echo $e;
-            //return redirect("admin/index");
+            //echo $e;
+            return redirect("admin/index");
         }
 
     }

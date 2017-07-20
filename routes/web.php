@@ -148,7 +148,8 @@ Auth::routes();
 
 /* Ver el tema de las urles correctamente */
 
-Route::any('/ff', function()
+Route::any('/info', function()
 {
     echo "Hello Wolrd";
+    phpinfo();
 });
