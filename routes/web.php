@@ -125,7 +125,7 @@ Route::post('art/artist/delete','art\artist\ArtistController@ArtistDestroy')->mi
 Route::post('art/artist/create','art\artist\ArtistController@ArtistCreate')->middleware('auth');
 Route::post('art/artist/edit','art\artist\ArtistController@ArtistEdit')->middleware('auth');
 Route::get('art/artist/export/{id}','art\artist\ArtistController@ArtistExport')->middleware('auth');
-Route::get('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')->middleware('auth');
+Route::post('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')->middleware('auth');
 
 /* Terminop Rutas modulo Artista*/
 

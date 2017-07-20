@@ -8,7 +8,7 @@
 
 @section('contenido')
 
-    <form class="form-horizontal" role="form" method="get" action="{{ url('art/artist/pdfexport') }}">
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('art/artist/pdfexport') }}">
     <div class="container gallery-container" style="width: 90%">
         <div class="row">
 
