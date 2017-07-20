@@ -12,12 +12,13 @@
     <title>@lang('index.ProyectTitle')</title>
 
     <!-- Latest compiled and minified CSS -->
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"--!>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
     <!-- Custom styles for this template -->
 
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
 
@@ -31,16 +32,17 @@
 
 </head>
 
-<body>
+<body data-feedly-mini="yes">
 
 <script src="{{ asset('js/app.js') }}"></script>
 
 
 
+<div class="container">
 
-@yield('contenido')
+    @yield('contenido')
 
-
+</div>
 
 <footer>
 
