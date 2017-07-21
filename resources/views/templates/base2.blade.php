@@ -32,7 +32,7 @@
 
 </head>
 
-<body>
+<body style="background: transparent">
 
 <script src="{{ asset('js/app.js') }}"></script>
 

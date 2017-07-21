@@ -39,6 +39,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    protected function showRegistrationForm()
+    {
+        return redirect()->to('login')->with('warning', 'El registro de usuarios está desactivado');
+
+        //return redirect()->to('register');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
