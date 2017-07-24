@@ -90,7 +90,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                     @if (count($ninv) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/1/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12 col-md-12"><a href="{{ URL::to('/art/search/details/1/'.$texto) }}">@lang('search.Mas')</a></div>
                     @endif
             </div>
             <div><hr></div>
