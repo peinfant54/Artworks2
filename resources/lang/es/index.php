@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Sistema Coleccion Privada de Arte',
+    'ProyectTitle'   => 'Sistema Privado de Colección de Arte',
     'PageTitle'     => 'Últimas Obras',
     'ChangePasswordMsg'     => 'Cambiar la contraseña ',
     'welcome' => 'Bienvenido la página principal Usuario ',
