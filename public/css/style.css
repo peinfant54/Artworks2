@@ -228,6 +228,17 @@ footer a {
 	margin-top: 5px;
 }
 
+.btn-volver {
+	padding: 10px 30px;
+	border: none;
+	background: #d6d6d6;
+	color: #595959;
+	cursor: pointer;
+	box-shadow: 1px 1px 3px #8b8b8b;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .titulos_busquedas{
 	color:#A6A6A6;
 }

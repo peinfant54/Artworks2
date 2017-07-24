@@ -73,7 +73,7 @@
                 <div style="margin-bottom: 70px">{!!  $obras->links()  !!}</div>
                 <div style="margin-bottom: 70px">
 
-                    <button type="button" onclick="history.back()" class="btn btn-primary right">
+                    <button type="button" onclick="history.back()" class="btn btn-primary right btn-volver">
                         <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
                     </button>
                 </div>
