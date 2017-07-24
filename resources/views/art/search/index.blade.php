@@ -14,7 +14,7 @@
             <div class="titulos_busquedas">@lang('search.title_artist')</div>
             <div class="container gallery-container">
                 <div class="tz-gallery">
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($artist) > 0)
                             @foreach ($artist as $obra)
                                 <a href="{{ URL::to('/art/search/details2/1/'. $obra->id .'/'.$texto) }}">{{ $obra->nombre }} {{ $obra->apellido }}</a><br>
@@ -29,7 +29,7 @@
             <div class="titulos_busquedas">@lang('search.title_location')</div>
             <div class="container gallery-container">
                 <div class="tz-gallery">
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($location2) > 0)
                             @foreach ($location2 as $obra)
                                 <a href="{{ URL::to('/art/search/details2/2/'. $obra->id .'/'.$texto) }}">{{ $obra->name  }}</a> <br>
@@ -48,21 +48,18 @@
 
                 <div class="tz-gallery">
 
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($ninv) > 0)
                             @foreach ($ninv as $obra)
 
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                    Técnica: {{ $obra->tecnica }}">
-                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-                                                        Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                        Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
+                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
@@ -101,21 +98,18 @@ Título: {{ $obra->titulo }}
 
                 <div class="tz-gallery">
 
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($titulo) > 0)
                             @foreach ($titulo as $obra)
 
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                    Técnica: {{ $obra->tecnica }}">
-                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-                                                        Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                        Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
+                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
@@ -151,21 +145,18 @@ Título: {{ $obra->titulo }}
 
                 <div class="tz-gallery">
 
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($tecnica) > 0)
                             @foreach ($tecnica as $obra)
 
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                    Técnica: {{ $obra->tecnica }}">
-                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-                                                        Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                        Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
+                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
@@ -200,7 +191,7 @@ Título: {{ $obra->titulo }}
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
 
                         @if (count($procedencia) > 0)
                             @foreach ($procedencia as $obra)
@@ -208,14 +199,11 @@ Título: {{ $obra->titulo }}
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                    Técnica: {{ $obra->tecnica }}">
-                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-                                                        Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                        Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
+                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park" >
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
@@ -251,21 +239,18 @@ Título: {{ $obra->titulo }}
 
                 <div class="tz-gallery">
 
-                    <div class="row resultados_busquedas">
+                    <div class="resultados_busquedas">
                         @if (count($catalogo) > 0)
                             @foreach ($catalogo as $obra)
 
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                    Técnica: {{ $obra->tecnica }}">
-                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-                                                        Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                        Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
+                                                <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
