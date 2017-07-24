@@ -240,7 +240,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                 @if (count($procedencia) > 0)
-                    <div style="margin-bottom: 70px"><a href="{{ URL::to('/art/search/details/4/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px"><a href="{{ URL::to('/art/search/details/4/'.$texto) }}">@lang('search.Mas')</a></div>
                 @endif
             </div>
             <div><hr></div>
