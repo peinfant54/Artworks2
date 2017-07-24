@@ -63,7 +63,10 @@ Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
-                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
+                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @endif
 
@@ -113,7 +116,10 @@ Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
-                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
+                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @endif
 
@@ -160,7 +166,10 @@ Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
-                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
+                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @endif
 
@@ -207,7 +216,10 @@ Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
-                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
+                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @endif
 
@@ -254,7 +266,10 @@ Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
-                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
+                                                <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             </a>
                                         @endif
 
