@@ -33,7 +33,7 @@
                                 <div class="col-sm-6 col-md-2">
                                     <div class="thumbnail">
                                         @if($obra->file1)
-                                            <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
+                                            <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
 Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
 Técnica: {{ $obra->tecnica }}">
