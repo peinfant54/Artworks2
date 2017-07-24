@@ -39,7 +39,7 @@
                                 <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded img_seleccion">
                             </a>
                         @endif
-                            <input type="checkbox" id="c{{$obra->id}}" name="listartworks[]" value="{{$obra->id}}">
+                            <input type="checkbox" id="c{{$obra->id}}" name="listartworks[]" value="{{$obra->id}}" style="display: none">
                             <label for="c{{$obra->id}}" class="p_selecion"><span></span><br>{{ $obra->n_inv }}</label>
                         </div>
                      </div>

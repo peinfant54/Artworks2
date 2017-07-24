@@ -24,15 +24,18 @@
                                     @if($obra->file1)
                                         <a class="ttooltip lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
+                                                Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+                                                Técnica: {{ $obra->tecnica }}" >
+                                            <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park" title="
+Título: {{ $obra->titulo }}
 Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}">
-                                            <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  title="
-                                                Título: {{ $obra->titulo }}
-Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}">
+Técnica: {{ $obra->tecnica }}" >
                                         </a>
                                     @else
-                                        <a class="lightbox" href="{{asset('storage/No_Image.png')}}">
+                                        <a class="lightbox" href="{{asset('storage/No_Image.png')}}" title="
+Título: {{ $obra->titulo }}
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
                                         </a>
                                     @endif

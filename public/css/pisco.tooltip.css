@@ -1,11 +1,11 @@
 /* basic usage piscoToolTip with id by default --- */
-.tooltip {position: absolute;}
-.tooltip .cont {padding: 10px; background: #c00; opacity: .9; color:#fff; font-size: 13px; border-radius:3px;}
-.tooltip .arrow {width: 0; height: 0; position: absolute; display: block; opacity: .9;}
-.tooltip .arrowTop {border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #c00; bottom: -5px; left: 10px;}
-.tooltip .arrowBottom {border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #c00; top: -5px; left: 10px;}
-.tooltip .arrowLeft {border-right: 5px solid #c00; border-top: 5px solid transparent; border-bottom: 5px solid transparent; top: 50%; left: -5px; margin-top:-3px}
-.tooltip .arrowRight {border-left: 5px solid #c00; border-top: 5px solid transparent; border-bottom: 5px solid transparent; top: 50%; right: -5px; margin-top:-3px}
+.tooltip3 {position: absolute;}
+.tooltip3 .cont {padding: 10px; background: #c00; opacity: .9; color:#fff; font-size: 13px; border-radius:3px;}
+.tooltip3 .arrow {width: 0; height: 0; position: absolute; display: block; opacity: .9;}
+.tooltip3 .arrowTop {border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #c00; bottom: -5px; left: 10px;}
+.tooltip3 .arrowBottom {border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #c00; top: -5px; left: 10px;}
+.tooltip3 .arrowLeft {border-right: 5px solid #c00; border-top: 5px solid transparent; border-bottom: 5px solid transparent; top: 50%; left: -5px; margin-top:-3px}
+.tooltip3 .arrowRight {border-left: 5px solid #c00; border-top: 5px solid transparent; border-bottom: 5px solid transparent; top: 50%; right: -5px; margin-top:-3px}
 
 
 /* custom design --- */

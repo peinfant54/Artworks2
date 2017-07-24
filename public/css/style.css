@@ -223,6 +223,16 @@ footer a {
 	margin-bottom: 15px;
 }
 
+.resultados_busquedas{
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.titulos_busquedas{
+	color:#A6A6A6;
+}
+
+
 .img_seleccion{
 	height: 100px;
 	width: auto;

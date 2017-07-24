@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\MyResetPassword;
 
 
 class User extends Authenticatable
@@ -33,4 +34,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\CoreModel\CoreProfile', 'id_profile');
     }
 
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MyResetPassword($token));
+    }
 }

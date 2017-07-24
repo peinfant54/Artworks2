@@ -150,14 +150,21 @@
                         </li>
                     @endif
                 @endforeach
-                <li style="padding-top: 12px">
+                <li>
+                    <a href="{{ route('lang.switch', $lang) }}" data-title="Edit" name="ChangePass" data-toggle="modal" data-target="#change" title="@lang('index.ChangePasswordMsg')">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </a>
+                </li>
+                <!--li style="padding-top: 12px">
+
                     <p data-placement="top">
+
                         <button class="btn btn-xs" style="background: transparent" data-title="Edit" name="ChangePass" data-toggle="modal" data-target="#change" title="@lang('index.ChangePasswordMsg')">
                             <span class="glyphicon glyphicon-lock"></span>
                             <!--img  style="height: 20px; background: #f8f8f8;" src="{{ asset('img/candado.svg') }}"-->
-                        </button>
+                        <!-- /button>
                     </p>
-                </li>
+                </li -->
                 <li>
                     <a href="{{ route('logout') }}" id="logout"
                          onclick="event.preventDefault();

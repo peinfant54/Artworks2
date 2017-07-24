@@ -11,10 +11,10 @@
 
         <div class="galeria">
             <div><hr></div>
-            <div>@lang('search.title_artist')</div>
+            <div class="titulos_busquedas">@lang('search.title_artist')</div>
             <div class="container gallery-container">
                 <div class="tz-gallery">
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($artist) > 0)
                             @foreach ($artist as $obra)
                                 <a href="{{ URL::to('/art/search/details2/1/'. $obra->id .'/'.$texto) }}">{{ $obra->nombre }} {{ $obra->apellido }}</a><br>
@@ -26,10 +26,10 @@
                 </div>
             </div>
             <div><hr></div>
-            <div>@lang('search.title_location')</div>
+            <div class="titulos_busquedas">@lang('search.title_location')</div>
             <div class="container gallery-container">
                 <div class="tz-gallery">
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($location2) > 0)
                             @foreach ($location2 as $obra)
                                 <a href="{{ URL::to('/art/search/details2/2/'. $obra->id .'/'.$texto) }}">{{ $obra->name  }}</a> <br>
@@ -41,14 +41,14 @@
                 </div>
             </div>
             <div><hr></div>
-            <div>@lang('search.title_ninv')</div>
+            <div class="titulos_busquedas">@lang('search.title_ninv')</div>
             <div class="container gallery-container">
 
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
 
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($ninv) > 0)
                             @foreach ($ninv as $obra)
 
@@ -94,14 +94,14 @@ Título: {{ $obra->titulo }}
                     @endif
             </div>
             <div><hr></div>
-            <div>@lang('search.title_titulo')</div>
+            <div class="titulos_busquedas">@lang('search.title_titulo')</div>
             <div class="container gallery-container">
 
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
 
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($titulo) > 0)
                             @foreach ($titulo as $obra)
 
@@ -144,14 +144,14 @@ Título: {{ $obra->titulo }}
                 @endif
             </div>
             <div><hr></div>
-            <div>@lang('search.title_tecnica')</div>
+            <div class="titulos_busquedas">@lang('search.title_tecnica')</div>
             <div class="container gallery-container">
 
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
 
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($tecnica) > 0)
                             @foreach ($tecnica as $obra)
 
@@ -194,13 +194,13 @@ Título: {{ $obra->titulo }}
                     @endif
             </div>
             <div><hr></div>
-            <div>@lang('search.title_procedencia')</div>
+            <div class="titulos_busquedas">@lang('search.title_procedencia')</div>
             <div class="container gallery-container">
 
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
-                    <div class="row">
+                    <div class="row resultados_busquedas">
 
                         @if (count($procedencia) > 0)
                             @foreach ($procedencia as $obra)
@@ -244,14 +244,14 @@ Título: {{ $obra->titulo }}
                 @endif
             </div>
             <div><hr></div>
-            <div>@lang('search.title_catalogo')</div>
+            <div class="titulos_busquedas">@lang('search.title_catalogo')</div>
             <div class="container gallery-container">
 
                 <!--   Galería    -->
 
                 <div class="tz-gallery">
 
-                    <div class="row">
+                    <div class="row resultados_busquedas">
                         @if (count($catalogo) > 0)
                             @foreach ($catalogo as $obra)
 
