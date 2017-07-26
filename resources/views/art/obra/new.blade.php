@@ -13,6 +13,9 @@
                         @foreach($errors->all() as $error)
                             <li> {{ $error }} </li>
                         @endforeach
+
+
+
                     </ul>
                     <input type="hidden" name="modalnew" value="0" />
 

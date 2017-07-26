@@ -63,6 +63,7 @@ class ObraController extends Controller
                         //Debugbar::error('Error!');
                         //Debugbar::warning('Watch out…');
                         //Debugbar::addMessage('Another message', 'mylabel');
+
                         return view('art.obra.index')
                             ->with('modulos', $modules) //Modulos
                             ->with('xmod', $a) //Permisos
@@ -92,6 +93,8 @@ class ObraController extends Controller
         try{
 
             SysObra::destroy(Input::get('id_obra'));
+            SysObra::show();
+
 
             /*echo "Hola";
             exit;*/
