@@ -42,6 +42,7 @@ Técnica: {{ $obra->tecnica }}">
                                         <button class="BotonFoto" data-title="Edit" name="ChangePass" data-toggle="modal" data-target="#detalle{{ $obra->id }}">
                                             <h3>{{ $obra->titulo }}</h3>
                                             <p>{{ $obra->artist->nombre }} {{ $obra->artist->apellido }}</p>
+
                                         </button>
                                     </div>
                                 </div>

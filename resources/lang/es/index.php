@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Sistema Privado de Colección de Arte',
+    'ProyectTitle'   => 'Sistema de Colección de Arte',
     'PageTitle'     => 'Últimas Obras',
     'ChangePasswordMsg'     => 'Cambiar la contraseña ',
     'welcome' => 'Bienvenido la página principal Usuario ',
@@ -26,6 +26,8 @@ return [
 
     'DeleteErrorProfile'=> 'El perfil no puede ser eliminado, debido a que existes usuarios que tienen asignado este perfil!',
     'DeleteErrorArtist' => 'El artista no puede ser eliminado, debido a que tiene asignada una o mas obras!',
+    'DeleteErrorFile' => 'El archivo no pudo ser eliminado.',
+
     'IndexButton'   => 'Acceder',
     'IndexForgot'   =>  'Olvidaste tu contraseña?',
     'IndexUsernamePlaceHolder'  => 'Nombre de Usuario',

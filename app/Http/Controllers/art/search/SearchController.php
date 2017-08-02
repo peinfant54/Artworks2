@@ -143,14 +143,14 @@ class SearchController extends Controller
 
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
-            if($opc == 1) // Por Numero de inventario
+            if($opc == 1) // Por Artista
             {
                 $obras = SysObra::where('id_artista', $id)
                         ->paginate(10);
 
                 $name = SysArtista::find($id)->nombre ." ". SysArtista::find($id)->apellido;
             }
-            elseif($opc == 2) // Por titulo
+            elseif($opc == 2) // Por Ubicacion
             {
                 $obras = SysObra::where('id_ubica', $id)->paginate(10);
 

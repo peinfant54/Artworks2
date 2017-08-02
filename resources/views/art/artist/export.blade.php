@@ -52,6 +52,9 @@
             </table>
         </div>
         <div class="left">
+            <button type="button" onclick="history.back()" class="btn btn-primary right btn-volver">
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
+            </button>
             <button type="submit" class="btn btn-primary right" name="export" >
                 <span class="glyphicon glyphicon-plus"></span>@lang('artist.BtnExport')</button>
         </div>

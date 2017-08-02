@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Private Art Colection System',
+    'ProyectTitle'   => 'Art Colection System',
     'PageTitle'     => 'Latest Artworks',
     'ChangePasswordMsg'     => 'Change your password ',
     'welcome'   => 'Welcome to the Home page User ',
@@ -25,6 +25,7 @@ return [
     'Delete'     => 'The register has been Delete!',
     'DeleteErrorProfile'=> 'The Profile cannot be deleted, because some users has assigned this profile!',
     'DeleteErrorArtist' => 'The Artist cannot be deleted, because some artworks has assigned this Artist!',
+    'DeleteErrorFile' => 'The File cannot be deleted!',
     'IndexButton'   => 'Log In',
     'IndexForgot'   =>  'Forgot Your Password?',
     'IndexUsernamePlaceHolder'  => 'Username',

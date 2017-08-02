@@ -10,6 +10,11 @@ class LanguageLocalizationController extends Controller
 {
     public function index(Request $request)
     {
+        if($request->method() == "GET")
+        {
+
+        }
+
             if($request->lang == 'es')
             {
 
@@ -22,7 +27,7 @@ class LanguageLocalizationController extends Controller
                 //echo  "Ingles";
             }
 //dd($request);
-        return Redirect::back();
+        return Redirect::back()->withInput();
 
     }
 }

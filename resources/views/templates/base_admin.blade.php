@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 
     <title>@lang('index.ProyectTitle')</title>
 
@@ -75,7 +75,7 @@
              otro elemento que se pueda ocultar al minimizar la barra -->
         <div class="navbar-collapse navbar-ex1-collapse collapse" style="height: 1px;">
 
-            <form class="navbar-form navbar-right" role="search" style="margin-right: -30px;" action="{{ url('art/search/') }}" method="POST">
+            <form class="navbar-form navbar-right" role="search" style="margin-right: -30px;" action="{{ url('art/search/') }}" method="GET">
                 <div class="form-group">
                     <input type="text" name="textsearch" class="form-control" placeholder="@lang('index.SearchPlaceHolder')" title="@lang('index.SearchLeyend')" required>
                 </div>
@@ -151,7 +151,7 @@
                     @endif
                 @endforeach
                 <li>
-                    <a href="{{ route('lang.switch', $lang) }}" data-title="Edit" name="ChangePass" data-toggle="modal" data-target="#change" title="@lang('index.ChangePasswordMsg')">
+                    <a data-title="ChangePass" name="ChangePass" data-toggle="modal" data-target="#change2" title="@lang('index.ChangePasswordMsg')">
                         <span class="glyphicon glyphicon-lock"></span>
                     </a>
                 </li>
@@ -181,7 +181,7 @@
     </nav>
 </div>
 
-@include ('templates.password' )
+
 
 
 
@@ -209,11 +209,14 @@
     @if(Session::has('dbDelete'))
         <div class="alert alert-success">@lang('index.Delete')</div>
     @endif
+
         @if(Session::has('dbDeleteError') == 'Profile')
             @if(Session::get('dbDeleteError') == 'Profile')
                 <div class="alert alert-danger">@lang('index.DeleteErrorProfile')</div>
             @elseif(Session::get('dbDeleteError') == 'Artist')
                 <div class="alert alert-danger">@lang('index.DeleteErrorArtist')</div>
+            @elseif(Session::get('dbDeleteError') == 'ArtWorkFile')
+                <div class="alert alert-danger">@lang('index.DeleteErrorFile')</div>
             @endif
         @endif
     @if(Session::has('msg_access2'))
@@ -234,7 +237,7 @@
 
 </script>
 
-
+@include ('templates.password' )
 
 
 <footer>

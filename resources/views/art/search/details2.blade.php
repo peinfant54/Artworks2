@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-
+<?php  /*dd($obras); */?>
     <div class="contenido posicion_contenedor">
         <div class="titulo">
             @if ($opc == 1)

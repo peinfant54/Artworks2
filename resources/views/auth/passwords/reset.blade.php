@@ -1,11 +1,11 @@
 @extends('templates.base2')
 
-@section('content')
-<div class="container">
+@section('contenido')
+<div class="container" style="background: transparent; padding-top: 250px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+                <div class="panel-heading">Reset Passworddd</div>
 
                 <div class="panel-body">
                     @if (session('status'))

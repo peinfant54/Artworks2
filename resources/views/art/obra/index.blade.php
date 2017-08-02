@@ -33,13 +33,13 @@
                     <table id="mytable" class="table table-bordred table-striped">
 
                         <thead>
-                        <th style="width:100px">@lang('obra.title4')</th>
-                        <th style="width:10px">Id</th>
+                        <th style="width:100px" class="text-center">@lang('obra.title4')</th>
 
                         <th class="text-center">@lang('obra.title1')</th>
                         <th class="text-center">@lang('obra.title2')</th>
                         <th class="text-center">@lang('obra.title3')</th>
                         @if($xmod->pivot->eedit > 0)
+                            <th class="text-center" style="width:15px">@lang('obra.title7')</th>
                             <th class="text-center" style="width:15px">@lang('obra.title5')</th>
                         @endif
                         @if($xmod->pivot->ddelete > 0)
@@ -50,7 +50,7 @@
                         @foreach ($obras as $obra)
 
                             <tr>
-                                <td class="text-center">{{ $obra->id }}</td>
+                                <!--td class="text-center">{{ $obra->id }}</td-->
                                 <td style="min-width: 100px;">
                                     <div class="thumbnail">
                                         @if($obra->file1)
@@ -70,7 +70,8 @@
                                 <td class="text-center">{{ $obra->titulo }}</td>
 
                                 @if($xmod->pivot->eedit > 0)
-                                    <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Edit"><button name="edit{{ $obra->id }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{ $obra->id }}" title="@lang('obra.EditMsg'){{$obra->n_inv}}"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                                    <td class="text-center"><button name="file{{ $obra->id }}" class="btn btn-primary btn-xs" title="@lang('obra.EditFiles') {{$obra->n_inv}}" onClick="window.location.href='{{URL::to('art/obra/pdf/'.$obra->id)}}'"><span class="glyphicon glyphicon-file"></span></button></td>
+                                    <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Edit"><button name="edit{{ $obra->id }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{ $obra->id }}" title="@lang('obra.EditMsg') {{$obra->n_inv}}"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                                 @endif
 
                                 @if($xmod->pivot->ddelete > 0)
@@ -79,9 +80,12 @@
                                 @endif
 
                             </tr>
-
-                            @include ('art.obra.edit' , ['obra' => $obra])
-                            @include ('art.obra.delete' , ['obra' => $obra])
+                            @if($xmod->pivot->eedit > 0)
+                                @include ('art.obra.edit' , ['obra' => $obra])
+                            @endif
+                            @if($xmod->pivot->ddelete > 0)
+                                @include ('art.obra.delete' , ['obra' => $obra])
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
@@ -98,18 +102,18 @@
     @include ('art.obra.new')
     <script type="text/javascript">
 
-        @if(old('modalpass'))
-            @if (count($errors) > 0)
-                $('#pass{{old('modalpass')}}').modal({show: true});
-        @endif
+    @if(old('modalpass'))
+        @if (count($errors) > 0)
+            $('#pass{{old('modalpass')}}').modal({show: true});
+    @endif
 
     @elseif(old('modaledit'))
         @if (count($errors) > 0)
-$('#edit{{old('modaledit')}}').modal({show: true});
+            $('#edit{{old('modaledit')}}').modal({show: true});
         @endif
     @else
         @if (count($errors) > 0)
-$('#new').modal({show: true});
+            $('#new').modal({show: true});
         @endif
 
         @endif

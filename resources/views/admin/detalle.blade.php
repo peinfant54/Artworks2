@@ -94,6 +94,16 @@
                     </div>
                 </div>
 
+                <div class="EditModal form-group">
+                    <label for="name" class="col-md-4 control-label">@lang('obra.Field14')</label>
+                    <div class="col-md-6">
+                        @foreach ($obra->files as $files)
+                            <p><a href="{{asset('storage/pdfs/'.$files->name)}}" target="_blank">{{ $files->name }}</a></p>
+                        @endforeach
+
+                    </div>
+                </div>
+
 
             </div>
 

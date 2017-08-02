@@ -32,10 +32,19 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">
+
+                                        Send Password Reset Link
+                                    </button>
+                                </div>
+                                <div style="padding-left: 0px; float: left;" >
+                                    <button type="button" class="btn btn-primary" onclick="location.href = ' {{ URL::to('login') }} '">
+                                        Back
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
                     </form>
                 </div>

@@ -145,7 +145,7 @@ class ArtistController extends Controller
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
 
-            $pro = SysObra::where('id_artista', $id)->orderBy('id', 'desc')->paginate(15);
+            $pro = SysObra::where('id_artista', $id)->orderBy('n_inv', 'desc')->get();
 
             /* Se tiene que hacer all()->plunck() y no plunck() directamente, ya que para
    poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
@@ -165,7 +165,7 @@ class ArtistController extends Controller
             LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
             Session::flash('msg_access2', $e);
-            return redirect("admin/index");
+            //return redirect("admin/index");
         }
 
     }

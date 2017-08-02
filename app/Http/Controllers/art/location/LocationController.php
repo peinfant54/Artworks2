@@ -14,6 +14,8 @@ use App\Models\CoreModel\CoreModule;
 use App\Helpers\SystemCatchLog\LogSystem;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
+use App\Models\SysModel\SysObra;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class LocationController extends Controller
 {
@@ -142,6 +144,88 @@ class LocationController extends Controller
             LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+        }
+
+    }
+
+    public function LocationExport($id)
+    {
+        try{
+
+
+            /* Menu */
+            $modules  = User::find(Auth::id())->profile->module;
+
+            $pro = SysObra::where('id_ubica', $id)->orderBy('id', 'desc')->paginate(15);
+
+            /* Se tiene que hacer all()->plunck() y no plunck() directamente, ya que para
+   poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
+            $location = SysUbicaciones::all()->where('id', $id);
+
+
+            return view('art.location.export')
+                ->with('modulos', $modules)
+                ->with('obras', $pro)
+                ->with('location', $location);
+
+
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e);
+            //return redirect("admin/index");
+        }
+
+    }
+
+    public function LocationExportpdf()
+    {
+        try{
+            //$pdf = PDF::loadView('art.artist.pdf');
+            /*            $view = \View::make('art.artist.pdf');
+                        $pdf = \App::make('dompdf.wrapper');
+                        $pdf->loadHTML($view);
+                        return $pdf->stream('test.php'); */// Para desplegar en la misma pantalla
+            //return $pdf->download('test.php'); // Para descargar el archivo
+            //return view('art.artist.pdf');
+            //echo "hola";
+            //exit;
+            $id_ubica = Input::get('idubica');
+            $title = SysUbicaciones::find($id_ubica)->name;
+            //view()->share('title', "Pan con queso");
+            //$view =  view('art.artist.pdf');
+
+            $lista = Input::get('listartworks');
+
+            $obras = SysObra::find($lista);
+
+            //dd(Input::get('listartworks'));
+            $pdf =  PDF::loadView('art.location.pdf', compact(['title', 'obras']))
+                ->setPaper('a4', 'portrait')
+                ->setWarnings(false)
+                ->setOptions(['isHtml5ParserEnabled' => true,'isRemoteEnabled' => true]);
+//dd($pdf);
+            //return $pdf->stream();
+            return $pdf->download('export.pdf');
+
+            /*return view('art.artist.pdf')
+                ->with('title', $title)
+                ->with('obras', $obras);*/
+
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e);
+            //echo $e;
+            //return redirect("admin/index");
         }
 
     }

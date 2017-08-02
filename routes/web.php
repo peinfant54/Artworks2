@@ -35,6 +35,7 @@ Route::get('admin/logout', function()
     return view('admin/logout');
 });
 
+
 Route::get('/logout', function()
 {
     Auth::logout();
@@ -82,7 +83,7 @@ Route::post('admin/login', function()
 
     //return view('admin/login');
 });
-Route::get('admin/localization/{lang?}', 'LanguageLocalizationController@inbdex');
+//Route::get('admin/localization/{lang?}', 'LanguageLocalizationController@inbdex');
 Route::get('admin/index', 'HomeController@AdminIndex')->middleware('auth');
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageLocalizationController@index']);
 
@@ -116,16 +117,23 @@ Route::get('art/location/index', 'art\location\LocationController@LocationIndex'
 Route::post('art/location/delete','art\location\LocationController@LocationDestroy')->middleware('auth');
 Route::post('art/location/create','art\location\LocationController@LocationCreate')->middleware('auth');
 Route::post('art/location/edit','art\location\LocationController@LocationEdit')->middleware('auth');
+Route::get('art/location/export/{id}','art\location\LocationController@LocationExport')->middleware('auth');
+Route::post('art/location/pdfexport','art\location\LocationController@LocationExportpdf')->middleware('auth');
 
+/* Cuando una Routa POST no funciona es por el CsrToken. Desabilitar en Middleware/VerifyCsrfToken.php*/
 
 
 /* Terminop Rutas modulo Ubicaciones*/
 
+
 /* Incio Rutas modulo Obras*/
 Route::get('art/obra/index', 'art\obra\ObraController@ObraIndex')->middleware('auth');
 Route::post('art/obra/delete','art\obra\ObraController@ObraDestroy')->middleware('auth');
+Route::post('art/obra/deletepdf','art\obra\ObraController@ObraPdfDestroy')->middleware('auth');
 Route::post('art/obra/create','art\obra\ObraController@ObraCreate')->middleware('auth');
+Route::post('art/obra/createpdf','art\obra\ObraController@ObraCreatePdf')->middleware('auth');
 Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');
+Route::get('art/obra/pdf/{id}','art\obra\ObraController@ObraPdfIndex')->middleware('auth');
 //Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');
 /* Terminop Rutas modulo Obras*/
 
@@ -141,7 +149,7 @@ Route::post('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf'
 
 
 /* Inicio Rutas modulo Search*/
-Route::post('art/search','art\search\SearchController@SearchIndex')->middleware('auth');
+Route::get('art/search','art\search\SearchController@SearchIndex')->middleware('auth');
 /*Route::post('art/search', function()
 {
     $texto = Input::get('textsearch');

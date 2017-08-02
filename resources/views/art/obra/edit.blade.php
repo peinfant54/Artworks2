@@ -5,21 +5,23 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                 <h4 class="modal-title custom_align" id="Heading">@lang('location.EditMsg') {{$obra->titulo}}</h4>
             </div>
+            <?php /*dd($obra);*/?>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('art/obra/edit') }}">
+                <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ url('art/obra/edit') }}">
 
                     {{ csrf_field() }}
                     <input type="hidden" name="id_obra" value="{{$obra->id}}" />
+                    <input type="hidden" name="modaledit" value="{{$obra->id}}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
 
 
-                    <div class="EditModal form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('n_inv_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
                         <div class="col-md-6">
-                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv" value="{{ $obra->n_inv }}" required>
+                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit" value="{{ $obra->n_inv }}" required>
 
-                            @if ($errors->has('n_inv'))
+                            @if ($errors->has('n_inv_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('n_inv') }}</strong>
+                                        <strong>{{ $errors->first('n_inv_edit') }}</strong>
                                     </span>
                             @endif
                         </div>
@@ -31,116 +33,116 @@
                         </div>
                     </div>
 
-                    <div class=" EditModal form-group{{ $errors->has('titulo') ? ' has-error' : '' }}">
+                    <div class=" EditModal form-group{{ $errors->has('titulo_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field3')</label>
                         <div class="col-md-6">
-                            <input id="titulo{{ $obra->id }}" type="text" class="form-control" name="titulo" value="{{ $obra->titulo }}" required autofocus>
+                            <input id="titulo{{ $obra->id }}" type="text" class="form-control" name="titulo_edit" value="{{ $obra->titulo }}" required autofocus>
 
-                            @if ($errors->has('titulo'))
+                            @if ($errors->has('titulo_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('titulo') }}</strong>
+                                        <strong>{{ $errors->first('titulo_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('tecnica') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('tecnica_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field4')</label>
                         <div class="col-md-6">
-                            <input id="tecnica{{ $obra->id }}" type="text" class="form-control" name="tecnica" value="{{ $obra->tecnica }}" required autofocus>
+                            <input id="tecnica{{ $obra->id }}" type="text" class="form-control" name="tecnica_edit" value="{{ $obra->tecnica }}" autofocus>
 
-                            @if ($errors->has('tecnica'))
+                            @if ($errors->has('tecnica_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('tecnica') }}</strong>
+                                        <strong>{{ $errors->first('tecnica_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
-                    <div class="EditModal form-group{{ $errors->has('dimension') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('dimension_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field5')</label>
                         <div class="col-md-6">
-                            <input id="dimension{{ $obra->id }}" type="text" class="form-control" name="dimension" value="{{ $obra->dimension }}" required autofocus>
+                            <input id="dimension{{ $obra->id }}" type="text" class="form-control" name="dimension_edit" value="{{ $obra->dimension }}" autofocus>
 
-                            @if ($errors->has('dimension'))
+                            @if ($errors->has('dimension_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('dimension') }}</strong>
+                                        <strong>{{ $errors->first('dimension_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
-                    <div class="EditModal form-group{{ $errors->has('ano') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('ano_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field6')</label>
                         <div class="col-md-6">
-                            <input id="ano{{ $obra->id }}" type="text" class="form-control" name="ano" value="{{ $obra->ano }}" required autofocus>
+                            <input id="ano{{ $obra->id }}" type="text" class="form-control" name="ano_edit" value="{{ $obra->ano }}" autofocus>
 
-                            @if ($errors->has('ano'))
+                            @if ($errors->has('ano_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('ano') }}</strong>
+                                        <strong>{{ $errors->first('ano_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('edicion') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('edicion_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field7')</label>
                         <div class="col-md-6">
-                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="edicion" value="{{ $obra->edicion }}" required autofocus>
+                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="edicion_edit" value="{{ $obra->edicion }}" autofocus>
 
-                            @if ($errors->has('edicion'))
+                            @if ($errors->has('edicion_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('edicion') }}</strong>
+                                        <strong>{{ $errors->first('edicion_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('procedencia') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('procedencia_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field8')</label>
                         <div class="col-md-6">
-                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="procedencia" value="{{ $obra->procedencia }}" required autofocus>
+                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="procedencia_edit" value="{{ $obra->procedencia }}" autofocus>
 
-                            @if ($errors->has('edicion'))
+                            @if ($errors->has('procedencia_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('edicion') }}</strong>
+                                        <strong>{{ $errors->first('procedencia_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('catalogo') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('catalogo_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field9')</label>
                         <div class="col-md-6">
-                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="catalogo" value="{{ $obra->catalogo }}" required autofocus>
+                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="catalogo_edit" value="{{ $obra->catalogo }}" autofocus>
 
-                            @if ($errors->has('catalogo'))
+                            @if ($errors->has('catalogo_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('catalogo') }}</strong>
+                                        <strong>{{ $errors->first('catalogo_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('certificacion') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('certificacion_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field10')</label>
                         <div class="col-md-6">
-                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="certificacion" value="{{ $obra->certificacion }}" required autofocus>
+                            <input id="edicion{{ $obra->id }}" type="text" class="form-control" name="certificacion_edit" value="{{ $obra->certificacion }}" autofocus>
 
-                            @if ($errors->has('certificacion'))
+                            @if ($errors->has('certificacion_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('certificacion') }}</strong>
+                                        <strong>{{ $errors->first('certificacion_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="EditModal form-group{{ $errors->has('valoracion') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('valoracion_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field11')</label>
                         <div class="col-md-6">
-                            <input id="valoracion{{ $obra->id }}" type="text" class="form-control" name="valoracion" value="{{ $obra->valoracion }}" required autofocus>
+                            <input id="valoracion{{ $obra->id }}" type="text" class="form-control" name="valoracion_edit" value="{{ $obra->valoracion }}" autofocus>
 
-                            @if ($errors->has('valoracion'))
+                            @if ($errors->has('valoracion_edit'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('valoracion') }}</strong>
+                                        <strong>{{ $errors->first('valoracion_edit') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -154,6 +156,20 @@
                             {{Form::select('id_ubica'. $obra->id, $location, $obra->id_ubica,['class' => 'form-control'])}}
                         </div>
                     </div>
+
+                    <div class="form-group{{ $errors->has('foto1_edit') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">@lang('obra.Field13')</label>
+                        <div class="col-md-6">
+                            <input id="file1" type="file" class="form-control" name="foto1_edit" accept="image/*" value="{{ $obra->file1 }}"  >
+
+                            @if ($errors->has('foto1_edit'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('foto1_edit') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-warning btn-lg" name="update_edit{{ $obra->id }}" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Update')</button>
 
                 </form>

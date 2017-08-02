@@ -23,7 +23,7 @@ class CreateArtWorks extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'n_inv'         => 'required|string|max:10',
             'titulo'        => 'required|string|max:100',
             'tecnica'       => 'nullable|string|max:200',
@@ -36,5 +36,11 @@ class CreateArtWorks extends FormRequest
             'valoracion'    => 'nullable|string|max:100',
             'foto1'         => 'nullable|image|mimes:jpeg,bmp,png,jpg|max:5120',
         ];
+        $pdf = count($this->input('pdf'));
+        foreach(range(0, $pdf) as $index) {
+            $rules['pdf.' . $index] = 'nullable|mimes:pdf|max:10000';
+        }
+//dd($rules);
+        return $rules;
     }
 }

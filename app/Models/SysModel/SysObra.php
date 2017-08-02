@@ -23,4 +23,9 @@ class SysObra extends Model
         return $this->belongsTo('App\Models\SysModel\SysUbicaciones', 'id_ubica');
     }
 
+    public function files()
+    {
+        return $this->hasMany('App\Models\SysModel\SysObraFile', 'id_obra', 'id');
+    }
+
 }

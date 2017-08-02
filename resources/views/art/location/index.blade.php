@@ -27,6 +27,8 @@
 
                         <th style="width:10px" class="text-center">Id</th>
                         <th class="text-center">@lang('location.title1')</th>
+                        <th class="text-center">Exp</th>
+
                         @if($xmod->pivot->eedit > 0)
 
                             <th style="width:15px" class="text-center">@lang('location.title3')</th> <!-- Editar -->
@@ -41,6 +43,8 @@
                             <tr>
                                 <td class="text-center">{{ $location->id }}</td>
                                 <td class="text-center">{{ $location->name }}</td>
+                                <td class="text-center">
+                                    <a href="{{ URL::to('art/location/export/'.$location->id) }}"><i class="material-icons">picture_as_pdf</i></a></td>
                                 @if($xmod->pivot->eedit > 0)
 
                                     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button id="Edit{{ $location->id }}" class="btn btn-primary btn-xs center-block" data-title="Edit" data-toggle="modal" data-target="#edit{{ $location->id }}" title="@lang('location.EditMsg'){{$location->name}}"><span class="glyphicon glyphicon-pencil"></span></button></p></td>

@@ -10,10 +10,6 @@
                 <form class="form-horizontal formularios" id="register" role="form" method="POST" action="{{ url('art/obra/create') }}"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <ul class="alert-box warning radius">
-                        @foreach($errors->all() as $error)
-                            <li> {{ $error }} </li>
-                        @endforeach
-
 
 
                     </ul>
@@ -165,7 +161,7 @@
                     <div class="form-group{{ $errors->has('foto1') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field13')</label>
                         <div class="col-md-6">
-                            <input id="file1" type="file" class="form-control" name="foto1" value="{{ old('foto1') }}"  >
+                            <input id="file1" type="file" class="form-control" name="foto1" accept="image/*" value="{{ old('foto1') }}"  >
 
                             @if ($errors->has('foto1'))
                                 <span class="help-block">
@@ -175,13 +171,19 @@
                         </div>
                     </div>
 
-                    <!--div-- class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Register
-                            </button>
+                    <div class="form-group{{ $errors->has('pdf.0') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">@lang('obra.Field14')</label>
+                        <div class="col-md-6">
+                            <input id="pdf" type="file" class="form-control" name="pdf[]" value="{{ old('pdf.0') }}" accept="application/pdf" multiple>
+                            @if ($errors->has('pdf.0'))
+                                <span class="help-block">
+                                        <strong><?php /*dd($errors); */?>
+                                            {{ $errors->first('pdf.0') }}</strong>
+                                </span>
+                            @endif
                         </div>
-                    </div-->
+                    </div>
+
 
                     <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name="save"><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Save')</button>
                 </form>
