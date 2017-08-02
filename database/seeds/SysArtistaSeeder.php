@@ -46,5 +46,11 @@ class SysArtistaSeeder extends Seeder
             'nombre'       => 'Rene',
             'apellido'       => 'Portocarrero'
         ]);
+
+        SysArtista::create([
+            'id'            => 7,
+            'nombre'       => 'Kurt',
+            'apellido'       => 'Herdan'
+        ]);
     }
 }

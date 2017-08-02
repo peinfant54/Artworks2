@@ -20,11 +20,16 @@ use Illuminate\Support\Facades\Auth;
 class SearchController extends Controller
 {
     //
-    public function SearchIndex()
+    public function index()
+    {
+        $texto = Input::get('textsearch');
+        return redirect("art/search/".$texto);
+    }
+    public function SearchIndex($texto)
     {
         try{
 
-            $texto = Input::get('textsearch');
+            //$texto = Input::get('textsearch');
             //dd($texto);
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
