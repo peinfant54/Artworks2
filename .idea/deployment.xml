@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" uploadOnCheckin="f4a56add-2e77-49b3-9c60-b5a28c751d20">
     <serverData>
-      <paths name="ArtWorks">
+      <paths name="ArtWorks_Produccion">
         <serverdata>
           <mappings>
             <mapping deploy="/ArtWorks" local="$PROJECT_DIR$" web="/" />
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="ArtWorks_Produccion" />
   </component>
 </project>

@@ -156,7 +156,7 @@ class LocationController extends Controller
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
 
-            $pro = SysObra::where('id_ubica', $id)->orderBy('id', 'desc')->paginate(15);
+            $pro = SysObra::where('id_ubica', $id)->orderBy('id', 'desc')->get();
 
             /* Se tiene que hacer all()->plunck() y no plunck() directamente, ya que para
    poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */

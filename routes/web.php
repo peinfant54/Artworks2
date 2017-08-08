@@ -5,6 +5,7 @@ use App\User;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,7 @@ Route::get('/', function () {
     //DebugBar::info($artist);
     //dd(Request::ip());
     //app('debugbar')->info($artist);
+    //dd(Request::ip());
     return view('auth.login');
 });
 

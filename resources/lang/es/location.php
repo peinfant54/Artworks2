@@ -37,4 +37,6 @@ return [
     'Save'      => 'Guardar',
     'Update'      => 'Actualizar',
 
+    'ExportMsg' => 'Listado de obras en la ubicación ',
+
 ];

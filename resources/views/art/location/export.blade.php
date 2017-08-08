@@ -14,7 +14,7 @@
 
                 <div class="col-md-12">
                     @foreach ($location as $a)
-                        <h1>@lang('Location.ExportMsg') {{$a->name}} </h1>
+                        <h1>@lang('location.ExportMsg') "{{$a->name}}" </h1>
                         <input name="idubica" type="hidden" value="{{  $a->id }}">
                     @endforeach
                 </div>

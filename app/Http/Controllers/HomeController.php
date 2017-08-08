@@ -50,6 +50,7 @@ class HomeController extends Controller
 
 
             $mod  = User::with('profile')->find(Auth::id())->profile->module;
+            LogSystem::writeSystemLog("The User has view the index","Home.Index",Auth::id());
             //$mod  = User::find(Auth::id())->profile->module;
 
             /*echo "Usuario = ".$user."<br>";

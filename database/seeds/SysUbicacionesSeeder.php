@@ -27,6 +27,11 @@ class SysUbicacionesSeeder extends Seeder
         SysUbicaciones::create(['id'=> 12,'name'=> 'Bodega P.R. rack ']);
         SysUbicaciones::create(['id'=> 13,'name'=> 'Bodega P.R.']);
 
+        SysUbicaciones::create(['id'=> 14,'name'=> 'Bodega P.R. Planera gris 3']);
+        SysUbicaciones::create(['id'=> 15,'name'=> 'Bodega P.R. Planera gris cajón 4']);
+        SysUbicaciones::create(['id'=> 16,'name'=> 'Bodega P.R. Planera negra cajón 1']);
+        SysUbicaciones::create(['id'=> 17,'name'=> 'Casa Francisca Cruz']);
+
         SysUbicaciones::create(['id'=> 1000,'name'=> 'Sin Ubicación']);
     }
 }

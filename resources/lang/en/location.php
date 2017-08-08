@@ -35,6 +35,6 @@ return [
 
     'Field5'    =>  '',
     'Save'      => 'Save',
-    'Update'      => 'Update',
-
+    'Update'    => 'Update',
+    'ExportMsg' => 'List of Artworks in the location ',
 ];

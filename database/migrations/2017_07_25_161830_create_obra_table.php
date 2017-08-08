@@ -21,7 +21,7 @@ class CreateObraTable extends Migration
             $table->string('titulo', 200);
             $table->string('tecnica', 200)->nullable();
             $table->string('dimension', 100)->nullable();
-            $table->string('ano', 20)->nullable();
+            $table->string('ano', 50)->nullable();
             $table->string('edicion', 200)->nullable();
             $table->string('procedencia',100)->nullable();
             $table->string('catalogo', 300)->nullable();
