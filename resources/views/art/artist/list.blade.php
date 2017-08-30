@@ -31,15 +31,15 @@
                                     @if($obra->file1)
                                         <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-                                                Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                Técnica: {{ $obra->tecnica }}" >
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}" >
                                             <img class="lightbox" src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park" >
                                         </a>
                                     @else
                                         <a class="lightbox" href="{{asset('storage/No_Image.png')}}" title="
 Título: {{ $obra->titulo }}
-                                                Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-                                                Técnica: {{ $obra->tecnica }}">
+Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+Técnica: {{ $obra->tecnica }}">
                                             <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
                                         </a>
                                     @endif
@@ -55,11 +55,11 @@ Título: {{ $obra->titulo }}
                                 </div>
                             </div>
                             <!--- ('admin.detalle' , ['obra' => $obra, 'opc' => ORIGEN, 'texto' => TEXTO a BUSCA, 'opc2' => VARIABEL PARA LA PAGINA DE BUSQUEDAS, 'xid' ID secundario para busquedas ])                   -->
-                            @include ('admin.detalle' , ['obra' => $obra, 'opc' => 1, 'texto' => 'index', 'opc2' => '0', 'xid' => 0 ])
+                            @include ('admin.detalle' , ['obra' => $obra, 'opc' => 6, 'texto' => 'index', 'opc2' => '0', 'xid' => $idartist ])
                         @endforeach
                    </div>
                     <div class="left">
-                        <button type="button" onclick="history.back()" class="btn btn-primary right btn-volver">
+                        <button type="button" onclick="window.location='{{ url("art/artist/index") }}'" class="btn btn-primary right btn-volver">
                             <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
                         </button>
                     </div>

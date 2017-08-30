@@ -359,6 +359,15 @@ class ObraController extends Controller
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
                 return redirect("admin/log/summary/search/".$opc2."/".$id );
             }
+            else if($opc == 6) /* Call from Summary */
+            {
+                $search = Input::get('search');
+                $opc2 = Input::get('opc2');
+                $id = Input::get('xid');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("art/obra/list/".$id );
+            }
 
         }
         catch(\Exception $e)
@@ -710,6 +719,7 @@ class ObraController extends Controller
                             ->with('modulos', $modules)
                             ->with('allmod', $allmod)
                             ->with('obras', $pro)
+                            ->with('idartist',$id)
                             ->with('editar_obra', $permission_edit_art)
                             ->with('location', $location)
                             ->with('artists_name', $artists_name)
