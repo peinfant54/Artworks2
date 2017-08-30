@@ -23,7 +23,17 @@
                     <div class="EditModal form-group">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
                         <div class="col-md-6">
+
+
+
+                        @if($editar_obra == 1)
+                            <a href="{{ URL::to('art/obra/edit/'. $obra->id .'/' . $opc .'/' . $texto.'/'.$opc2.'/'.$xid ) }}"  title="@lang('obra.EditMsg')">{{ $obra->n_inv }}</a>
+                        @else
                             {{ $obra->n_inv }}
+                        @endif
+
+
+
                         </div>
                     </div>
 

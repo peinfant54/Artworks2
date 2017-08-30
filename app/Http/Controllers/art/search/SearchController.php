@@ -32,7 +32,10 @@ class SearchController extends Controller
             //$texto = Input::get('textsearch');
             //dd($texto);
             /* Menu */
+            //$mod  = User::with('profile')->find(Auth::id())->profile->module;
             $modules  = User::find(Auth::id())->profile->module;
+
+            $permission_edit_art = $modules[6]->pivot->eedit;
 
             $search_ninv = SysObra::where('n_inv','like', '%'.$texto.'%')
                                   ->orderBy('id', 'desc')->paginate(5);
@@ -65,6 +68,7 @@ class SearchController extends Controller
                 ->with('catalogo', $search_catalogo)
                 ->with('artist', $search_artists)
                 ->with('location2', $search_location)
+                ->with('editar_obra', $permission_edit_art)
                 ->with('texto', $texto);
 
         }
@@ -79,13 +83,14 @@ class SearchController extends Controller
         }
     }
 
-    public function SearchDetails($opc, $textsearch)
+    public function SearchDetails($opc, $textsearch, $opc2)
     {
         try{
 
 
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
+            $permission_edit_art = $modules[6]->pivot->eedit;
             if($opc == 1) // Por Numero de inventario
             {
                 $obras = SysObra::where('n_inv','like', '%'.$textsearch.'%')
@@ -127,6 +132,8 @@ class SearchController extends Controller
                 ->with('location', $location)
                 ->with('obras', $obras)
                 ->with('opc', $opc)
+                ->with('opc2', $opc2)
+                ->with('editar_obra', $permission_edit_art)
                 ->with('textsearch', $textsearch);
 
         }
@@ -141,13 +148,14 @@ class SearchController extends Controller
         }
     }
 
-    public function SearchDetails2($opc, $id, $textsearch)
+    public function SearchDetails2($opc, $id, $textsearch, $opc2)
     {
         try{
 
 
             /* Menu */
             $modules  = User::find(Auth::id())->profile->module;
+            $permission_edit_art = $modules[6]->pivot->eedit;
             if($opc == 1) // Por Artista
             {
                 $obras = SysObra::where('id_artista', $id)
@@ -174,8 +182,74 @@ class SearchController extends Controller
                 ->with('location', $location)
                 ->with('obras', $obras)
                 ->with('opc', $opc)
+                ->with('opc2', $opc2)
+                ->with('xid', $id)
+                ->with('editar_obra', $permission_edit_art)
                 ->with('name', $name)
                 ->with('texto', $textsearch);
+
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            //Session::flash('msg_access2', $e);
+            //return redirect("admin/index");
+        }
+    }
+
+    public function Summary($opc, $id)
+    {
+        try{
+
+
+            /* Menu */
+            $name = "";
+            $modules  = User::find(Auth::id())->profile->module;
+            $permission_edit_art = $modules[6]->pivot->eedit;
+            if($opc == 1) // Sin titulo
+            {
+                $obras = SysObra::where('titulo', 'Sin título')
+                        ->orderBy('id', 'desc')->paginate(15);
+            }
+            elseif($opc == 2) // Sin Ubica
+            {
+                $obras = SysObra::where('id_ubica', '1000')
+                    ->orderBy('id', 'desc')->paginate(15);
+            }
+            elseif($opc == 3) // Sin Imagenes
+            {
+                $obras = SysObra::where('file1', '')
+                    ->orderBy('id', 'desc')->paginate(15);
+            }
+            elseif($opc == 4) // Por Ubicacióon
+            {
+                $obras = SysObra::where('id_ubica', $id)
+                    ->orderBy('id', 'desc')->paginate(15);
+                $name = SysUbicaciones::find($id);
+            }
+
+
+
+            /*$search_artists  = SysArtista::where('nombre','like', '%'.$textsearch.'%')
+                ->orWhere('apellido','like', '%'.$textsearch.'%')
+                ->get()->pluck('full_name', 'id');*/
+            //dd($search_artists);
+            $location = SysUbicaciones::pluck('name','id');
+
+            /* Se tiene que hace all()->plunck() y no plunck() directamente, ya que para
+               poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
+
+            return view('art.search.summary')
+                ->with('modulos', $modules) //Modulos
+                ->with('location', $location)
+                ->with('obras', $obras)
+                ->with('editar_obra', $permission_edit_art)
+                ->with('opc', $opc)
+                ->with('xid', $id)
+                ->with('name', $name);
 
         }
         catch(\Exception $e)

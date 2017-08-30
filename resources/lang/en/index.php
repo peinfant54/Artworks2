@@ -41,12 +41,17 @@ return [
     'SearchPlaceHolder'     => 'Find artworks',
     'SearchLeyend'          => 'Find artworks by name, location, etc.',
     'MenuGroup' => 'Settings',
+
     'Menu1'     => 'User',
     'Menu2'     => 'Profile',
+
     'Menu3'     => 'SystemLog',
     'Menu4'     => 'Locations',
     'Menu5'     => 'Artist',
     'Menu6'     => 'ArtWorks',
+    'Menu7'     => 'Artworks Stats',
+
+
     'EditPassMsg'   => 'Change your password ',
     'Next'      => 'Next',
     'Leyend1'   => 'Current Password',

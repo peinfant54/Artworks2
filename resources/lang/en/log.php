@@ -19,4 +19,23 @@ return [
     'title3' => 'Module',
     'title4' => 'Details',
 
+    //Summary
+
+    'summary'   => 'Artworks Stats',
+    's_title1'  => 'Locatation Name',
+    's_title2'  => '%',
+
+    'Ex'    => 'There is ',
+    's_sistema'  => 'artworks in the system',
+    's_titulo'  => 'artworks without Titles',
+    's_file'  => 'artworks without Images',
+    's_ubica'  => 'artworks without Locations',
+
+    's_sistema_ley'  => 'See all the artworks in the system',
+    's_titulo_ley'  => 'See all the artworks without title',
+    's_file_ley'  => 'See all the artworks without images',
+    's_ubica_ley'  => 'See all the artworks without location',
+
+    'ubica_ley'  => 'See all the artworks in the location  ',
+
 ];

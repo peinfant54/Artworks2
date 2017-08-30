@@ -111,6 +111,8 @@ Route::post('admin/profile/permissions','admin\profile\ProfileController@Profile
 /* Incio Rutas modulo Log*/
 
 Route::get('admin/log/index', 'admin\log\LogController@LogIndex')->middleware('auth');
+Route::get('admin/log/summary', 'admin\log\LogController@LogSummary')->middleware('auth');
+Route::get('admin/log/summary/search/{opc}/{id}', 'art\search\SearchController@Summary')->middleware('auth');
 
 /* Termino Rutas modulo Log*/
 
@@ -135,6 +137,7 @@ Route::post('art/obra/deletepdf','art\obra\ObraController@ObraPdfDestroy')->midd
 Route::post('art/obra/create','art\obra\ObraController@ObraCreate')->middleware('auth');
 Route::post('art/obra/createpdf','art\obra\ObraController@ObraCreatePdf')->middleware('auth');
 Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');
+Route::get('art/obra/edit/{id}/{opc}/{textsearch}/{opc2}/{xid}','art\obra\ObraController@ObraEditIndex')->middleware('auth');
 Route::get('art/obra/pdf/{id}','art\obra\ObraController@ObraPdfIndex')->middleware('auth');
 //Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');
 /* Terminop Rutas modulo Obras*/
@@ -153,14 +156,16 @@ Route::post('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf'
 /* Inicio Rutas modulo Search*/
 Route::post('art/search','art\search\SearchController@Index')->middleware('auth');
 Route::get('art/search/{text}','art\search\SearchController@SearchIndex')->middleware('auth');
+Route::get('art/search1/{text}','art\search\SearchController1@SearchIndex')->middleware('auth');
+//Route::get('art/{text}','art\search\SearchController@SearchIndex')->middleware('auth');
 /*Route::post('art/search', function()
 {
     $texto = Input::get('textsearch');
     dd($texto);
 });*/
 
-Route::get('art/search/details/{opc}/{textsearch}','art\search\SearchController@SearchDetails')->middleware('auth');
-Route::get('art/search/details2/{opc}/{id}/{textsearch}','art\search\SearchController@SearchDetails2')->middleware('auth');
+Route::get('art/search/details/{opc}/{textsearch}/{opc2}','art\search\SearchController@SearchDetails')->middleware('auth');
+Route::get('art/search/details2/{opc}/{id}/{textsearch}/{opc2}','art\search\SearchController@SearchDetails2')->middleware('auth');
 /* Termino Rutas modulo Search*/
 
 

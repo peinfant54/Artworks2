@@ -46,10 +46,13 @@ return [
     'Menu1'     => 'Usuarios',
     'Menu2'     => 'Perfiles',
     'UpdatePassword'    => 'La contraseña ha sido cambiada con exito!',
+
     'Menu3'     => 'Log del Sistema',
     'Menu4'     => 'Ubicaciones',
     'Menu5'     => 'Artista',
     'Menu6'     => 'Obras',
+    'Menu7'     => 'Resumen de uso',
+
     'MenuGroup' => 'Configuraciones',
     'EditPassMsg'   => 'Modificación de Contraseña ',
     'Next'      => 'Siguiente',

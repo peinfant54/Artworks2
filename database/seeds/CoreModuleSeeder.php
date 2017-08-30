@@ -34,6 +34,7 @@ class CoreModuleSeeder extends Seeder
             'visible'       =>  1
         ]);
 
+
         CoreModule::create([
             'id'  =>  3,
             'name'  => 'SystemLog',
@@ -74,6 +75,18 @@ class CoreModuleSeeder extends Seeder
             'links'         =>  'art/obra/index',
             'file'          =>  'obra.php',
             'image'         =>  'obra.png',
+            'visible'       =>  1
+        ]);
+
+
+        CoreModule::create([
+            'id'  =>  7,
+            'name'  => 'Stats',
+            'descripcion'   =>  'View Artworks Summary',
+            'id_group'      =>  '2',
+            'links'         =>  'admin/log/summary',
+            'file'          =>  'summary.php',
+            'image'         =>  'summary.png',
             'visible'       =>  1
         ]);
     }

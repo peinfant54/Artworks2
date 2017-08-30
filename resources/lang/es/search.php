@@ -25,4 +25,9 @@ return [
     'Details_tecnica'   =>  'Obras filtradas por técnica por texto ',
     'Details_procedencia'=> 'Obras filtradas por Origen por texto ',
     'Details_catalogo'  =>  'Obras filtradas por catálogo por texto ',
+
+    'Summary_Title'  =>  'Obras de arte sin título',
+    'Summary_Ubica'  =>  'Obras de arte sin ubicación',
+    'Summary_File'  =>  'Obras de arte sin imágenes',
+    'Summary_cUbica'  =>  'Obras de arte en la ubicación ',
 ];

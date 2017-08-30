@@ -92,6 +92,76 @@ class ObraController extends Controller
 
     }
 
+
+    public function ObraEditIndex($id, $opc, $search, $opc2, $xid)
+    {
+        try{
+            /* OPC = Control de Procedencia siempre */
+            /* OPC2 = Control de Procedencia para paa la pagina search */
+            /* Menu */
+            $modules  = User::find(Auth::id())->profile->module;
+
+
+            /*echo "Usuario = ".$user."<br>";
+            echo "Perfil = ".$profile."<br>";
+            echo "Modulos = ".$modules."<br>";*/
+            foreach($modules as $a)
+            {
+
+                if($a->id == $this->idmodulo) /* Is allowed to see this Module */
+                {
+                    /*echo "ID = ".$a->id. "<br>";
+                    echo "IdC = ". $this->idmodulo. "<br>";*/
+                    if($a->pivot->rread > 0 or $a->pivot->eedit > 0 or $a->pivot->wwrite > 0 or $a->pivot->ddelete > 0)
+                    {
+                        /* Content */
+
+                        /*echo "<br>Read = ".$a->pivot->rread;
+                        echo "<br>Write  = ".$a->pivot->wwrite;
+                        echo "<br>Edit   = ".$a->pivot->eedit;
+                        echo "<br>Delete = ".$a->pivot->ddelete;*/
+                        //$logs = CoreLog::orderBy('fecha', 'desc')->paginate(15);
+                        $obra = SysObra::find($id);
+
+                        $location = SysUbicaciones::pluck('name','id');
+                        $artists = SysArtista::all()->pluck('full_name', 'id');
+                        /* Se tiene que hace all()->plunck() y no lunck() directamente, ya que para
+                           poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
+
+
+                        //Debugbar::info($object);
+                        //Debugbar::error('Error!');
+                        //Debugbar::warning('Watch out…');
+                        //Debugbar::addMessage('Another message', 'mylabel');
+
+                        return view('art.obra.empty')
+                            ->with('modulos', $modules) //Modulos
+                            ->with('xmod', $a) //Permisos
+                            ->with('obra', $obra)
+                            ->with('location', $location)
+                            ->with('artist', $artists)
+                            ->with('opc', $opc)
+                            ->with('xid', $xid)
+                            ->with('opc2', $opc2)
+                            ->with('search', $search);
+                    }
+                }
+            }
+            Session::flash('msg_access', 'Obras');
+            return redirect("admin/index"); /* If he dont have access redirect to the Index*/
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e);
+            return redirect("admin/index");
+        }
+
+    }
+
     public function ObraDestroy()
     {
         try{
@@ -145,30 +215,84 @@ class ObraController extends Controller
                     //dd(Image::make($request->file('foto1_edit')));
                     //$im  = Image::make($request->file('foto1_edit'));
 
-                    $img2 = Image::make($request->file('foto1_edit'));
-                    $img = $img2;
+                    $img = Image::make($request->file('foto1_edit'));
+
+
                    // dd($img2);
-                    /*$width = $img->width();
-                    $height =  $img->height();*/
 
 
 
-                    if ($img->width() > $img->height()) {
-                        $img->resize(800, 600); //Resize
-                        $img2->resize(800, 600)->crop(600, 600); //Crop
-                    } else {
-                        $img->resize(600, 800); //Resize
-                        $img2->resize(600, 800)->crop(600, 600); //Crop
+
+                    if ($img->width() > $img->height())
+                    {
+                        /**
+                        Primera Imagen: Reduccion de tamaño
+                         */
+
+                        $img->resize(800, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });  //Resize and maintain aspect ratio
+
+                        $img->save($pathS, 60); //Save the New Small Photo
+
+                        /*
+                         * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
+                         * */
+
+                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2->resize(800, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        }); //Resize and maintain aspect ratio
+
+                        $width  = $img2->width();
+                        $height = $img2->height();
+
+
+                        $img2->crop($height, $height); //Crop a square from the center of image
+
+
+                        $img2->save($pathC, 60); //Save the New Square Photo
                     }
+                    else
+                    {
+
+                        /**
+                        Primera Imagen: Reduccion de tamaño
+                         */
+
+                        $img->resize(null, 800, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });  //Resize and maintain aspect ratio
+
+                        $img->save($pathS, 60); //Save the New Small Photo
+
+                        /*
+                         * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
+                         * */
+
+                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2->resize(null, 800, function ($constraint) {
+                            $constraint->aspectRatio();
+                        }); //Resize and maintain aspect ratio
+
+                        $width  = $img2->width();
+                        //$height = $img2->height();
 
 
-                    $img->save($pathS, 60); //Save the New Photo
-                    $img2->save($pathC, 60); //Save the New Photo
+                        $img2->crop($width, $width); //Crop a square from the center of image
+
+
+                        $img2->save($pathC, 60); //Save the New Square Photo
+                     }
+
+
+                   // $img->save($pathS, 60); //Save the New Photo
+                   // $img2->save($pathC, 60); //Save the New Photo
 
                     $pro->file1         = $file_name;
                     $pro->file2         = $file_name;
 
-                    //dd($file_name);
+                    //dd($img2);
 
                 }
             }
@@ -188,12 +312,53 @@ class ObraController extends Controller
             $pro->valoracion    = Input::get('valoracion_edit');
             $pro->id_ubica      = Input::get('id_ubica'.Input::get('id_obra'));
 
-
+            $opc = Input::get('opc');
 
             $pro->save();
             Session::flash('dbUpdated', '1');
             LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id." has been updated","Art.ArtWorks",Auth::id());
-            return redirect("art/obra/index");
+
+            if($opc == 0) /* Call from ObraIndex*/
+            {
+                return redirect("art/obra/index");
+            }
+            else if($opc == 1) /* Call from AdminIndex*/
+            {
+                return redirect("admin/index");
+            }
+            else if($opc == 2) /* Call from Search Level 1*/
+            {
+                $search = Input::get('search');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("art/search/".$search );
+            }
+            else if($opc == 3) /* Call from Search Level 2.1*/
+            {
+                $search = Input::get('search');
+                $opc2 = Input::get('opc2');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("art/search/details/".$opc2."/".$search."/".$opc );
+            }
+            else if($opc == 4) /* Call from Search Level 2.2*/
+            {
+                $search = Input::get('search');
+                $opc2 = Input::get('opc2');
+                $id = Input::get('xid');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("art/search/details2/".$opc2."/".$id."/".$search."/".$opc2 );
+            }
+            else if($opc == 5) /* Call from Summary */
+            {
+                $search = Input::get('search');
+                $opc2 = Input::get('opc2');
+                $id = Input::get('xid');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("admin/log/summary/search/".$opc2."/".$id );
+            }
 
         }
         catch(\Exception $e)
@@ -220,33 +385,89 @@ class ObraController extends Controller
 
             if ($request->hasFile('foto1'))
             {
-                if (Input::file('foto1')->isValid())
+                if (Input::file('foto1_edit')->isValid())
                 {
 
-                    $file_name = Input::get('n_inv') . "." . $request->file('foto1')->getClientOriginalExtension();
+                    $file_name = Input::get('n_inv_edit') . "." . $request->file('foto1_edit')->getClientOriginalExtension();
                     $pathO = "public/Arts_Original/";
                     $pathS = public_path('storage/Arts_Small/' . $file_name);
                     $pathC = public_path('storage/Arts_Square/' . $file_name);
+                    // dd($file_name);
+                    $request->file('foto1_edit')->storeAs($pathO, $file_name); //Save Original Photo
 
-                    $request->file('foto1')->storeAs($pathO, $file_name); //Save Original Photo
+                    //dd(Image::make($request->file('foto1_edit')));
+                    //$im  = Image::make($request->file('foto1_edit'));
+
+                    $img = Image::make($request->file('foto1_edit'));
+
+                    // dd($img2);
+
+                    if ($img->width() > $img->height())
+                    {
+                        /**
+                        Primera Imagen: Reduccion de tamaño
+                         */
+
+                        $img->resize(800, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });  //Resize and maintain aspect ratio
+
+                        $img->save($pathS, 60); //Save the New Small Photo
+
+                        /*
+                         * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
+                         * */
+
+                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2->resize(800, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        }); //Resize and maintain aspect ratio
+
+                        $width  = $img2->width();
+                        $height = $img2->height();
+                        $img2->crop($height, $height); //Crop a square from the center of image
+                        $img2->save($pathC, 60); //Save the New Square Photo
+                    }
+                    else
+                    {
+
+                        /**
+                        Primera Imagen: Reduccion de tamaño
+                         */
+
+                        $img->resize(null, 800, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });  //Resize and maintain aspect ratio
+
+                        $img->save($pathS, 60); //Save the New Small Photo
+
+                        /*
+                         * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
+                         * */
+
+                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2->resize(null, 800, function ($constraint) {
+                            $constraint->aspectRatio();
+                        }); //Resize and maintain aspect ratio
+
+                        $width  = $img2->width();
+                        //$height = $img2->height();
 
 
-                    $img = Image::make($request->file('foto1'));
-                    $img2 = Image::make($request->file('foto1'));
-                    /*$width = $img->width();
-                    $height =  $img->height();*/
+                        $img2->crop($width, $width); //Crop a square from the center of image
 
-                    if ($img->width() > $img->height()) {
-                        $img->resize(800, 600); //Resize
-                        $img2->resize(800, 600)->crop(600, 600); //Crop
-                    } else {
-                        $img->resize(600, 800); //Resize
-                        $img2->resize(600, 800)->crop(600, 600); //Crop
+
+                        $img2->save($pathC, 60); //Save the New Square Photo
                     }
 
 
-                    $img->save($pathS, 60); //Save the New Photo
-                    $img2->save($pathC, 60); //Save the New Photo
+                    // $img->save($pathS, 60); //Save the New Photo
+                    // $img2->save($pathC, 60); //Save the New Photo
+
+                    $pro->file1         = $file_name;
+                    $pro->file2         = $file_name;
+
+                    //dd($img2);
 
                 }
             }

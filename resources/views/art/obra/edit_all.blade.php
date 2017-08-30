@@ -1,8 +1,10 @@
-<div class="modal fade" id="edit{{ $obra->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <button type="button" class="close" data-dismiss="modal" onclick="history.back()" aria-hidden="true">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
                 <h4 class="modal-title custom_align" id="Heading">@lang('location.EditMsg') {{$obra->titulo}}</h4>
             </div>
             <?php /*dd($obra);*/?>
@@ -11,11 +13,12 @@
 
                     {{ csrf_field() }}
                     <input type="hidden" name="id_obra" value="{{$obra->id}}" />
+                    <input type="hidden" name="opc" value="{{ $opc }}" />
+                    <input type="hidden" name="opc2" value="{{ $opc2 }}" />
                     <input type="hidden" name="modaledit" value="{{$obra->id}}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
-                    <input type="hidden" name="opc" value="0" />
-                    <input type="hidden" name="search" value="{{ $obra->id }}" />
-                    <input type="hidden" name="opc2" value="0" />
-                    <input type="hidden" name="xid" value="0" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+                    <input type="hidden" name="search" value="{{ $texto }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+                    <input type="hidden" name="xid" value="{{ $xid }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+
 
                     <div class="EditModal form-group{{ $errors->has('n_inv_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>

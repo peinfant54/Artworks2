@@ -98,7 +98,7 @@
 
                             @if($mod->pivot->rread > 0 or $mod->pivot->eedit > 0 or $mod->pivot->wwrite > 0 or $mod->pivot->ddelete > 0)
                                 @if($mod->id > 3)
-                                    <li><a href="{{ URL::to($mod->links) }}"> @lang('index.Menu'.$mod->id) </a></li>
+                                    <li><a href="{{ URL::to($mod->links) }}"> @lang('index.Menu'.$mod->id) </a> {{$mod->id}}</li>
                                 @endif
                             @endif
                         @endforeach

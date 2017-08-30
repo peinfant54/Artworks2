@@ -68,5 +68,15 @@ class CorePermissionsSeeder extends Seeder
             'eedit'         => 1,
             'ddelete'       => 1,
         ]);
+
+        CorePermission::create([
+            'id'            => 7,
+            'id_module'     => 7,
+            'id_profile'    => 1,
+            'rread'         => 1,
+            'wwrite'        => 1,
+            'eedit'         => 1,
+            'ddelete'       => 1,
+        ]);
     }
 }

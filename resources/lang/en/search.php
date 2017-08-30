@@ -25,4 +25,10 @@ return [
     'Details_tecnica'   =>  'Artworks filter by technique with keyword ',
     'Details_procedencia'=>  'Artworks filter by Origin with keyword ',
     'Details_catalogo'  =>  'Artworks filter by catalogue with keyword ',
+
+    'Summary_Title'  =>  'List of artworks without Titles',
+    'Summary_Ubica'  =>  'List of artworks without Locations',
+    'Summary_File'  =>  'List of artworks without Images',
+    'Summary_cUbica'  =>  'List of artworks in the Location ',
+
 ];

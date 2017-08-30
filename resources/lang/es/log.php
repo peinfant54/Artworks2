@@ -18,4 +18,25 @@ return [
     'title2' => 'Usuario',
     'title3' => 'Modulo',
     'title4' => 'Detalle',
+
+
+    //Summary
+
+    'summary'   => 'Resumen de Obras en el sistema',
+    's_title1'  => 'Nombre Ubicación',
+    's_title2'  => '%',
+
+    'Ex'    => 'Existen ',
+    's_sistema'  => 'obras de arte en el sistema',
+    's_titulo'  => 'obras de arte sin título',
+    's_file'  => 'obras de arte sin imágenes',
+    's_ubica'  => 'obras de arte sin ubicación',
+
+
+    's_sistema_ley'  => 'Ver todas las obras de arte en el sistema',
+    's_titulo_ley'  => 'Ver todas las obras de arte sin título',
+    's_file_ley'  => 'Ver todas las obras de arte sin imágenes',
+    's_ubica_ley'  => 'Ver todas las obras de arte sin ubicación',
+
+    'ubica_ley'  => 'Ver solo las obras de arte en la ubicación ',
 ];

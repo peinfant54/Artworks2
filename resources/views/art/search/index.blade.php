@@ -17,7 +17,7 @@
                     <div class="resultados_busquedas">
                         @if (count($artist) > 0)
                             @foreach ($artist as $obra)
-                                <a href="{{ URL::to('/art/search/details2/1/'. $obra->id .'/'.$texto) }}">{{ $obra->nombre }} {{ $obra->apellido }}</a><br>
+                                <a href="{{ URL::to('/art/search/details2/1/'. $obra->id .'/'.$texto .'/0') }}">{{ $obra->nombre }} {{ $obra->apellido }}</a><br>
                             @endforeach
                         @else
                             @lang('search.NoResult')
@@ -32,7 +32,7 @@
                     <div class="resultados_busquedas">
                         @if (count($location2) > 0)
                             @foreach ($location2 as $obra)
-                                <a href="{{ URL::to('/art/search/details2/2/'. $obra->id .'/'.$texto) }}">{{ $obra->name  }}</a> <br>
+                                <a href="{{ URL::to('/art/search/details2/2/'. $obra->id .'/'.$texto .'/0') }}">{{ $obra->name  }}</a> <br>
                             @endforeach
                         @else
                             @lang('search.NoResult')
@@ -79,7 +79,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => '2', 'opc2' => '1', 'xid' => 0])
                             @endforeach
 
                         @else
@@ -90,7 +90,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                     @if (count($ninv) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12 col-md-12"><a href="{{ URL::to('/art/search/details/1/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12 col-md-12"><a href="{{ URL::to('/art/search/details/1/'.$texto .'/1') }}">@lang('search.Mas')</a></div>
                     @endif
             </div>
             <div><hr></div>
@@ -132,7 +132,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '2', 'xid' => 0])
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -140,7 +140,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                 @if (count($titulo) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/2/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/2/'.$texto .'/2') }}">@lang('search.Mas')</a></div>
                 @endif
             </div>
             <div><hr></div>
@@ -182,7 +182,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '3', 'xid' => 0])
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -190,7 +190,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                     @if (count($tecnica) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/3/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/3/'.$texto .'/3') }}">@lang('search.Mas')</a></div>
                     @endif
             </div>
             <div><hr></div>
@@ -232,7 +232,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '4', 'xid' => 0])
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -240,7 +240,7 @@ Técnica: {{ $obra->tecnica }}">
                     </div>
                 </div>
                 @if (count($procedencia) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/4/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/4/'.$texto .'/4') }}">@lang('search.Mas')</a></div>
                 @endif
             </div>
             <div><hr></div>
@@ -282,7 +282,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => '2', 'opc2' => '5', 'xid' => 0])
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -291,7 +291,7 @@ Técnica: {{ $obra->tecnica }}">
 
                 </div>
                 @if (count($catalogo) > 0)
-                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/5/'.$texto) }}">@lang('search.Mas')</a></div>
+                    <div style="margin-bottom: 15px" class="col-sm-12"><a href="{{ URL::to('/art/search/details/5/'.$texto .'/5') }}">@lang('search.Mas')</a></div>
                 @endif
 
 

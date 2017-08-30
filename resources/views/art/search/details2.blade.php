@@ -57,7 +57,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 4, 'texto' => $texto, 'opc2' => $opc, 'xid' => $xid ])
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -73,7 +73,7 @@ Técnica: {{ $obra->tecnica }}">
                 <div style="margin-bottom: 70px">{!!  $obras->links()  !!}</div>
                 <div style="margin-bottom: 70px">
 
-                    <button type="button" onclick="history.back()" class="btn btn-primary right btn-volver">
+                    <button type="button" onclick="window.location='{{ url("art/search/".$texto) }}'" class="btn btn-primary right btn-volver">
                         <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
                     </button>
                 </div>

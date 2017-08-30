@@ -8,6 +8,8 @@ use App\Models\CoreModel\CoreModule;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\SysModel\SysObra;
+use App\Models\SysModel\SysArtista;
+use App\Models\SysModel\SysUbicaciones;
 
 
 
@@ -53,10 +55,14 @@ class HomeController extends Controller
             LogSystem::writeSystemLog("The User has view the index","Home.Index",Auth::id());
             //$mod  = User::find(Auth::id())->profile->module;
 
+            $permission_edit_art = $mod[6]->pivot->eedit;
             /*echo "Usuario = ".$user."<br>";
             echo "Perfil = ".$profile."<br>";
             echo "Modulos = ".$mod."<br>";*/
             //exit;
+            $location = SysUbicaciones::pluck('name','id');
+            $artists = SysArtista::all()->pluck('full_name', 'id');
+
             app('debugbar')->info($mod);
             $mess = "Pruebs de Mnesaje usted no tiene acceso";
             $pro = SysObra::orderBy('id', 'desc')->paginate(15);
@@ -65,7 +71,10 @@ class HomeController extends Controller
                         ->with('modulos', $mod)
                         ->with('msg', $mess)
                         ->with('allmod', $allmod)
-                        ->with('obras', $pro);
+                        ->with('obras', $pro)
+                        ->with('editar_obra', $permission_edit_art)
+                        ->with('location', $location)
+                        ->with('artist', $artists);
         }
         catch(\Exception $e)
         {
