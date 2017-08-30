@@ -679,4 +679,46 @@ class ObraController extends Controller
         }
 
     }
+
+    public function ObraByArtist($id)
+    {
+        /* Menu */
+        $modules  = User::find(Auth::id())->profile->module;
+        $permission_edit_art = $modules[6]->pivot->eedit;
+        foreach($modules as $a)
+        {
+
+            if($a->id == $this->idmodulo) /* Is allowed to see this Module */
+            {
+
+                if($a->pivot->rread > 0 or $a->pivot->eedit > 0 or $a->pivot->wwrite > 0 or $a->pivot->ddelete > 0)
+                {
+                    /* Content */
+
+                    $location = SysUbicaciones::pluck('name','id');
+                    $artists = SysArtista::all()->pluck('full_name', 'id');
+                    /* Se tiene que hace all()->plunck() y no lunck() directamente, ya que para
+                       poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
+
+                    $artists_name = SysArtista::all()->where('id', $id)->pluck('full_name', 'id');
+                    $pro = SysObra::where('id_artista', $id)
+                           ->orderBy('id', 'desc')->get();
+                    //$pro = SysObra::find($id)->get();
+//dd($pro);
+                    $allmod = CoreModule::all();
+                    return view('art.artist.list')
+                            ->with('modulos', $modules)
+                            ->with('allmod', $allmod)
+                            ->with('obras', $pro)
+                            ->with('editar_obra', $permission_edit_art)
+                            ->with('location', $location)
+                            ->with('artists_name', $artists_name)
+                            ->with('artist', $artists);
+
+                }
+            }
+        }
+        Session::flash('msg_access', 'Obras');
+        return redirect("admin/index"); /* If he dont have access redirect to the Index*/
+    }
 }

@@ -35,7 +35,7 @@
                     <div class="EditModal form-group"><label for="artista" class="col-md-4 control-label">@lang('obra.Field2')</label>
 
                         <div class="col-md-6">
-                            {{Form::select('id_artista', $artist, old('id_artista'),['class' => 'form-control'])}}
+                            {{Form::select('id_artista', $artist, $obra->id_artista,['class' => 'form-control'])}}
                         </div>
                     </div>
 

@@ -44,8 +44,8 @@
 
                             <tr>
                                 <td class="text-center">{{ $artist->id }}</td>
-                                <td class="text-center">{{ $artist->nombre }}</td>
-                                <td class="text-center">{{ $artist->apellido }}</td>
+                                <td class="text-center"><a href="{{ URL::to('art/obra/list/'.$artist->id) }}">{{ $artist->nombre }}</a></td>
+                                <td class="text-center"><a href="{{ URL::to('art/obra/list/'.$artist->id) }}">{{ $artist->apellido }}</a></td>
                                 <td class="text-center">
                                     <a href="{{ URL::to('art/artist/export/'.$artist->id) }}"><i class="material-icons">picture_as_pdf</i></a></td>
                                 @if($xmod->pivot->eedit > 0)

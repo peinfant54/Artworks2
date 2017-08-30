@@ -139,6 +139,8 @@ Route::post('art/obra/createpdf','art\obra\ObraController@ObraCreatePdf')->middl
 Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');
 Route::get('art/obra/edit/{id}/{opc}/{textsearch}/{opc2}/{xid}','art\obra\ObraController@ObraEditIndex')->middleware('auth');
 Route::get('art/obra/pdf/{id}','art\obra\ObraController@ObraPdfIndex')->middleware('auth');
+Route::get('art/obra/list/{id}','art\obra\ObraController@ObraByArtist')->middleware('auth');
+
 //Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');
 /* Terminop Rutas modulo Obras*/
 
@@ -149,6 +151,7 @@ Route::post('art/artist/create','art\artist\ArtistController@ArtistCreate')->mid
 Route::post('art/artist/edit','art\artist\ArtistController@ArtistEdit')->middleware('auth');
 Route::get('art/artist/export/{id}','art\artist\ArtistController@ArtistExport')->middleware('auth');
 Route::post('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')->middleware('auth');
+
 
 /* Terminop Rutas modulo Artista*/
 
