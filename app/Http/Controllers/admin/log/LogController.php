@@ -63,7 +63,7 @@ class LogController extends Controller
     {
         try{
 
-            $this->idmodulo  = 3;
+            $this->idmodulo  = 7;
 
 
             /* Menu */

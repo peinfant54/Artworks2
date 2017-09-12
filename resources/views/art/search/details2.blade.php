@@ -7,7 +7,7 @@
         <div class="titulo">
             @if ($opc == 1)
 
-                <h1>@lang('search.Details_artist') "{{ $name  }}"</h1>
+                <h1>@lang('search.Details_artist') "{{ $name  }}" <a href="{{ URL::to('art/artist/export/'.$xid) }}"><i class="material-icons">picture_as_pdf</i></a></h1>
 
             @elseif ($opc == 2)
 

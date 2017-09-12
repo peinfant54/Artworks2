@@ -94,27 +94,27 @@ class SearchController extends Controller
             if($opc == 1) // Por Numero de inventario
             {
                 $obras = SysObra::where('n_inv','like', '%'.$textsearch.'%')
-                    ->orderBy('id', 'desc')->paginate(10);
+                    ->orderBy('id', 'desc')->paginate(50);
             }
             elseif($opc == 2) // Por titulo
             {
                 $obras = SysObra::Where('titulo','like', '%'.$textsearch.'%')
-                    ->orderBy('id', 'desc')->paginate(10);
+                    ->orderBy('id', 'desc')->paginate(50);
             }
             elseif($opc == 3) // Por tecnica
             {
                 $obras = SysObra::Where('tecnica','like', '%'.$textsearch.'%')
-                    ->orderBy('id', 'desc')->paginate(10);
+                    ->orderBy('id', 'desc')->paginate(50);
             }
             elseif($opc == 4) // Por Procedencia
             {
                 $obras = SysObra::Where('procedencia','like', '%'.$textsearch.'%')
-                    ->orderBy('id', 'desc')->paginate(10);
+                    ->orderBy('id', 'desc')->paginate(50);
             }
             elseif($opc == 5) // Por Catalogo
             {
                 $obras = SysObra::Where('catalogo','like', '%'.$textsearch.'%')
-                    ->orderBy('id', 'desc')->paginate(10);
+                    ->orderBy('id', 'desc')->paginate(50);
 //dd($search_catalogo);
             }
 
@@ -159,13 +159,13 @@ class SearchController extends Controller
             if($opc == 1) // Por Artista
             {
                 $obras = SysObra::where('id_artista', $id)
-                        ->paginate(10);
+                        ->paginate(50);
 
                 $name = SysArtista::find($id)->nombre ." ". SysArtista::find($id)->apellido;
             }
             elseif($opc == 2) // Por Ubicacion
             {
-                $obras = SysObra::where('id_ubica', $id)->paginate(10);
+                $obras = SysObra::where('id_ubica', $id)->paginate(50);
 
                 $name = SysUbicaciones::find($id)->name;
             }
