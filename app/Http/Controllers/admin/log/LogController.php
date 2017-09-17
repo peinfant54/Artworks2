@@ -90,7 +90,7 @@ class LogController extends Controller
                         $query = DB::select("select b.id, b.name, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
                                     from sys_obra a, sys_ubicaciones b
                                       where a.id_ubica = b.id
-                                    group by id_ubica
+                                    group by a.id_ubica, b.id, b.name
                                     order by porc desc");
 
                         //dd($query);
