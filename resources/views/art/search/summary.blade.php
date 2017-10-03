@@ -62,6 +62,9 @@ Título: {{ $obra->titulo }}
                                 </div>
                             </div>
                             @include ('admin.detalle' , ['obra' => $obra, 'opc' => '5', 'opc2' => $opc, 'texto' => 'xx', 'xid' => $xid])
+                            @if($borrar_obra == 1)
+                                @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                            @endif
                         @endforeach
 
 
@@ -74,9 +77,16 @@ Título: {{ $obra->titulo }}
                 <div style="margin-bottom: 70px">{!!  $obras->links()  !!}</div>
 
                 <div style="margin-bottom: 70px">
-                    <button type="button" onclick="window.location='{{ url("admin/log/summary/") }}'" class="btn btn-primary right btn-volver">
-                        <span class="glyphicon glyphicon-arrow-left"> Back</span>
-                    </button>
+                    @if ($opc2 == 1)
+                        <button type="button" onclick="window.location='{{ url("art/location/index") }}'" class="btn btn-primary right btn-volver">
+                            <span class="glyphicon glyphicon-arrow-left"> Back</span>
+                        </button>
+                    @else
+                        <button type="button" onclick="window.location='{{ url("admin/log/summary/") }}'" class="btn btn-primary right btn-volver">
+                            <span class="glyphicon glyphicon-arrow-left"> Back</span>
+                        </button>
+                    @endif
+
                 </div>
 
             </div>

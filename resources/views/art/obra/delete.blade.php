@@ -14,10 +14,12 @@
                 <form method="post" action="{{url('art/obra/delete/')}}">
                     {{csrf_field()}}
                     <input type="hidden" name="id_obra" value="{{$obra->id}}" />
+                    <input type="hidden" name="next" value="{{$next}}" />
 
                     <button type="submit" name = "yes{{$obra->id}}" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Yes')</button>
+                    <button type="button" name = "no" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> @lang('obra.No')</button>
                 </form>
-                <button type="button" name = "no" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> @lang('obra.No')</button>
+
             </div>
         </div>
         <!-- /.modal-content -->

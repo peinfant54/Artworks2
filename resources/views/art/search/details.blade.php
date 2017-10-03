@@ -67,6 +67,9 @@ Técnica: {{ $obra->tecnica }}">
                                 </div>
                             </div>
                             @include ('admin.detalle' , ['obra' => $obra, 'opc' => 3, 'texto' => $textsearch, 'opc2' => $opc, 'xid' => 0 ])
+                            @if($borrar_obra == 1)
+                                @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                            @endif
                         @endforeach
 
 

@@ -80,6 +80,9 @@ Técnica: {{ $obra->tecnica }}">
                                     </div>
                                 </div>
                                 @include ('admin.detalle' , ['obra' => $obra, 'opc' => '2', 'opc2' => '1', 'xid' => 0])
+                                @if($borrar_obra == 1)
+                                    @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                                @endif
                             @endforeach
 
                         @else
@@ -133,6 +136,9 @@ Técnica: {{ $obra->tecnica }}">
                                     </div>
                                 </div>
                                 @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '2', 'xid' => 0])
+                                @if($borrar_obra == 1)
+                                    @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                                @endif
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -183,6 +189,9 @@ Técnica: {{ $obra->tecnica }}">
                                     </div>
                                 </div>
                                 @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '3', 'xid' => 0])
+                                @if($borrar_obra == 1)
+                                    @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                                @endif
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -233,6 +242,9 @@ Técnica: {{ $obra->tecnica }}">
                                     </div>
                                 </div>
                                 @include ('admin.detalle' , ['obra' => $obra, 'opc' => 2, 'opc2' => '4', 'xid' => 0])
+                                @if($borrar_obra == 1)
+                                    @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                                @endif
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>
@@ -283,6 +295,9 @@ Técnica: {{ $obra->tecnica }}">
                                     </div>
                                 </div>
                                 @include ('admin.detalle' , ['obra' => $obra, 'opc' => '2', 'opc2' => '5', 'xid' => 0])
+                                @if($borrar_obra == 1)
+                                    @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
+                                @endif
                             @endforeach
                         @else
                             <p>@lang('search.NoResult')</p>

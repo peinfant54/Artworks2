@@ -24,6 +24,7 @@ return [
     'summary'   => 'Artworks Stats',
     's_title1'  => 'Locatation Name',
     's_title2'  => '%',
+    's_title3'  => 'Artist Name',
 
     'Ex'    => 'There is ',
     's_sistema'  => 'artworks in the system',
@@ -37,5 +38,6 @@ return [
     's_ubica_ley'  => 'See all the artworks without location',
 
     'ubica_ley'  => 'See all the artworks in the location  ',
+    'artista_ley'  => 'See all the artworks from the artist  ',
 
 ];

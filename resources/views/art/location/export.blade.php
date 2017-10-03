@@ -51,7 +51,22 @@
                     @endif
                 </table>
             </div>
-            <div class="left">
+            <div class="left" >
+                <table style="width:500px;">
+                    <tr>
+                        <td>
+                            <label for="name" class="control-label">@lang('artist.PrintMsg') </label>
+                        </td>
+                        <td>
+                            <select name="opc" class="form-control">
+                                <option value="0">No</option>
+                                <option value="1">Si</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="left" style="padding-top:20px;">
                 <button type="button" onclick="history.back()" class="btn btn-primary right btn-volver">
                     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
                 </button>

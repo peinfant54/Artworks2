@@ -195,6 +195,7 @@ class LocationController extends Controller
             //echo "hola";
             //exit;
             $id_ubica = Input::get('idubica');
+            $opc = Input::get('opc');
             $title = SysUbicaciones::find($id_ubica)->name;
             //view()->share('title', "Pan con queso");
             //$view =  view('art.artist.pdf');
@@ -204,13 +205,14 @@ class LocationController extends Controller
             $obras = SysObra::find($lista);
 
             //dd(Input::get('listartworks'));
-            $pdf =  PDF::loadView('art.location.pdf', compact(['title', 'obras']))
+            $pdf =  PDF::loadView('art.location.pdf', compact(['title', 'obras', 'opc']))
                 ->setPaper('a4', 'portrait')
                 ->setWarnings(false)
                 ->setOptions(['isHtml5ParserEnabled' => true,'isRemoteEnabled' => true]);
 //dd($pdf);
             //return $pdf->stream();
-            return $pdf->download('export.pdf');
+            $name = "exp_".$title . ".pdf";
+            return $pdf->download($name);
 
             /*return view('art.artist.pdf')
                 ->with('title', $title)

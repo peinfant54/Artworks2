@@ -217,6 +217,8 @@
                 <div class="alert alert-danger">@lang('index.DeleteErrorArtist')</div>
             @elseif(Session::get('dbDeleteError') == 'ArtWorkFile')
                 <div class="alert alert-danger">@lang('index.DeleteErrorFile')</div>
+            @elseif(Session::get('dbDeleteError') == 'ArtWork')
+                <div class="alert alert-danger">@lang('index.DeleteErrorArtwork')</div>
             @endif
         @endif
     @if(Session::has('msg_access2'))

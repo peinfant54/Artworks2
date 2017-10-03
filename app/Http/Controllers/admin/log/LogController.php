@@ -93,6 +93,12 @@ class LogController extends Controller
                                     group by a.id_ubica, b.id, b.name
                                     order by porc desc");
 
+                        $query1 = DB::select("select b.id, concat(concat(b.nombre, ' '), b.apellido) nombre, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
+                                        from sys_obra a, sys_artista b
+                                          where a.id_artista = b.id
+                                        group by a.id_artista, b.id, b.nombre, b.apellido
+                                        order by porc desc");
+
                         //dd($query);
 
                         return view('admin/log/summary')
@@ -101,6 +107,7 @@ class LogController extends Controller
                                 ->with('sin_titulo', $sin_titulo)
                                 ->with('sin_file', $sin_file)
                                 ->with('query', $query)
+                                ->with('query1', $query1)
                                 ->with('total', $total);
                     }
 

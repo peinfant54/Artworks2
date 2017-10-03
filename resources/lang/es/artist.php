@@ -20,6 +20,7 @@ return [
     'BtnNew'    => ' Nuevo Artista',
     'title1' => 'Nombre',
     'title2' => 'Apellido',
+    'PrintMsg' => 'Desea imprimir los detalles?',
 
     'title3' => 'Editar',
     'title4' => 'Borrar',

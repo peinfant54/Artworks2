@@ -26,6 +26,8 @@ return [
     's_title1'  => 'Nombre Ubicación',
     's_title2'  => '%',
 
+    's_title3'  => 'Nombre Artista',
+
     'Ex'    => 'Existen ',
     's_sistema'  => 'obras de arte en el sistema',
     's_titulo'  => 'obras de arte sin título',
@@ -39,4 +41,5 @@ return [
     's_ubica_ley'  => 'Ver todas las obras de arte sin ubicación',
 
     'ubica_ley'  => 'Ver solo las obras de arte en la ubicación ',
+    'artista_ley'  => 'Ver todas las obras del artista ',
 ];

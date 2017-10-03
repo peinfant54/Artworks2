@@ -21,6 +21,7 @@ return [
     'title5' => 'Edit',
     'title6' => 'Delete',
     'title7' => 'PDF',
+    'title8' => 'Export',
 
     'new' => 'New Artwork',
     'edit' => 'Edit Artwork',
@@ -35,6 +36,7 @@ return [
     'EditPassMsg'   => 'Change password to user ',
     'NewMsg'   => 'New Artwork ',
     'DeleteMsg'   => 'Delete Artwork ',
+    'ExportMsg'   => 'Export all the artwork information to PDF ',
 
     'NoData'   => 'No Artwork has been found....',
     'NoDataFile'   => 'No files has been found, associated to this artwork....',

@@ -182,6 +182,7 @@ class ArtistController extends Controller
             //return view('art.artist.pdf');
             //echo "hola";
             $title = Input::get('NameArtist');
+            $opc = Input::get('opc');
             //view()->share('title', "Pan con queso");
             //$view =  view('art.artist.pdf');
 
@@ -190,13 +191,14 @@ class ArtistController extends Controller
             $obras = SysObra::find($lista);
 
                 //dd(Input::get('listartworks'));
-            $pdf =  PDF::loadView('art.artist.pdf', compact(['title', 'obras']))
+            $pdf =  PDF::loadView('art.artist.pdf', compact(['title', 'obras', 'opc']))
                         ->setPaper('a4', 'portrait')
                         ->setWarnings(false)
                         ->setOptions(['isHtml5ParserEnabled' => true,'isRemoteEnabled' => true]);
 //dd($pdf);
             //return $pdf->stream();
-            return $pdf->download('export.pdf');
+            $name = "Coleccion_".$title .".pdf";
+            return $pdf->download($name);
 
             /*return view('art.artist.pdf')
                 ->with('title', $title)

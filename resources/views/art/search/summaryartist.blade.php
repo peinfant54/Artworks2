@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-<?php  /*dd($obras); */?>
+    <?php  /*dd($obras); */?>
     <div class="contenido posicion_contenedor">
         <div class="titulo">
             @if ($opc == 1)
@@ -35,15 +35,15 @@
                                         @if($obra->file1)
                                             <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}">
+                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+                                                    Técnica: {{ $obra->tecnica }}">
                                                 <img src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park"  >
                                             </a>
                                         @else
                                             <a class="lightbox" href="{{asset('storage/No_Image.png')}}" title="
 Título: {{ $obra->titulo }}
-Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}">
+                                                    Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+                                                    Técnica: {{ $obra->tecnica }}">
                                                 <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
                                             </a>
                                         @endif
@@ -57,7 +57,7 @@ Técnica: {{ $obra->tecnica }}">
                                         </div>
                                     </div>
                                 </div>
-                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 4, 'texto' => $texto, 'opc2' => $opc, 'xid' => $xid ])
+                                @include ('admin.detalle' , ['obra' => $obra, 'opc' => 7, 'texto' => 'xx', 'opc2' => $opc, 'xid' => $xid ])
                                 @if($borrar_obra == 1)
                                     @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
                                 @endif
@@ -76,9 +76,15 @@ Técnica: {{ $obra->tecnica }}">
                 <div style="margin-bottom: 70px">{!!  $obras->links()  !!}</div>
                 <div style="margin-bottom: 70px">
 
-                    <button type="button" onclick="window.location='{{ url("art/search/".$texto) }}'" class="btn btn-primary right btn-volver">
-                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
-                    </button>
+                    @if ($opc2 == 1)
+                        <button type="button" onclick="window.location='{{ url("art/obra/index") }}'" class="btn btn-primary right btn-volver">
+                            <span class="glyphicon glyphicon-arrow-left"> Back</span>
+                        </button>
+                    @else
+                        <button type="button" onclick="window.location='{{ url("admin/log/summary/") }}'" class="btn btn-primary right btn-volver">
+                            <span class="glyphicon glyphicon-arrow-left"> Back</span>
+                        </button>
+                    @endif
                 </div>
 
 

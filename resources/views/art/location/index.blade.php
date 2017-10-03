@@ -42,7 +42,7 @@
 
                             <tr>
                                 <td class="text-center">{{ $location->id }}</td>
-                                <td class="text-center">{{ $location->name }}</td>
+                                <td class="text-center"><a href="{{URL::to('admin/log/summary/search/4/'.$location->id.'/1')}}" title="@lang('log.ubica_ley') '{{ $location->name }}'">{{ $location->name }}</a></td>
                                 <td class="text-center">
                                     <a href="{{ URL::to('art/location/export/'.$location->id) }}"><i class="material-icons">picture_as_pdf</i></a></td>
                                 @if($xmod->pivot->eedit > 0)

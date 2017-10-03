@@ -112,7 +112,8 @@ Route::post('admin/profile/permissions','admin\profile\ProfileController@Profile
 
 Route::get('admin/log/index', 'admin\log\LogController@LogIndex')->middleware('auth');
 Route::get('admin/log/summary', 'admin\log\LogController@LogSummary')->middleware('auth');
-Route::get('admin/log/summary/search/{opc}/{id}', 'art\search\SearchController@Summary')->middleware('auth');
+Route::get('admin/log/summary/search/{opc}/{id}/{opc2}', 'art\search\SearchController@Summary')->middleware('auth');
+Route::get('admin/log/summary/search2/{opc}/{id}/{opc2}', 'art\search\SearchController@SummaryArtist')->middleware('auth');
 
 /* Termino Rutas modulo Log*/
 
@@ -140,7 +141,7 @@ Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('aut
 Route::get('art/obra/edit/{id}/{opc}/{textsearch}/{opc2}/{xid}','art\obra\ObraController@ObraEditIndex')->middleware('auth');
 Route::get('art/obra/pdf/{id}','art\obra\ObraController@ObraPdfIndex')->middleware('auth');
 Route::get('art/obra/list/{id}','art\obra\ObraController@ObraByArtist')->middleware('auth');
-
+Route::get('art/obra/exportArt/{id}','art\obra\ObraController@ObraPdf')->middleware('auth');
 //Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');
 /* Terminop Rutas modulo Obras*/
 
@@ -150,6 +151,7 @@ Route::post('art/artist/delete','art\artist\ArtistController@ArtistDestroy')->mi
 Route::post('art/artist/create','art\artist\ArtistController@ArtistCreate')->middleware('auth');
 Route::post('art/artist/edit','art\artist\ArtistController@ArtistEdit')->middleware('auth');
 Route::get('art/artist/export/{id}','art\artist\ArtistController@ArtistExport')->middleware('auth');
+
 Route::post('art/artist/pdfexport','art\artist\ArtistController@ArtistExportpdf')->middleware('auth');
 
 

@@ -28,6 +28,9 @@ return [
     'NoData'   => 'No Artist has been found....',
     'DelMsg1' => 'Deleting the Artist',
     'DelMsg2' => 'Are you sure you want to delete the Artist ',
+
+    'PrintMsg' => 'Do you want to export all the artworks details?',
+
     'Yes'   => 'Yes',
     'No'   => 'No',
     'Field1'    =>  'Name',

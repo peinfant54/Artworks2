@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'home' => 'Modulo Obras',
+    'home' => 'Módulo Obras',
     'title1' => 'N° Inv.',
     'title2' => 'Artista',
     'title3' => 'Título',
@@ -21,6 +21,7 @@ return [
     'title5' => 'Editar',
     'title6' => 'Borrar',
     'title7' => 'PDF',
+    'title8' => 'Export',
 
     'new' => ' Nueva obra',
     'edit' => 'Editar Obra ',
@@ -30,6 +31,7 @@ return [
     'BtnNewFileMsg'    => 'Nuevo Archivo PDF asociado a la Obra ',
     'EditMsg'   => 'Editar Obra',
     'EditFiles'   => 'Agregar o Eliminar los archivos PDF a la Obra ',
+    'ExportMsg'   => 'Exportar toda la información de la obra a PDF ',
     'DetailsMsg' => 'Detalle de Obra Título ',
     'NewMsg'   => 'Nueva Obra ',
     'DeleteMsg'   => 'Borrar Obra ',
@@ -48,10 +50,10 @@ return [
     'Field4'    =>  'Técnica',
     'Field5'    =>  'Dimensión',
     'Field6'    =>  'Año',
-    'Field7'    =>  'Edicion',
+    'Field7'    =>  'Edición',
     'Field8'    =>  'Origen',
-    'Field9'    =>  'Catalogo',
-    'Field10'   =>  'Certificacion',
+    'Field9'    =>  'Catálogo',
+    'Field10'   =>  'Certificación',
     'Field11'   =>  'Valoración',
     'Field12'   =>  'Ubicación',
     'Field13'    =>  'Imagen en Baja',

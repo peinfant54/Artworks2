@@ -12,7 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Art Colection System',
+    'ProyectTitle'   => 'C.C.P. Colection ',
+    'ProyectTitlePrint'  => 'Colección Privada Carlos Cruz Puga',
+
     'PageTitle'     => 'Latest Artworks',
     'ChangePasswordMsg'     => 'Change your password ',
     'welcome'   => 'Welcome to the Home page User ',
@@ -26,6 +28,7 @@ return [
     'DeleteErrorProfile'=> 'The Profile cannot be deleted, because some users has assigned this profile!',
     'DeleteErrorArtist' => 'The Artist cannot be deleted, because some artworks has assigned this Artist!',
     'DeleteErrorFile' => 'The File cannot be deleted!',
+    'DeleteErrorArtwork' => 'The Artwork cannot be deleted!',
     'IndexButton'   => 'Log In',
     'IndexForgot'   =>  'Forgot Your Password?',
     'IndexUsernamePlaceHolder'  => 'Username',

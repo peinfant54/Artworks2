@@ -12,7 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Sistema de Colección de Arte',
+    'ProyectTitle'   => 'Colección C.C.P.',
+    'ProyectTitlePrint'  => 'Colección Privada Carlos Cruz Puga',
+
     'PageTitle'     => 'Últimas Obras',
     'ChangePasswordMsg'     => 'Cambiar la contraseña ',
     'welcome' => 'Bienvenido la página principal Usuario ',
@@ -27,6 +29,8 @@ return [
     'DeleteErrorProfile'=> 'El perfil no puede ser eliminado, debido a que existes usuarios que tienen asignado este perfil!',
     'DeleteErrorArtist' => 'El artista no puede ser eliminado, debido a que tiene asignada una o mas obras!',
     'DeleteErrorFile' => 'El archivo no pudo ser eliminado.',
+
+    'DeleteErrorArtwork' => 'La obra no pudo ser eliminada.',
 
     'IndexButton'   => 'Acceder',
     'IndexForgot'   =>  'Olvidaste tu contraseña?',

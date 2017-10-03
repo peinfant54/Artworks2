@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">@lang('obra.DetailsMsg') {{$obra->titulo}}</h4>
+                <h4 class="modal-title custom_align" id="Heading">@lang('obra.DetailsMsg'): <strong>{{$obra->titulo}}</strong></h4>
             </div>
             <div class="modal-body">
 
@@ -119,7 +119,10 @@
 
 
             <div class="modal-footer ">
-
+                <a href="{{ URL::to('art/obra/exportArt/'.$obra->id) }}" title="@lang('obra.ExportMsg')"><i class="material-icons" style="float:left;">picture_as_pdf</i></a>
+                @if($borrar_obra == 1)
+                    <p data-placement="top" data-toggle="tooltip" title="Delete"><button name="delete{{ $obra->id }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" cconclick="BorrarObra({{ $obra->id }})" data-target="#delete{{ $obra->id }}" title="@lang('obra.DeleteMsg'){{$obra->n_inv}}"><span class="glyphicon glyphicon-trash"></span></button></p>
+                @endif
             </div>
 
         </div>

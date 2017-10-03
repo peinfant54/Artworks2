@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 
@@ -167,16 +168,25 @@ class ObraController extends Controller
         try{
 
             SysObra::destroy(Input::get('id_obra'));
-            SysObra::show();
+            //SysObra::show();
 
 
-            /*echo "Hola";
-            exit;*/
 
             Session::flash('dbDelete', 'ArtWork');
 
             LogSystem::writeSystemLog("The ArtWork with ID = ". Input::get('id_obra') ." has been deleted","Art.ArtWorks",Auth::id());
-            return redirect("art/obra/index");
+            $next = Input::get('next');
+
+            if($next == 0)
+            {
+                return redirect("art/obra/index");
+            }
+            else
+            {
+                return redirect()->back();
+            }
+
+
 
         }
         catch(\Exception $e)
@@ -187,8 +197,8 @@ class ObraController extends Controller
             LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
             //Session::flash('msg_access2', $e->getMessage());
-            Session::flash('dbDeleteError', 'Profile');
-            return redirect("admin/profile/index");
+            Session::flash('dbDeleteError', 'ArtWork');
+            return redirect("art/obra/index");
         }
 
     }
@@ -350,7 +360,7 @@ class ObraController extends Controller
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
                 return redirect("art/search/details2/".$opc2."/".$id."/".$search."/".$opc2 );
             }
-            else if($opc == 5) /* Call from Summary */
+            else if($opc == 5) /* Call from Summary By Location */
             {
                 $search = Input::get('search');
                 $opc2 = Input::get('opc2');
@@ -359,7 +369,7 @@ class ObraController extends Controller
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
                 return redirect("admin/log/summary/search/".$opc2."/".$id );
             }
-            else if($opc == 6) /* Call from Summary */
+            else if($opc == 6) /*  */
             {
                 $search = Input::get('search');
                 $opc2 = Input::get('opc2');
@@ -367,6 +377,15 @@ class ObraController extends Controller
                 //echo "hola= " .$search;
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
                 return redirect("art/obra/list/".$id );
+            }
+            else if($opc == 7) /* Call from Summary By Artist */
+            {
+                $search = Input::get('search');
+                $opc2 = Input::get('opc2');
+                $id = Input::get('xid');
+                //echo "hola= " .$search;
+                //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
+                return redirect("admin/log/summary/search2/".$opc2."/".$id );
             }
 
         }
@@ -693,7 +712,15 @@ class ObraController extends Controller
     {
         /* Menu */
         $modules  = User::find(Auth::id())->profile->module;
-        $permission_edit_art = $modules[6]->pivot->eedit;
+        foreach($modules as $d)
+        {
+            if($d->id == 6)
+            {
+                //dd($d);
+                $permission_edit_art = $d->pivot->eedit;
+                $permission_delete_art = $d->pivot->ddelete;
+            }
+        }
         foreach($modules as $a)
         {
 
@@ -723,6 +750,7 @@ class ObraController extends Controller
                             ->with('editar_obra', $permission_edit_art)
                             ->with('location', $location)
                             ->with('artists_name', $artists_name)
+                        ->with('borrar_obra', $permission_delete_art)
                             ->with('artist', $artists);
 
                 }
@@ -730,5 +758,54 @@ class ObraController extends Controller
         }
         Session::flash('msg_access', 'Obras');
         return redirect("admin/index"); /* If he dont have access redirect to the Index*/
+    }
+
+    public function ObraPdf($id)
+    {
+        try{
+
+            //$pdf = PDF::loadView('art.artist.pdf');
+            /*            $view = \View::make('art.artist.pdf');
+                        $pdf = \App::make('dompdf.wrapper');
+                        $pdf->loadHTML($view);
+                        return $pdf->stream('test.php'); */// Para desplegar en la misma pantalla
+            //return $pdf->download('test.php'); // Para descargar el archivo
+            //return view('art.artist.pdf');
+            //echo "hola";
+            $title = "Buscar";
+            //view()->share('title', "Pan con queso");
+            //$view =  view('art.artist.pdf');
+
+            //$lista = Input::get('listartworks');
+
+            $obras = SysObra::find($id);
+            $title = $obras->artist->nombre ." ". $obras->artist->apellido;
+            //dd($obras->artist->nombre);
+            //dd($obras);
+            //dd(Input::get('listartworks'));
+            $pdf =  PDF::loadView('art.obra.exportpdf', compact(['title', 'obras']))
+                ->setPaper('a4', 'portrait')
+                ->setWarnings(false)
+                ->setOptions(['isHtml5ParserEnabled' => true,'isRemoteEnabled' => true]);
+//dd($pdf);
+            //return $pdf->stream();
+            $name = "exp_". $obras->n_inv .".pdf";
+                //dd($name);
+            return $pdf->download($name);
+
+            /*return view('art.artist.pdf')
+                ->with('title', $title)
+                ->with('obras', $obras);*/
+        }
+        catch(\Exception $e)
+        {
+            //dd($e);
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e);
+            return redirect("admin/index");
+        }
     }
 }

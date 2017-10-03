@@ -38,6 +38,7 @@
                         <th class="text-center">@lang('obra.title1')</th>
                         <th class="text-center">@lang('obra.title2')</th>
                         <th class="text-center">@lang('obra.title3')</th>
+                        <th class="text-center" style="width:15px">@lang('obra.title8')</th>
                         @if($xmod->pivot->eedit > 0)
                             <th class="text-center" style="width:15px">@lang('obra.title7')</th>
                             <th class="text-center" style="width:15px">@lang('obra.title5')</th>
@@ -66,9 +67,10 @@
                                 </td>
 
                                 <td class="text-center">{{ $obra->n_inv }}</td>
-                                <td class="text-center">{{ $obra->artist->nombre }} {{ $obra->artist->apellido }}</td>
+                                <td class="text-center"><a href="{{URL::to('admin/log/summary/search2/1/'.$obra->id_artista.'/1')}}" title="@lang('log.artista_ley') '{{ $obra->artist->nombre }} {{ $obra->artist->apellido }}'">{{ $obra->artist->nombre }} {{ $obra->artist->apellido }}</a></td>
                                 <td class="text-center">{{ $obra->titulo }}</td>
-
+                                <td class="text-center">
+                                    <a href="{{ URL::to('art/obra/exportArt/'.$obra->id) }}" title="@lang('obra.ExportMsg')"><i class="material-icons">picture_as_pdf</i></a></td>
                                 @if($xmod->pivot->eedit > 0)
                                     <td class="text-center"><button name="file{{ $obra->id }}" class="btn btn-primary btn-xs" title="@lang('obra.EditFiles') {{$obra->n_inv}}" onClick="window.location.href='{{URL::to('art/obra/pdf/'.$obra->id)}}'"><span class="glyphicon glyphicon-file"></span></button></td>
                                     <td class="text-center"><p data-placement="top" data-toggle="tooltip" title="Edit"><button name="edit{{ $obra->id }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit{{ $obra->id }}" title="@lang('obra.EditMsg') {{$obra->n_inv}}"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
@@ -84,7 +86,7 @@
                                 @include ('art.obra.edit' , ['obra' => $obra])
                             @endif
                             @if($xmod->pivot->ddelete > 0)
-                                @include ('art.obra.delete' , ['obra' => $obra])
+                                @include ('art.obra.delete' , ['obra' => $obra, 'next' => 0])
                             @endif
                         @endforeach
                         </tbody>
