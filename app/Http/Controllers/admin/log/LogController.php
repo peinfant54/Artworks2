@@ -87,13 +87,13 @@ class LogController extends Controller
                         $total = SysObra::count();
 
 
-                        $query = DB::select("select b.id, b.name, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
+                        $query = DB::select("select b.id, b.name, count(*) num, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
                                     from sys_obra a, sys_ubicaciones b
                                       where a.id_ubica = b.id
                                     group by a.id_ubica, b.id, b.name
                                     order by porc desc");
 
-                        $query1 = DB::select("select b.id, concat(concat(b.nombre, ' '), b.apellido) nombre, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
+                        $query1 = DB::select("select b.id, concat(concat(b.nombre, ' '), b.apellido) nombre, count(*) num, round((count(*)/(select count(*) from sys_obra))*100,2)  porc
                                         from sys_obra a, sys_artista b
                                           where a.id_artista = b.id
                                         group by a.id_artista, b.id, b.nombre, b.apellido

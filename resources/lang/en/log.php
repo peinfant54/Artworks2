@@ -38,6 +38,11 @@ return [
     's_ubica_ley'  => 'See all the artworks without location',
 
     'ubica_ley'  => 'See all the artworks in the location  ',
+    'ubica_cantidad'  => 'There is a total of \' :cant \' artworks from the location \':ubica\' ',
+
     'artista_ley'  => 'See all the artworks from the artist  ',
+
+
+    'artista_cantidad'  => 'There is a total of \' :cant \' artworks from the artist \':artist\' ',
 
 ];

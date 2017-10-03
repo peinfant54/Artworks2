@@ -28,7 +28,7 @@
 
                         <tr>
                             <td style="text-align: center"><a href="{{URL::to('admin/log/summary/search/4/'.$s->id .'/0')}}" title="@lang('log.ubica_ley') '{{ $s->name }}'">{{ $s->name }}</a></td>
-                            <td style="text-align: center">{{ $s->porc }}</td>
+                            <td style="text-align: center" title="@lang('log.ubica_cantidad', ['cant' => $s->num, 'ubica' => $s->name ] )" >{{ $s->porc }}</td>
                         </tr>
 
                     @endforeach
@@ -47,8 +47,8 @@
                     @foreach ($query1 as $s)
 
                         <tr>
-                            <td style="text-align: center"><a href="{{URL::to('admin/log/summary/search2/1/'.$s->id .'/0')}}" title="@lang('log.artista_ley') '{{ $s->nombre }}'">{{ $s->nombre }}</a></td>
-                            <td style="text-align: center">{{ $s->porc }}</td>
+                            <td style="text-align: center"><a href="{{URL::to('admin/log/summary/search2/1/'.$s->id .'/0')}}" title="@lang('log.artista_ley') '{{ $s->nombre }}' ">{{ $s->nombre }}</a></td>
+                            <td style="text-align: center" title="@lang('log.artista_cantidad', ['cant' => $s->num, 'artist' => $s->nombre ] )" >{{ $s->porc }}</td>
                         </tr>
 
                     @endforeach

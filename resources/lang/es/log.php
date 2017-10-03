@@ -41,5 +41,7 @@ return [
     's_ubica_ley'  => 'Ver todas las obras de arte sin ubicación',
 
     'ubica_ley'  => 'Ver solo las obras de arte en la ubicación ',
+    'ubica_cantidad'  => 'Existe un total de \' :cant \' obras en la ubicacion \':ubica\' ',
     'artista_ley'  => 'Ver todas las obras del artista ',
+    'artista_cantidad'  => 'Existe un total de \' :cant \' obras del artista \':artist\' ',
 ];
