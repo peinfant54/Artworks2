@@ -35,6 +35,7 @@ class CreateArtWorks extends FormRequest
             'certificacion' => 'nullable|string|max:100',
             'valoracion'    => 'nullable|string|max:100',
             'foto1'         => 'nullable|image|mimes:jpeg,bmp,png,jpg|max:5120',
+            'obs'           => 'nullable|string',
         ];
         $pdf = count($this->input('pdf'));
         foreach(range(0, $pdf) as $index) {

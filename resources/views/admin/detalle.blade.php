@@ -103,7 +103,12 @@
                         {{ $obra->location->name }}
                     </div>
                 </div>
-
+                <div class="EditModal form-group">
+                    <label for="name" class="col-md-4 control-label">@lang('obra.Field15')</label>
+                    <div class="col-md-6">
+                        {{ $obra->obs}}
+                    </div>
+                </div>
                 <div class="EditModal form-group">
                     <label for="name" class="col-md-4 control-label">@lang('obra.Field14')</label>
                     <div class="col-md-6">

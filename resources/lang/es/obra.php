@@ -58,6 +58,7 @@ return [
     'Field12'   =>  'Ubicación',
     'Field13'    =>  'Imagen en Baja',
     'Field14'    =>  'Certificados (PDF)',
+    'Field15'    =>  'Observaciones',
     'Save'      =>  'Guardar',
     'Update'    =>  'Actualizar',
 

@@ -321,6 +321,7 @@ class ObraController extends Controller
             $pro->certificacion = Input::get('certificacion_edit');
             $pro->valoracion    = Input::get('valoracion_edit');
             $pro->id_ubica      = Input::get('id_ubica'.Input::get('id_obra'));
+            $pro->obs           = Input::get('obs');
 
             $opc = Input::get('opc');
 
@@ -516,6 +517,7 @@ class ObraController extends Controller
             $pro->id_ubica = Input::get('id_ubica');
             $pro->file1 = $file_name;
             $pro->file2 = $file_name;
+            $pro->obs = Input::get('obs');
             $pro->save();
             Session::flash('dbCreate', 'Artwork');
 

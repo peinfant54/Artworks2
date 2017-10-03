@@ -47,6 +47,9 @@
             @if ($a->valoracion != "")
                 {{ $a->valoracion }}<br>
             @endif
+            @if ($a->obs != "")
+                {{ $a->obs }}<br>
+            @endif
             {{$a->location->name }}<br>
         @endif
 

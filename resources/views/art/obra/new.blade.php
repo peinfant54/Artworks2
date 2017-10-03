@@ -103,9 +103,9 @@
                         <div class="col-md-6">
                             <input id="edicion" type="text" class="form-control" name="procedencia" value="{{ old('procedencia') }}"  >
 
-                            @if ($errors->has('edicion'))
+                            @if ($errors->has('procedencia'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('edicion') }}</strong>
+                                        <strong>{{ $errors->first('procedencia') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -183,7 +183,17 @@
                             @endif
                         </div>
                     </div>
-
+                    <div class="form-group{{ $errors->has('obs') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">@lang('obra.Field15')</label>
+                        <div class="col-md-6">
+                            <textarea name="obs" class="form-control" style="resize:none;">{{ old('obs') }}</textarea>
+                            @if ($errors->has('obs'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('obs') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name="save"><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Save')</button>
                 </form>

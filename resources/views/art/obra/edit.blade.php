@@ -160,7 +160,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('foto1_edit') ? ' has-error' : '' }}">
+                    <div class="EditModal form-group{{ $errors->has('foto1_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field13')</label>
                         <div class="col-md-6">
                             <input id="file1" type="file" class="form-control" name="foto1_edit" accept="image/*" value="{{ $obra->file1 }}"  >
@@ -172,6 +172,19 @@
                             @endif
                         </div>
                     </div>
+
+                    <div class="EditModal form-group{{ $errors->has('obs') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">@lang('obra.Field15')</label>
+                        <div class="col-md-6">
+                            <textarea name="obs" class="form-control" style="resize:none;">{{ $obra->obs }}</textarea>
+                            @if ($errors->has('obs'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('obs') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
 
                     <button type="submit" class="btn btn-warning btn-lg" name="update_edit{{ $obra->id }}" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Update')</button>
 

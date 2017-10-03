@@ -10,7 +10,7 @@ class SysObra extends Model
 
     protected $fillable = [
         'id', 'n_inv', 'id_artista', 'titulo', 'tecnica', 'dimension', 'ano', 'edicion', 'procedencia', 'catalogo', 'certificacion',
-        'valoracion', 'id_ubica', 'file1', 'file2'
+        'valoracion', 'id_ubica', 'file1', 'file2', 'obs'
     ];
 
     public function artist()

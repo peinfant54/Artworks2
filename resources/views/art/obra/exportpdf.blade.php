@@ -47,7 +47,11 @@
             @if ($obras->valoracion != "")
                 {{ $obras->valoracion }}<br>
             @endif
+            @if ($obras->obs != "")
+                {{ $obras->obs }}<br>
+            @endif
             {{$obras->location->name }}<br>
+
 
         </h4>
     </div>

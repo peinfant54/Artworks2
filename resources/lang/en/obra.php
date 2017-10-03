@@ -60,6 +60,7 @@ return [
     'Field12'    =>  'Location',
     'Field13'    =>  'Low Definition Image',
     'Field14'    =>  'Certification (PDF)',
+    'Field15'    =>  'Observations',
     'Save'      => 'Save',
     'Update'      => 'Update',
 

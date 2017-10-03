@@ -30,6 +30,7 @@ class CreateObraTable extends Migration
             $table->integer('id_ubica')->unsigned();
             $table->string('file1', 200)->nullable();
             $table->string('file2', 200)->nullable();
+            $table->text('obs')->nullable();
             $table->timestamps();
         });
 

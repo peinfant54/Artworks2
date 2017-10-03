@@ -48,6 +48,9 @@
                 @if ($a->valoracion != "")
                     {{ $a->valoracion }}<br>
                 @endif
+                    @if ($obras->obs != "")
+                        {{ $obras->obs }}<br>
+                    @endif
             @endif
 
         </h4>

@@ -175,6 +175,17 @@
                             @endif
                         </div>
                     </div>
+                    <div class="EditModal form-group{{ $errors->has('obs') ? ' has-error' : '' }}">
+                        <label for="name" class="col-md-4 control-label">@lang('obra.Field15')</label>
+                        <div class="col-md-6">
+                            <textarea name="obs" class="form-control" style="resize:none;">{{ $obra->obs }}</textarea>
+                            @if ($errors->has('obs'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('obs') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn btn-warning btn-lg" name="update_edit{{ $obra->id }}" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Update')</button>
 
