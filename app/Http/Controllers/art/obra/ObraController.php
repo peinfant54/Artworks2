@@ -368,7 +368,7 @@ class ObraController extends Controller
                 $id = Input::get('xid');
                 //echo "hola= " .$search;
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
-                return redirect("admin/log/summary/search/".$opc2."/".$id );
+                return redirect("admin/log/summary/search/".$opc2."/".$id ."/0" );
             }
             else if($opc == 6) /*  */
             {
@@ -386,7 +386,7 @@ class ObraController extends Controller
                 $id = Input::get('xid');
                 //echo "hola= " .$search;
                 //return redirect()->action("art\search\SearchController@SearchIndex", ['test' => $search]);
-                return redirect("admin/log/summary/search2/".$opc2."/".$id );
+                return redirect("admin/log/summary/search2/".$opc2."/".$id ."/0"  );
             }
 
         }
@@ -414,20 +414,20 @@ class ObraController extends Controller
 
             if ($request->hasFile('foto1'))
             {
-                if (Input::file('foto1_edit')->isValid())
+                if (Input::file('foto1')->isValid())
                 {
 
-                    $file_name = Input::get('n_inv_edit') . "." . $request->file('foto1_edit')->getClientOriginalExtension();
+                    $file_name = Input::get('n_inv') . "." . $request->file('foto1')->getClientOriginalExtension();
                     $pathO = "public/Arts_Original/";
                     $pathS = public_path('storage/Arts_Small/' . $file_name);
                     $pathC = public_path('storage/Arts_Square/' . $file_name);
                     // dd($file_name);
-                    $request->file('foto1_edit')->storeAs($pathO, $file_name); //Save Original Photo
+                    $request->file('foto1')->storeAs($pathO, $file_name); //Save Original Photo
 
                     //dd(Image::make($request->file('foto1_edit')));
                     //$im  = Image::make($request->file('foto1_edit'));
 
-                    $img = Image::make($request->file('foto1_edit'));
+                    $img = Image::make($request->file('foto1'));
 
                     // dd($img2);
 
@@ -447,7 +447,7 @@ class ObraController extends Controller
                          * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
                          * */
 
-                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2 = Image::make($request->file('foto1'));;
                         $img2->resize(800, null, function ($constraint) {
                             $constraint->aspectRatio();
                         }); //Resize and maintain aspect ratio
@@ -474,7 +474,7 @@ class ObraController extends Controller
                          * Segunda Imagen: Primero se reduce de tamaño y luego se corta desde el centro un cuadrado.
                          * */
 
-                        $img2 = Image::make($request->file('foto1_edit'));;
+                        $img2 = Image::make($request->file('foto1'));;
                         $img2->resize(null, 800, function ($constraint) {
                             $constraint->aspectRatio();
                         }); //Resize and maintain aspect ratio

@@ -52,7 +52,7 @@ return [
     'Field6'    =>  'Año',
     'Field7'    =>  'Edición',
     'Field8'    =>  'Origen',
-    'Field9'    =>  'Catálogo',
+    'Field9'    =>  'Catalogación & Exposición',
     'Field10'   =>  'Certificación',
     'Field11'   =>  'Valoración',
     'Field12'   =>  'Ubicación',

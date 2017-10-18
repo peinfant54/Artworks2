@@ -17,5 +17,10 @@ class CoreProfileSeeder extends Seeder
             'name'  => 'Admin',
             'descripcion'   => 'System Admin Profile'
         ]);
+        CoreProfile::create([
+            'id'  =>  2,
+            'name'  => 'Perfil Lector',
+            'descripcion'   => 'Perfil Lector'
+        ]);
     }
 }

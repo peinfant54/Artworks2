@@ -54,7 +54,7 @@ return [
     'Field6'    =>  'Year',
     'Field7'    =>  'Edition',
     'Field8'    =>  'Origin',
-    'Field9'    =>  'Catalogue',
+    'Field9'    =>  'Cataloging & Exhibition',
     'Field10'    =>  'Certification',
     'Field11'    =>  'Assessment',
     'Field12'    =>  'Location',
