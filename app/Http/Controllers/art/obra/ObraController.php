@@ -167,9 +167,20 @@ class ObraController extends Controller
     {
         try{
 
-            SysObra::destroy(Input::get('id_obra'));
+            $obraFile = SysObraFile::where('id_obra', Input::get('id_obra'))->delete();
+            $obra = SysObra::find(Input::get('id_obra'))->delete();
+
+
+            //$obraFile->destroy();
+            //$obra->destroy();
+
+
+            //SysObraFile::destroy($obra->id);
+
+            //SysObra::destroy(Input::get('id_obra'));
             //SysObra::show();
 
+            //$obra->delete();
 
 
             Session::flash('dbDelete', 'ArtWork');
