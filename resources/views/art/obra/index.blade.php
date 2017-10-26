@@ -10,12 +10,6 @@
 
     <div class="container gallery-container"  style="width: 90%">
         <div class="row">
-            <ul class="alert-box warning radius">
-
-                @foreach($errors->all() as $error)
-                    <li> {{ $error }} </li>
-                @endforeach
-            </ul>
             <div class="col-md-12">
                 <h1>@lang('obra.home') </h1>
 

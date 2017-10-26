@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">@lang('location.EditMsg') {{$obra->titulo}}</h4>
+                <h4 class="modal-title custom_align" id="Heading">@lang('obra.EditMsg') {{$obra->titulo}}</h4>
             </div>
             <?php /*dd($obra);*/?>
             <div class="modal-body">
@@ -20,7 +20,7 @@
                     <div class="EditModal form-group{{ $errors->has('n_inv_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
                         <div class="col-md-6">
-                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit" value="{{ $obra->n_inv }}" required>
+                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit" value="{{ $obra->n_inv }}" disabled>
 
                             @if ($errors->has('n_inv_edit'))
                                 <span class="help-block">

@@ -44,7 +44,7 @@ return [
     'DelMsg2File' => 'Está seguro que quiere eliminar este Archivo de la obra?',
     'Yes'   => 'Sí',
     'No'   => 'No',
-    'Field1'    =>  'Codigo',
+    'Field1'    =>  'N° Inv',
     'Field2'    =>  'Artista',
     'Field3'    =>  'Título',
     'Field4'    =>  'Técnica',

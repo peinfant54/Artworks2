@@ -309,7 +309,7 @@ class ObraController extends Controller
 
 
 
-            $pro->n_inv         = Input::get('n_inv_edit');
+            //$pro->n_inv         = Input::get('n_inv_edit');
             $pro->id_artista    = Input::get('id_artista');
             $pro->titulo        = Input::get('titulo_edit');
             $pro->tecnica       = Input::get('tecnica_edit');

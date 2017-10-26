@@ -25,7 +25,6 @@ class EditArtworks extends FormRequest
     {
         //dd($this);
         return [
-            'n_inv_edit'              => 'required|string|max:10',
             'titulo_edit'        => 'required|string|max:100',
             'tecnica_edit'       => 'nullable|string|max:200',
             'dimension_edit'     => 'nullable|string|max:200',

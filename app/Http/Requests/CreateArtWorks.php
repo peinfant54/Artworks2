@@ -24,7 +24,7 @@ class CreateArtWorks extends FormRequest
     public function rules()
     {
         $rules = [
-            'n_inv'         => 'required|string|max:10',
+            'n_inv'         => 'required|string|unique:sys_obra|max:10',
             'titulo'        => 'required|string|max:100',
             'tecnica'       => 'nullable|string|max:200',
             'dimension'     => 'nullable|string|max:200',
