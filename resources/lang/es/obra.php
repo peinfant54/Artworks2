@@ -51,7 +51,7 @@ return [
     'Field5'    =>  'Dimensión',
     'Field6'    =>  'Año',
     'Field7'    =>  'Edición',
-    'Field8'    =>  'Origen',
+    'Field8'    =>  'Procedencia',
     'Field9'    =>  'Catalogación & Exposición',
     'Field10'   =>  'Certificación',
     'Field11'   =>  'Valoración',

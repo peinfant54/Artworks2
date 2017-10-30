@@ -36,7 +36,7 @@ class ArtistController extends Controller
                     {
                         /* Content */
 
-                        $pro = SysArtista::paginate(20);
+                        $pro = SysArtista::orderBy('apellido', 'asc')->paginate(20);
                         $allmod = CoreModule::all();
                         return view('art.artist.index')
                             ->with('title', $title)
