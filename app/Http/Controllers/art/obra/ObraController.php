@@ -59,7 +59,9 @@ class ObraController extends Controller
                         $pro = SysObra::orderBy('id', 'desc')->paginate(10);
 
                         $location = SysUbicaciones::pluck('name','id');
-                        $artists = SysArtista::all()->pluck('full_name', 'id');
+                        //$artists = SysArtista::all()->pluck('full_name', 'id');
+                        $artists = SysArtista::orderBy('apellido', 'asc')->get();
+                        $artists = $artists->pluck('full_name', 'id');
                         /* Se tiene que hace all()->plunck() y no lunck() directamente, ya que para
                            poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
 
@@ -124,8 +126,11 @@ class ObraController extends Controller
                         //$logs = CoreLog::orderBy('fecha', 'desc')->paginate(15);
                         $obra = SysObra::find($id);
 
+                        //$pro = SysArtista::orderBy('apellido', 'asc')->paginate(20)->orderBy('full_name', 'asc');
+
                         $location = SysUbicaciones::pluck('name','id');
-                        $artists = SysArtista::all()->pluck('full_name', 'id');
+                        $artists = SysArtista::orderBy('apellido', 'asc')->get();
+                        $artists = $artists->pluck('full_name', 'id');
                         /* Se tiene que hace all()->plunck() y no lunck() directamente, ya que para
                            poder ejecutar la funciuon(full_name) necesita tenern los datos en memoria */
 

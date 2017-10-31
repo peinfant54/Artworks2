@@ -14,6 +14,6 @@ class SysArtista extends Model
 
     public function getFullNameAttribute()
     {
-        return $this->nombre . " " . $this->apellido;
+        return $this->apellido . ", " . $this->nombre;
     }
 }
