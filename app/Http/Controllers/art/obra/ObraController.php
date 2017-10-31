@@ -505,7 +505,7 @@ class ObraController extends Controller
 
                         $img2->save($pathC, 60); //Save the New Square Photo
                     }
-                    LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id." has upload a picture: " .$file_name ,"Art.ArtWorks",Auth::id());
+                    LogSystem::writeSystemLog("The Artwork with N_Inv = ". Input::get('n_inv') ." has upload a picture: " .$file_name ,"Art.ArtWorks",Auth::id());
 
                     // $img->save($pathS, 60); //Save the New Photo
                     // $img2->save($pathC, 60); //Save the New Photo
@@ -561,7 +561,7 @@ class ObraController extends Controller
 
             }
 
-            LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id." has been created with picture: " . $pro->file1,"Art.ArtWorks",Auth::id());
+            LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id ." has been created with picture: " . $pro->file1,"Art.ArtWorks",Auth::id());
             return redirect("art/obra/index");
         }
         catch(\Exception $e)
