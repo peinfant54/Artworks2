@@ -31,7 +31,7 @@ class CreateArtWorks extends FormRequest
             'ano'           => 'nullable|string|max:20',
             'edicion'       => 'nullable|string|max:200',
             'procedencia'   => 'nullable|string|max:100',
-            'catalogo'      => 'nullable|string|max:200',
+            'catalogo'      => 'nullable|string|max:600',
             'certificacion' => 'nullable|string|max:100',
             'valoracion'    => 'nullable|string|max:100',
             'foto1'         => 'nullable|image|mimes:jpeg,bmp,png,jpg|max:5120',
