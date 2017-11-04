@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CoreModuleSeeder::class);
         $this->call(CorePermissionsSeeder::class);
         $this->call(SysUbicacionesSeeder::class);
-        $this->call(SysArtistaSeeder::class);
+        $this->call(SysArtistaTableSeeder::class);
         $this->call(SysObraTableSeeder::class);
 
 

@@ -18,12 +18,13 @@
                     <input type="hidden" name="modaledit" value="{{$obra->id}}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
                     <input type="hidden" name="search" value="{{ $texto }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
                     <input type="hidden" name="xid" value="{{ $xid }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+                    <input type="hidden" name="n_inv_edit" value="{{ $obra->n_inv }}" />
 
 
                     <div class="EditModal form-group{{ $errors->has('n_inv_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
                         <div class="col-md-6">
-                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit" value="{{ $obra->n_inv }}" disabled>
+                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit2" value="{{ $obra->n_inv }}" disabled>
 
                             @if ($errors->has('n_inv_edit'))
                                 <span class="help-block">

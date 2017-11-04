@@ -8,7 +8,7 @@
             <div class="modal-body">
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">Foto</label>
+                    <label for="name" class="col-md-4 control-label MinW70">Foto</label>
                     <div class="col-md-6">
                         @if($obra->file1)
                             <img class="InfoImg" src="{{asset('storage/Arts_Small/'.$obra->file1)}}" alt="Park">
@@ -20,8 +20,8 @@
                 </div>
 
 
-                    <div class="EditModal form-group">
-                        <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
+                    <div class="EditModal form-group ">
+                        <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field1')</label>
                         <div class="col-md-6">
 
 
@@ -38,79 +38,79 @@
                     </div>
 
                     <div class="EditModal form-group">
-                        <label for="name" class="col-md-4 control-label">@lang('obra.Field2')</label>
+                        <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field2')</label>
                         <div class="col-md-6">
                             {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
                         </div>
                     </div>
 
                     <div class="EditModal form-group">
-                        <label for="name" class="col-md-4 control-label">@lang('obra.Field4')</label>
+                        <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field4')</label>
                         <div class="col-md-6">
                             {{ $obra->tecnica }}
                         </div>
                     </div>
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field5')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field5')</label>
                     <div class="col-md-6">
                         {{ $obra->dimension }}
                     </div>
                 </div>
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field6')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field6')</label>
                     <div class="col-md-6">
                         {{ $obra->ano }}
                     </div>
                 </div>
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field7')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field7')</label>
                     <div class="col-md-6">
                         {{ $obra->edicion }}
                     </div>
                 </div>
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field8')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field8')</label>
                     <div class="col-md-6">
                         {{ $obra->procedencia }}
                     </div>
                 </div>
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field9')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field9')</label>
                     <div class="col-md-6">
                         {{ $obra->catalogo }}
                     </div>
                 </div>
 
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field10')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field10')</label>
                     <div class="col-md-6">
                         {{ $obra->certificacion }}
                     </div>
                 </div>
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field11')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field11')</label>
                     <div class="col-md-6">
                         {{ $obra->valoracion }}
                     </div>
                 </div>
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field12')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field12')</label>
                     <div class="col-md-6">
                         {{ $obra->location->name }}
                     </div>
                 </div>
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field15')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field15')</label>
                     <div class="col-md-6">
                         {{ $obra->obs}}
                     </div>
                 </div>
                 <div class="EditModal form-group">
-                    <label for="name" class="col-md-4 control-label">@lang('obra.Field14')</label>
+                    <label for="name" class="col-md-4 control-label MinW170">@lang('obra.Field14')</label>
                     <div class="col-md-6">
                         @foreach ($obra->files as $files)
                             <p><a href="{{asset('storage/pdfs/'.$files->name)}}" target="_blank">{{ $files->name }}</a></p>

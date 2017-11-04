@@ -57,7 +57,7 @@ return [
     'Field11'   =>  'Valoración',
     'Field12'   =>  'Ubicación',
     'Field13'    =>  'Imagen en Baja',
-    'Field14'    =>  'Certificados (PDF)',
+    'Field14'    =>  'Documentos (PDF)',
     'Field15'    =>  'Observaciones',
     'Save'      =>  'Guardar',
     'Update'    =>  'Actualizar',

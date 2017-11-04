@@ -17,6 +17,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "mpociot/laravel-apidoc-generator": "^2.0",
+        "orangehill/iseed": "dev-master",
         "twbs/bootstrap": "^3.3"
     },
     "require-dev": {

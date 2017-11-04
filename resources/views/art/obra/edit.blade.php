@@ -15,12 +15,13 @@
                     <input type="hidden" name="opc" value="0" />
                     <input type="hidden" name="search" value="{{ $obra->id }}" />
                     <input type="hidden" name="opc2" value="0" />
+                    <input type="hidden" name="n_inv_edit" value="{{ $obra->n_inv }}" />
                     <input type="hidden" name="xid" value="0" /> <!-- Controla la ventana modal cuando ocurrern errores -->
 
                     <div class="EditModal form-group{{ $errors->has('n_inv_edit') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-4 control-label">@lang('obra.Field1')</label>
                         <div class="col-md-6">
-                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit" value="{{ $obra->n_inv }}" disabled>
+                            <input id="n_inv{{ $obra->id }}" type="text" class="form-control" name="n_inv_edit2" value="{{ $obra->n_inv }}" disabled>
 
                             @if ($errors->has('n_inv_edit'))
                                 <span class="help-block">

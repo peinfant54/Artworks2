@@ -235,7 +235,7 @@ class ObraController extends Controller
                     $pathO = "public/Arts_Original/";
                     $pathS = public_path('storage/Arts_Small/' . $file_name);
                     $pathC = public_path('storage/Arts_Square/' . $file_name);
-                   // dd($file_name);
+                    //dd(Input::get('n_inv_edit') );
                     $request->file('foto1_edit')->storeAs($pathO, $file_name); //Save Original Photo
 
                     //dd(Image::make($request->file('foto1_edit')));
@@ -273,10 +273,13 @@ class ObraController extends Controller
                         $width  = $img2->width();
                         $height = $img2->height();
 
-
-                        $img2->crop($height, $height); //Crop a square from the center of image
-
-
+                        if($height < 400)
+                        {
+                            $img2->crop(400, 400); //Crop a square from the center of image
+                        }
+                        else{
+                            $img2->crop($height, $height); //Crop a square from the center of image
+                        }
                         $img2->save($pathC, 60); //Save the New Square Photo
                     }
                     else
@@ -303,9 +306,15 @@ class ObraController extends Controller
 
                         $width  = $img2->width();
                         //$height = $img2->height();
+                        if($width < 400)
+                        {
+                            $img2->crop(400, 400); //Crop a square from the center of image
+                        }
+                        else{
+                            $img2->crop($width, $width); //Crop a square from the center of image
+                        }
 
 
-                        $img2->crop($width, $width); //Crop a square from the center of image
 
 
                         $img2->save($pathC, 60); //Save the New Square Photo
@@ -343,7 +352,7 @@ class ObraController extends Controller
 
             $pro->save();
             Session::flash('dbUpdated', '1');
-            LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id." has been updated","Art.ArtWorks",Auth::id());
+            LogSystem::writeSystemLog("The Artwork with ID = ". $pro->id ." has been created with picture: " . $pro->file1,"Art.ArtWorks",Auth::id());
 
             if($opc == 0) /* Call from ObraIndex*/
             {
@@ -470,7 +479,13 @@ class ObraController extends Controller
 
                         $width  = $img2->width();
                         $height = $img2->height();
-                        $img2->crop($height, $height); //Crop a square from the center of image
+                        if($height < 400)
+                        {
+                            $img2->crop(400, 400); //Crop a square from the center of image
+                        }
+                        else{
+                            $img2->crop($height, $height); //Crop a square from the center of image
+                        }
                         $img2->save($pathC, 60); //Save the New Square Photo
 
                     }
@@ -499,8 +514,13 @@ class ObraController extends Controller
                         $width  = $img2->width();
                         //$height = $img2->height();
 
-
-                        $img2->crop($width, $width); //Crop a square from the center of image
+                        if($width < 400)
+                        {
+                            $img2->crop(400, 400); //Crop a square from the center of image
+                        }
+                        else{
+                            $img2->crop($width, $width); //Crop a square from the center of image
+                        }
 
 
                         $img2->save($pathC, 60); //Save the New Square Photo

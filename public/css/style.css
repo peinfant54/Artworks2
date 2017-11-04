@@ -144,6 +144,7 @@ html {
 
 .InfoImg{
 	width: 200px;
+	padding-right: 10px;
 }
 
 .img_seleccion{
@@ -221,6 +222,13 @@ footer a {
 	font-weight: 100;
 	margin-top: 20px;
 	margin-bottom: 15px;
+}
+.MinW170{
+	min-width: 120px;
+}
+
+.MinW70{
+	min-width: 70px;
 }
 
 .resultados_busquedas{
@@ -454,6 +462,7 @@ margin-top: 0;}
 }
 
 
+
 }
  
 
@@ -496,34 +505,47 @@ footer{
 }
  
 /*Escritorios muy anchos*/
-@media (min-width: 1200px) { 
+@media (max-width: 500px) {
 
-.contenido {
-  width: 100%;
-  min-height: 500px;
-}
-.posicion_contenedor{
-	margin-top: 0;
-}
-/*titulo grande de la izquiersa*/
-.titulo{
-	/* padding-top: 30px; */
-	float: left;
-	/* margin-left: 40px; */
-	margin-right: auto;
-	/* width: 260px; */
-	/* margin-top: 20px; */
-}
-.titulo_galeria{
-	text-align: left;
-	font-size: 4.4em;
-}
+	.MinW170 {
+		min-width: 120px;
+		margin-left: -20px;
+	}
+	.MinW70{
+		min-width: 70px;
+		margin-left: -20px;
+	}
 
+	@media (min-width: 1200px) {
 
+		.contenido {
+			width: 100%;
+			min-height: 500px;
+		}
 
-/*Footer*/
-footer{
-		text-align: center;
-}
+		.posicion_contenedor {
+			margin-top: 0;
+		}
 
+		/*titulo grande de la izquiersa*/
+		.titulo {
+			/* padding-top: 30px; */
+			float: left;
+			/* margin-left: 40px; */
+			margin-right: auto;
+			/* width: 260px; */
+			/* margin-top: 20px; */
+		}
+
+		.titulo_galeria {
+			text-align: left;
+			font-size: 4.4em;
+		}
+
+		/*Footer*/
+		footer {
+			text-align: center;
+		}
+
+	}
 }

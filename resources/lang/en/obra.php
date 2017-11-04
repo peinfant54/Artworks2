@@ -59,7 +59,7 @@ return [
     'Field11'    =>  'Assessment',
     'Field12'    =>  'Location',
     'Field13'    =>  'Low Definition Image',
-    'Field14'    =>  'Certification (PDF)',
+    'Field14'    =>  'Documentation (PDF)',
     'Field15'    =>  'Observations',
     'Save'      => 'Save',
     'Update'      => 'Update',

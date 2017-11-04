@@ -21,12 +21,12 @@ class CreateObraTable extends Migration
             $table->string('titulo', 200);
             $table->string('tecnica', 200)->nullable();
             $table->string('dimension', 100)->nullable();
-            $table->string('ano', 50)->nullable();
+            $table->string('ano', 150)->nullable();
             $table->string('edicion', 200)->nullable();
             $table->string('procedencia',100)->nullable();
             $table->string('catalogo', 600)->nullable();
             $table->string('certificacion', 100)->nullable();
-            $table->string('valoracion', 100)->nullable();
+            $table->string('valoracion', 150)->nullable();
             $table->integer('id_ubica')->unsigned();
             $table->string('file1', 200)->nullable();
             $table->string('file2', 200)->nullable();
