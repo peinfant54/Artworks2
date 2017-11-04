@@ -168,7 +168,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Orangehill\Iseed\IseedServiceProvider::class,
+        //Orangehill\Iseed\IseedServiceProvider::class,
 
         /*
          * Package Service Providers...
