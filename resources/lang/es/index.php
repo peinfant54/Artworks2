@@ -12,8 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'ProyectTitle'   => 'Colección C.C.P.',
-    'ProyectTitlePrint'  => 'Colección Privada Carlos Cruz Puga',
+    'ProyectTitle'   => 'Colección Patricia',
+    'ProyectTitlePrint'  => 'Colección Privada Patricia',
 
     'PageTitle'     => 'Últimas Obras',
     'ChangePasswordMsg'     => 'Cambiar la contraseña ',

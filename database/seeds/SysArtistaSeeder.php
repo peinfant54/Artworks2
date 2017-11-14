@@ -12,79 +12,207 @@ class SysArtistaSeeder extends Seeder
      */
     public function run()
     {
-        SysArtista::create([
-            'id'            => 1,
-            'nombre'       => 'Rodolfo',
-            'apellido'       => 'Opazo'
-        ]);
-        SysArtista::create([
-            'id'            => 2,
-            'nombre'       => 'Carmen',
-            'apellido'       => 'Piemonte'
-        ]);
+        SysArtista::create([ 'id' =>1, 'nombre' =>'Adolfo', 'apellido' =>'Bimer']);
+        SysArtista::create([ 'id' =>2, 'nombre' =>'Alfonso', 'apellido' =>'Fernandez']);
+        SysArtista::create([ 'id' =>3, 'nombre' =>'Alfredo', 'apellido' =>'jaar']);
+        SysArtista::create([ 'id' =>4, 'nombre' =>'Alfredo', 'apellido' =>'Jarr']);
+        SysArtista::create([ 'id' =>5, 'nombre' =>'Alicia', 'apellido' =>'Villarreal']);
+        SysArtista::create([ 'id' =>6, 'nombre' =>'Alvaro', 'apellido' =>'Donoso']);
+        SysArtista::create([ 'id' =>7, 'nombre' =>'Ana', 'apellido' =>'Teresa Barboza']);
+        SysArtista::create([ 'id' =>8, 'nombre' =>'Andara', 'apellido' =>'Craw']);
+        SysArtista::create([ 'id' =>9, 'nombre' =>'Andrea', 'apellido' =>'Carreño']);
+        SysArtista::create([ 'id' =>10, 'nombre' =>'Andrea', 'apellido' =>'Silva']);
+        SysArtista::create([ 'id' =>11, 'nombre' =>'Andres', 'apellido' =>'Vio']);
+        SysArtista::create([ 'id' =>12, 'nombre' =>'Andy', 'apellido' =>'Warhol']);
+        SysArtista::create([ 'id' =>13, 'nombre' =>'Anna', 'apellido' =>'Eckell']);
+        SysArtista::create([ 'id' =>14, 'nombre' =>'Antonia', 'apellido' =>'Cruz']);
+        SysArtista::create([ 'id' =>15, 'nombre' =>'Antony', 'apellido' =>'Gormley']);
+        SysArtista::create([ 'id' =>16, 'nombre' =>'Arturo', 'apellido' =>'Duclos']);
+        SysArtista::create([ 'id' =>17, 'nombre' =>'Aura', 'apellido' =>'Castro']);
+        SysArtista::create([ 'id' =>18, 'nombre' =>'Bororo', 'apellido' =>'Bororo']);
+        SysArtista::create([ 'id' =>19, 'nombre' =>'Bruno', 'apellido' =>'Zeppilli']);
+        SysArtista::create([ 'id' =>20, 'nombre' =>'C', 'apellido' =>'Gandras']);
+        SysArtista::create([ 'id' =>21, 'nombre' =>'Canala', 'apellido' =>'Canala']);
+        SysArtista::create([ 'id' =>22, 'nombre' =>'Carlos', 'apellido' =>'Cruz - Diez']);
+        SysArtista::create([ 'id' =>23, 'nombre' =>'Carlos', 'apellido' =>'Montes de Oca']);
+        SysArtista::create([ 'id' =>24, 'nombre' =>'Carmen', 'apellido' =>'Aldunate']);
+        SysArtista::create([ 'id' =>25, 'nombre' =>'Carolina', 'apellido' =>'Antoniadis']);
+        SysArtista::create([ 'id' =>26, 'nombre' =>'Carolina', 'apellido' =>'Ruff']);
+        SysArtista::create([ 'id' =>27, 'nombre' =>'Cecilia', 'apellido' =>'Vicuña']);
+        SysArtista::create([ 'id' =>28, 'nombre' =>'Christo', 'apellido' =>'Christo']);
+        SysArtista::create([ 'id' =>29, 'nombre' =>'Claudio', 'apellido' =>'Correa']);
+        SysArtista::create([ 'id' =>30, 'nombre' =>'Clever', 'apellido' =>'Lara']);
+        SysArtista::create([ 'id' =>31, 'nombre' =>'Corneille', 'apellido' =>'Corneille']);
+        SysArtista::create([ 'id' =>32, 'nombre' =>'Cristián', 'apellido' =>'Abeli']);
+        SysArtista::create([ 'id' =>33, 'nombre' =>'Cristián', 'apellido' =>'Salineros']);
+        SysArtista::create([ 'id' =>34, 'nombre' =>'Cristian', 'apellido' =>'Salisnero']);
+        SysArtista::create([ 'id' =>35, 'nombre' =>'Daniela', 'apellido' =>'Montecino']);
+        SysArtista::create([ 'id' =>36, 'nombre' =>'Daniela', 'apellido' =>'Montecinos']);
+        SysArtista::create([ 'id' =>37, 'nombre' =>'Delia', 'apellido' =>'Carril']);
+        SysArtista::create([ 'id' =>38, 'nombre' =>'Demian', 'apellido' =>'Schopf']);
+        SysArtista::create([ 'id' =>39, 'nombre' =>'Diego', 'apellido' =>'José Fontecilla']);
+        SysArtista::create([ 'id' =>40, 'nombre' =>'Dos', 'apellido' =>'Colonial']);
+        SysArtista::create([ 'id' =>41, 'nombre' =>'Edgar', 'apellido' =>'Negret']);
+        SysArtista::create([ 'id' =>42, 'nombre' =>'Eduardo', 'apellido' =>'Vilches']);
+        SysArtista::create([ 'id' =>43, 'nombre' =>'Elisa', 'apellido' =>'Aguirre']);
+        SysArtista::create([ 'id' =>44, 'nombre' =>'Elmar', 'apellido' =>'Rojas']);
+        SysArtista::create([ 'id' =>45, 'nombre' =>'Enrique', 'apellido' =>'Ramirez']);
+        SysArtista::create([ 'id' =>46, 'nombre' =>'Enrique', 'apellido' =>'Zamudio']);
+        SysArtista::create([ 'id' =>47, 'nombre' =>'Eugenia', 'apellido' =>'Vargas']);
+        SysArtista::create([ 'id' =>48, 'nombre' =>'Eugenio', 'apellido' =>'Dittborn']);
+        SysArtista::create([ 'id' =>49, 'nombre' =>'Eugenio', 'apellido' =>'Tellez']);
+        SysArtista::create([ 'id' =>50, 'nombre' =>'F', 'apellido' =>'Secretan']);
+        SysArtista::create([ 'id' =>51, 'nombre' =>'Federico', 'apellido' =>'Assler']);
+        SysArtista::create([ 'id' =>52, 'nombre' =>'Felipe', 'apellido' =>'Cusicanqui']);
+        SysArtista::create([ 'id' =>53, 'nombre' =>'Fernando', 'apellido' =>'de Szyslo']);
+        SysArtista::create([ 'id' =>54, 'nombre' =>'Fernando', 'apellido' =>'Gamacho Guerrero']);
+        SysArtista::create([ 'id' =>55, 'nombre' =>'Fernando', 'apellido' =>'Prats']);
+        SysArtista::create([ 'id' =>56, 'nombre' =>'Fernando', 'apellido' =>'Szyslo']);
+        SysArtista::create([ 'id' =>57, 'nombre' =>'Fernando', 'apellido' =>'Zyzlo']);
+        SysArtista::create([ 'id' =>58, 'nombre' =>'Fina', 'apellido' =>'Oliver']);
+        SysArtista::create([ 'id' =>59, 'nombre' =>'Francesca', 'apellido' =>'Colzani']);
+        SysArtista::create([ 'id' =>60, 'nombre' =>'Francis', 'apellido' =>'Bacon']);
+        SysArtista::create([ 'id' =>61, 'nombre' =>'Francisco', 'apellido' =>'Bustamante']);
+        SysArtista::create([ 'id' =>62, 'nombre' =>'Francisco', 'apellido' =>'Copello']);
+        SysArtista::create([ 'id' =>63, 'nombre' =>'Francisco', 'apellido' =>'de la Puente']);
+        SysArtista::create([ 'id' =>64, 'nombre' =>'Francisco', 'apellido' =>'Smythe']);
+        SysArtista::create([ 'id' =>65, 'nombre' =>'Francisco', 'apellido' =>'Zuñiga']);
+        SysArtista::create([ 'id' =>66, 'nombre' =>'Francsica', 'apellido' =>'Sutil']);
+        SysArtista::create([ 'id' =>67, 'nombre' =>'Gerardo', 'apellido' =>'Chavez']);
+        SysArtista::create([ 'id' =>68, 'nombre' =>'Gerardo', 'apellido' =>'Pulido']);
+        SysArtista::create([ 'id' =>69, 'nombre' =>'Gilda', 'apellido' =>'Hernandez']);
+        SysArtista::create([ 'id' =>70, 'nombre' =>'Gonzalo', 'apellido' =>'Diaz']);
+        SysArtista::create([ 'id' =>71, 'nombre' =>'Gracia', 'apellido' =>'Barrios']);
+        SysArtista::create([ 'id' =>72, 'nombre' =>'Gustavo', 'apellido' =>'Ramos Rivera']);
+        SysArtista::create([ 'id' =>73, 'nombre' =>'Hans', 'apellido' =>'Bellmer']);
+        SysArtista::create([ 'id' =>74, 'nombre' =>'Henry', 'apellido' =>'Moore']);
+        SysArtista::create([ 'id' =>75, 'nombre' =>'Hernan', 'apellido' =>'Gana']);
+        SysArtista::create([ 'id' =>76, 'nombre' =>'Hernan', 'apellido' =>'Miranda']);
+        SysArtista::create([ 'id' =>77, 'nombre' =>'Hugo', 'apellido' =>'Lugo']);
+        SysArtista::create([ 'id' =>78, 'nombre' =>'Hugo', 'apellido' =>'Marin']);
+        SysArtista::create([ 'id' =>79, 'nombre' =>'Humberto', 'apellido' =>'Nilo']);
+        SysArtista::create([ 'id' =>80, 'nombre' =>'Ignacio', 'apellido' =>'Valdes']);
+        SysArtista::create([ 'id' =>81, 'nombre' =>'Irene', 'apellido' =>'Dominguez']);
+        SysArtista::create([ 'id' =>82, 'nombre' =>'Ismael', 'apellido' =>'Frigerio']);
+        SysArtista::create([ 'id' =>83, 'nombre' =>'Ivan', 'apellido' =>'Daiber']);
+        SysArtista::create([ 'id' =>84, 'nombre' =>'J', 'apellido' =>'Cellejo']);
+        SysArtista::create([ 'id' =>85, 'nombre' =>'Jaime', 'apellido' =>'León']);
+        SysArtista::create([ 'id' =>86, 'nombre' =>'Javier', 'apellido' =>'Silva-Meinel']);
+        SysArtista::create([ 'id' =>87, 'nombre' =>'Javier', 'apellido' =>'Toro Blum']);
+        SysArtista::create([ 'id' =>88, 'nombre' =>'Jesús', 'apellido' =>'Soto']);
+        SysArtista::create([ 'id' =>89, 'nombre' =>'Joan', 'apellido' =>'Miro']);
+        SysArtista::create([ 'id' =>90, 'nombre' =>'Joaquín', 'apellido' =>'Sanchez']);
+        SysArtista::create([ 'id' =>91, 'nombre' =>'Jorge', 'apellido' =>'Tacla']);
+        SysArtista::create([ 'id' =>92, 'nombre' =>'José', 'apellido' =>'Angel Vincench']);
+        SysArtista::create([ 'id' =>93, 'nombre' =>'Jose', 'apellido' =>'Antonio Suarez']);
+        SysArtista::create([ 'id' =>94, 'nombre' =>'José', 'apellido' =>'Balmes']);
+        SysArtista::create([ 'id' =>95, 'nombre' =>'Jose', 'apellido' =>'Baso']);
+        SysArtista::create([ 'id' =>96, 'nombre' =>'José', 'apellido' =>'Basso']);
+        SysArtista::create([ 'id' =>97, 'nombre' =>'José', 'apellido' =>'Bedia']);
+        SysArtista::create([ 'id' =>98, 'nombre' =>'José', 'apellido' =>'Benito']);
+        SysArtista::create([ 'id' =>99, 'nombre' =>'José', 'apellido' =>'Santos Guerra']);
+        SysArtista::create([ 'id' =>100, 'nombre' =>'Josefina', 'apellido' =>'Fontecilla']);
+        SysArtista::create([ 'id' =>101, 'nombre' =>'Josefina', 'apellido' =>'Guilisasti']);
+        SysArtista::create([ 'id' =>102, 'nombre' =>'Julio', 'apellido' =>'Larraz']);
+        SysArtista::create([ 'id' =>103, 'nombre' =>'julio', 'apellido' =>'Le Parc']);
+        SysArtista::create([ 'id' =>104, 'nombre' =>'Lise', 'apellido' =>'Moller']);
+        SysArtista::create([ 'id' =>105, 'nombre' =>'Lorena', 'apellido' =>'Veliz']);
+        SysArtista::create([ 'id' =>106, 'nombre' =>'Lorenzo', 'apellido' =>'Moya']);
+        SysArtista::create([ 'id' =>107, 'nombre' =>'Loreto', 'apellido' =>'Enriquez']);
+        SysArtista::create([ 'id' =>108, 'nombre' =>'Loty', 'apellido' =>'Rosenfeld']);
+        SysArtista::create([ 'id' =>109, 'nombre' =>'Lucia', 'apellido' =>'Baiser']);
+        SysArtista::create([ 'id' =>110, 'nombre' =>'Lucía', 'apellido' =>'Waiser']);
+        SysArtista::create([ 'id' =>111, 'nombre' =>'Luz', 'apellido' =>'Letts']);
+        SysArtista::create([ 'id' =>112, 'nombre' =>'Magdalena', 'apellido' =>'Atria']);
+        SysArtista::create([ 'id' =>113, 'nombre' =>'Magdalena', 'apellido' =>'Vial']);
+        SysArtista::create([ 'id' =>114, 'nombre' =>'Man', 'apellido' =>'Ray']);
+        SysArtista::create([ 'id' =>115, 'nombre' =>'Marcela', 'apellido' =>'Correa']);
+        SysArtista::create([ 'id' =>116, 'nombre' =>'Marcelo', 'apellido' =>'Larraín']);
+        SysArtista::create([ 'id' =>117, 'nombre' =>'María', 'apellido' =>'Elena Cardenas']);
+        SysArtista::create([ 'id' =>118, 'nombre' =>'María', 'apellido' =>'Elvira Valenzuela']);
+        SysArtista::create([ 'id' =>119, 'nombre' =>'María', 'apellido' =>'Mohor']);
+        SysArtista::create([ 'id' =>120, 'nombre' =>'Mariella', 'apellido' =>'Agois']);
+        SysArtista::create([ 'id' =>121, 'nombre' =>'Mario', 'apellido' =>'Carreño']);
+        SysArtista::create([ 'id' =>122, 'nombre' =>'Mario', 'apellido' =>'Sanchez']);
+        SysArtista::create([ 'id' =>123, 'nombre' =>'Markus', 'apellido' =>'Lüpertz']);
+        SysArtista::create([ 'id' =>124, 'nombre' =>'Matias', 'apellido' =>'Pinto de Aguilar']);
+        SysArtista::create([ 'id' =>125, 'nombre' =>'Matilde', 'apellido' =>'Huidobro']);
+        SysArtista::create([ 'id' =>126, 'nombre' =>'Matilde', 'apellido' =>'Perez']);
+        SysArtista::create([ 'id' =>127, 'nombre' =>'Mireya', 'apellido' =>'Larena']);
+        SysArtista::create([ 'id' =>128, 'nombre' =>'Mireya', 'apellido' =>'Larenas']);
+        SysArtista::create([ 'id' =>129, 'nombre' =>'Moris', 'apellido' =>'Moris']);
+        SysArtista::create([ 'id' =>130, 'nombre' =>'Mría', 'apellido' =>'Elvira Moreno']);
+        SysArtista::create([ 'id' =>131, 'nombre' =>'Nadin', 'apellido' =>'Ospina']);
+        SysArtista::create([ 'id' =>132, 'nombre' =>'Nazca', 'apellido' =>'Cultura']);
+        SysArtista::create([ 'id' =>133, 'nombre' =>'Nelson', 'apellido' =>'Lagos']);
+        SysArtista::create([ 'id' =>134, 'nombre' =>'Nemesio', 'apellido' =>'Antúnez']);
+        SysArtista::create([ 'id' =>135, 'nombre' =>'Nicolas', 'apellido' =>'Grum']);
+        SysArtista::create([ 'id' =>136, 'nombre' =>'Norton', 'apellido' =>'Maza']);
+        SysArtista::create([ 'id' =>137, 'nombre' =>'Omar', 'apellido' =>'Rayo']);
+        SysArtista::create([ 'id' =>138, 'nombre' =>'Oscar', 'apellido' =>'Pantoja']);
+        SysArtista::create([ 'id' =>139, 'nombre' =>'Oscar', 'apellido' =>'Smoje']);
+        SysArtista::create([ 'id' =>140, 'nombre' =>'Pablo', 'apellido' =>'Dominguez']);
+        SysArtista::create([ 'id' =>141, 'nombre' =>'Paola', 'apellido' =>'Vezani']);
+        SysArtista::create([ 'id' =>142, 'nombre' =>'Patricia', 'apellido' =>'Figueroa']);
+        SysArtista::create([ 'id' =>143, 'nombre' =>'Patricia', 'apellido' =>'Israel']);
+        SysArtista::create([ 'id' =>144, 'nombre' =>'Patricia', 'apellido' =>'Vargas']);
+        SysArtista::create([ 'id' =>145, 'nombre' =>'Patricio', 'apellido' =>'Court']);
+        SysArtista::create([ 'id' =>146, 'nombre' =>'Patricio', 'apellido' =>'de la O']);
+        SysArtista::create([ 'id' =>147, 'nombre' =>'Patrick', 'apellido' =>'Hamilton']);
+        SysArtista::create([ 'id' =>148, 'nombre' =>'Patrick', 'apellido' =>'Steeger']);
+        SysArtista::create([ 'id' =>149, 'nombre' =>'Patrick', 'apellido' =>'Steger']);
+        SysArtista::create([ 'id' =>150, 'nombre' =>'Paul', 'apellido' =>'Fuguet']);
+        SysArtista::create([ 'id' =>151, 'nombre' =>'Pedro', 'apellido' =>'Erlweim']);
+        SysArtista::create([ 'id' =>152, 'nombre' =>'Pierre', 'apellido' =>'Alechinsky']);
+        SysArtista::create([ 'id' =>153, 'nombre' =>'Pilar', 'apellido' =>'Contardo']);
+        SysArtista::create([ 'id' =>154, 'nombre' =>'Pilar', 'apellido' =>'Ovalle']);
+        SysArtista::create([ 'id' =>155, 'nombre' =>'Ramiro', 'apellido' =>'Llona']);
+        SysArtista::create([ 'id' =>156, 'nombre' =>'Ramón', 'apellido' =>'Campos Larena']);
+        SysArtista::create([ 'id' =>157, 'nombre' =>'Ramos', 'apellido' =>'Ramos']);
+        SysArtista::create([ 'id' =>158, 'nombre' =>'Raúl', 'apellido' =>'Gonzalez']);
+        SysArtista::create([ 'id' =>159, 'nombre' =>'Raul', 'apellido' =>'Lara']);
+        SysArtista::create([ 'id' =>160, 'nombre' =>'Raul', 'apellido' =>'Sotomayor']);
+        SysArtista::create([ 'id' =>161, 'nombre' =>'Roberto', 'apellido' =>'Geise']);
+        SysArtista::create([ 'id' =>162, 'nombre' =>'Roberto', 'apellido' =>'Geisse']);
+        SysArtista::create([ 'id' =>163, 'nombre' =>'Roberto', 'apellido' =>'Matta']);
+        SysArtista::create([ 'id' =>164, 'nombre' =>'Rodrigo', 'apellido' =>'Canala']);
+        SysArtista::create([ 'id' =>165, 'nombre' =>'rogelio', 'apellido' =>'Poliezelo']);
+        SysArtista::create([ 'id' =>166, 'nombre' =>'Roser', 'apellido' =>'Bru']);
+        SysArtista::create([ 'id' =>167, 'nombre' =>'Ruben', 'apellido' =>'Valentin']);
+        SysArtista::create([ 'id' =>168, 'nombre' =>'Ruby', 'apellido' =>'Rumié']);
+        SysArtista::create([ 'id' =>169, 'nombre' =>'Ruperto', 'apellido' =>'Cadiz']);
+        SysArtista::create([ 'id' =>170, 'nombre' =>'Salvador', 'apellido' =>'Dali']);
+        SysArtista::create([ 'id' =>171, 'nombre' =>'Samy', 'apellido' =>'Benmayor']);
+        SysArtista::create([ 'id' =>172, 'nombre' =>'Sandra', 'apellido' =>'Gamarra']);
+        SysArtista::create([ 'id' =>173, 'nombre' =>'Sandro', 'apellido' =>'Chia']);
+        SysArtista::create([ 'id' =>174, 'nombre' =>'Sebastián', 'apellido' =>'Garretón']);
+        SysArtista::create([ 'id' =>175, 'nombre' =>'Sebastian', 'apellido' =>'Preece']);
+        SysArtista::create([ 'id' =>176, 'nombre' =>'Señor', 'apellido' =>'Colonial']);
+        SysArtista::create([ 'id' =>177, 'nombre' =>'Sergio', 'apellido' =>'Lay']);
+        SysArtista::create([ 'id' =>178, 'nombre' =>'Silvina', 'apellido' =>'Benguria']);
+        SysArtista::create([ 'id' =>179, 'nombre' =>'Sin', 'apellido' =>'Artista']);
+        SysArtista::create([ 'id' =>180, 'nombre' =>'Sol', 'apellido' =>'Lewit']);
+        SysArtista::create([ 'id' =>181, 'nombre' =>'Sonia', 'apellido' =>'Praguer']);
+        SysArtista::create([ 'id' =>182, 'nombre' =>'Stephan', 'apellido' =>'Balkenhol']);
+        SysArtista::create([ 'id' =>183, 'nombre' =>'Susana', 'apellido' =>'Larraín']);
+        SysArtista::create([ 'id' =>184, 'nombre' =>'Tatiana', 'apellido' =>'Alamos']);
+        SysArtista::create([ 'id' =>185, 'nombre' =>'Tatiana', 'apellido' =>'Lastarria']);
+        SysArtista::create([ 'id' =>186, 'nombre' =>'Teresa', 'apellido' =>'Gazitua']);
+        SysArtista::create([ 'id' =>187, 'nombre' =>'teresa', 'apellido' =>'Sanchez']);
+        SysArtista::create([ 'id' =>188, 'nombre' =>'Thomas', 'apellido' =>'Ianelli']);
+        SysArtista::create([ 'id' =>189, 'nombre' =>'Tony', 'apellido' =>'Grag']);
+        SysArtista::create([ 'id' =>190, 'nombre' =>'Tunga', 'apellido' =>'Tunga']);
+        SysArtista::create([ 'id' =>191, 'nombre' =>'Valentina', 'apellido' =>'Cruz']);
+        SysArtista::create([ 'id' =>192, 'nombre' =>'Verancio', 'apellido' =>'Shinki']);
+        SysArtista::create([ 'id' =>193, 'nombre' =>'Virgen', 'apellido' =>'Colonial']);
+        SysArtista::create([ 'id' =>194, 'nombre' =>'Viteri', 'apellido' =>'Viteri']);
+        SysArtista::create([ 'id' =>195, 'nombre' =>'Voluspa', 'apellido' =>'Jarpa']);
+        SysArtista::create([ 'id' =>196, 'nombre' =>'Wilfredo', 'apellido' =>'Lam']);
+        SysArtista::create([ 'id' =>197, 'nombre' =>'Ximena', 'apellido' =>'Armas']);
+        SysArtista::create([ 'id' =>198, 'nombre' =>'Ximena', 'apellido' =>'Mandiola']);
+        SysArtista::create([ 'id' =>199, 'nombre' =>'Ximena', 'apellido' =>'Velasco']);
+        SysArtista::create([ 'id' =>200, 'nombre' =>'Yu', 'apellido' =>'Hong']);
 
-        SysArtista::create([
-            'id'            => 3,
-            'nombre'       => 'Matías',
-            'apellido'       => 'Vial'
-        ]);
-
-        SysArtista::create([
-            'id'            => 4,
-            'nombre'       => 'Aixa',
-            'apellido'       => 'Vicuña'
-        ]);
-
-        SysArtista::create([
-            'id'            => 5,
-            'nombre'       => 'Ramón',
-            'apellido'       => 'Vergara Grez'
-        ]);
-
-        SysArtista::create([
-            'id'            => 6,
-            'nombre'       => 'Rene',
-            'apellido'       => 'Portocarrero'
-        ]);
-
-        SysArtista::create([
-            'id'            => 7,
-            'nombre'       => 'Kurt',
-            'apellido'       => 'Herdan'
-        ]);
-        SysArtista::create([
-            'id'            => 8,
-            'nombre'       => 'Mario',
-            'apellido'       => 'Carreño'
-        ]);
-
-        SysArtista::create([
-            'id'            => 9,
-            'nombre'       => 'Elsa',
-            'apellido'       => 'Bolivar'
-        ]);
-
-        SysArtista::create([
-            'id'            => 10,
-            'nombre'       => 'Claudio',
-            'apellido'       => 'Girola'
-        ]);
-        SysArtista::create([
-            'id'            => 11,
-            'nombre'       => 'Torres',
-            'apellido'       => 'García'
-        ]);
-
-        SysArtista::create([
-            'id'            => 12,
-            'nombre'       => 'Maria',
-            'apellido'       => 'Freire'
-        ]);
-
-        SysArtista::create([
-            'id'            => 13,
-            'nombre'       => 'Roberto',
-            'apellido'       => 'Matta'
-        ]);
+        SysArtista::create([ 'id' =>1000, 'nombre' =>'Sin', 'apellido' =>'Artista']);
     }
 }
