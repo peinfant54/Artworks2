@@ -827,7 +827,11 @@ class ObraController extends Controller
             LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
-
+            $opc = Input::get('opc');
+            $opc2 = Input::get('opc2');
+            $search = Input::get('search');
+            $xid = Input::get('xid');
+            $obraId = Input::get('obraid');
             Session::flash('dbCreateFile', 'Artwork');
             return redirect("art/obra/pdf2/".$obraId ."/". $opc ."/". $search ."/". $opc2 ."/". $xid);
         }

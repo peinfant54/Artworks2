@@ -24,7 +24,7 @@
                     <input type="hidden" name="opc" value="{{ $opc }}" />
                     <input type="hidden" name="opc2" value="{{ $opc2 }}" />
 
-                    <input type="hidden" name="search" value="{{ $texto }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+                    <input type="hidden" name="search" value="{{ $search }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
                     <input type="hidden" name="xid" value="{{ $xid }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
 
 
