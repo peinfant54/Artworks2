@@ -829,7 +829,7 @@ class ObraController extends Controller
             LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
 
             Session::flash('dbCreateFile', 'Artwork');
-            return redirect("art/obra/pdf/".$obraId);
+            return redirect("art/obra/pdf2/".$obraId ."/". $opc ."/". $search ."/". $opc2 ."/". $xid);
         }
 
     }
@@ -852,6 +852,44 @@ class ObraController extends Controller
 
             LogSystem::writeSystemLog("The File with ID = ". Input::get('id_file') ." and name = ". $file->name." has been deleted","Art.ArtWorks",Auth::id());
             return redirect("art/obra/pdf/".Input::get('id_obra') );
+
+        }
+        catch(\Exception $e)
+        {
+
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e->getMessage());
+            Session::flash('dbDeleteError', 'ArtWorkFile');
+            return redirect("art/obra/pdf/".Input::get('id_obra'));
+        }
+
+    }
+
+    public function ObraPdfDestroy2()
+    {
+        try{
+            $file = SysObraFile::find(Input::get('id_file'));
+            $pathC = public_path('storage/pdfs/' .$file->name);
+
+            \Storage::Delete($pathC);
+
+            SysObraFile::destroy(Input::get('id_file'));
+
+            $opc = Input::get('opc');
+            $opc2 = Input::get('opc2');
+            $search = Input::get('search');
+            $xid = Input::get('xid');
+
+            //echo "Hola";
+            //exit;
+
+            Session::flash('dbDelete', 'ArtWork');
+            $obraId = Input::get('id_obra');
+            LogSystem::writeSystemLog("The File with ID = ". Input::get('id_file') ." and name = ". $file->name." has been deleted","Art.ArtWorks",Auth::id());
+            return redirect("art/obra/pdf2/".$obraId ."/". $opc ."/". $search ."/". $opc2 ."/". $xid);
 
         }
         catch(\Exception $e)

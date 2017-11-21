@@ -11,10 +11,22 @@
 
             </div>
             <div class="modal-footer ">
-                <form method="post" action="{{url('art/obra/deletepdf/')}}">
+                @if($opc==5000)
+                    <form method="post" action="{{url('art/obra/deletepdf/')}}">
+                @else
+                    <form method="post" action="{{url('art/obra/deletepdf2/')}}">
+                @endif
+
                     {{csrf_field()}}
                     <input type="hidden" name="id_obra" value="{{$obra->id}}" />
                     <input type="hidden" name="id_file" value="{{$file->id}}" />
+
+                    <input type="hidden" name="opc" value="{{ $opc }}" />
+                    <input type="hidden" name="opc2" value="{{ $opc2 }}" />
+
+                    <input type="hidden" name="search" value="{{ $texto }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+                    <input type="hidden" name="xid" value="{{ $xid }}" /> <!-- Controla la ventana modal cuando ocurrern errores -->
+
 
                     <button type="submit" name = "yes{{$file->id}}" class="btn btn-success" >
                         <span class="glyphicon glyphicon-ok-sign"></span> @lang('obra.Yes')

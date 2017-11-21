@@ -54,7 +54,7 @@
                                     </td>
                                 @endif
                             </tr>
-                            @include ('art.obra.pdfdelete' , ['obras' => $obra, 'file' => $files])
+                            @include ('art.obra.pdfdelete' , ['obras' => $obra, 'file' => $files,  'opc'  => $opc, 'opc2'  => $opc2, 'texto' => $search, 'xid' => $xid])
                         @endforeach
                         </tbody>
                     </table>
