@@ -137,9 +137,11 @@ Route::post('art/obra/delete','art\obra\ObraController@ObraDestroy')->middleware
 Route::post('art/obra/deletepdf','art\obra\ObraController@ObraPdfDestroy')->middleware('auth');
 Route::post('art/obra/create','art\obra\ObraController@ObraCreate')->middleware('auth');
 Route::post('art/obra/createpdf','art\obra\ObraController@ObraCreatePdf')->middleware('auth');
+Route::post('art/obra/createpdf2','art\obra\ObraController@ObraCreatePdf2')->middleware('auth');
 Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');
 Route::get('art/obra/edit/{id}/{opc}/{textsearch}/{opc2}/{xid}','art\obra\ObraController@ObraEditIndex')->middleware('auth');
 Route::get('art/obra/pdf/{id}','art\obra\ObraController@ObraPdfIndex')->middleware('auth');
+Route::get('art/obra/pdf2/{id}/{opc}/{textsearch}/{opc2}/{xid}','art\obra\ObraController@ObraPdf2Index')->middleware('auth');
 Route::get('art/obra/list/{id}','art\obra\ObraController@ObraByArtist')->middleware('auth');
 Route::get('art/obra/exportArt/{id}','art\obra\ObraController@ObraPdf')->middleware('auth');
 //Route::get('art/obra/export','art\obra\ObraController@ObraExport')->middleware('auth');

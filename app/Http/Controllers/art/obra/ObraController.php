@@ -656,6 +656,62 @@ class ObraController extends Controller
 
     }
 
+    public function ObraPdf2Index($id, $opc, $search, $opc2, $xid)
+    {
+        try{
+
+            /* Menu */
+            $modules  = User::find(Auth::id())->profile->module;
+
+
+            foreach($modules as $a)
+            {
+
+                if($a->id == $this->idmodulo) /* Is allowed to see this Module */
+                {
+                    if($a->pivot->rread > 0 or $a->pivot->eedit > 0 or $a->pivot->wwrite > 0 or $a->pivot->ddelete > 0)
+                    {
+                        /* Content */
+
+                        /*echo "<br>Read = ".$a->pivot->rread;
+                        echo "<br>Write  = ".$a->pivot->wwrite;
+                        echo "<br>Edit   = ".$a->pivot->eedit;
+                        echo "<br>Delete = ".$a->pivot->ddelete;*/
+                        //$logs = CoreLog::orderBy('fecha', 'desc')->paginate(15);
+                        $pro = SysObra::find($id);
+
+
+                        //Debugbar::info($object);
+                        //Debugbar::error('Error!');
+                        //Debugbar::warning('Watch out…');
+                        //Debugbar::addMessage('Another message', 'mylabel');
+
+                        return view('art.obra.pdf2')
+                            ->with('modulos', $modules) //Modulos
+                            ->with('xmod', $a) //Permisos
+                            ->with('obra', $pro)
+                            ->with('opc', $opc)
+                            ->with('xid', $xid)
+                            ->with('opc2', $opc2)
+                            ->with('search', $search);
+                    }
+                }
+            }
+            Session::flash('msg_access', 'Obras');
+            return redirect("admin/index"); /* If he dont have access redirect to the Index*/
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+            Session::flash('msg_access2', $e);
+            return redirect("admin/index");
+        }
+
+    }
+
     public function ObraCreatePdf(CreatePdfFile $request)
     {
         try {
@@ -699,6 +755,71 @@ class ObraController extends Controller
             //Session::flash('dbCreateFile', 'Artwork');
             LogSystem::writeSystemLog("The Artwork with ID = ". $obraId." has a new PDF file created, name = ".$file_name."" ,"Art.ArtWorks",Auth::id());
             return redirect("art/obra/pdf/".$obraId);
+        }
+        catch(\Exception $e)
+        {
+            LogSystem::writeLog("ExcepcionM : " . $e->getMessage() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionF : " . $e->getFile() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionL : " . $e->getLine() . " ", Auth::id());
+            LogSystem::writeLog("ExcepcionT : " . $e->getTraceAsString() . " ", Auth::id());
+
+            Session::flash('dbCreateFile', 'Artwork');
+            return redirect("art/obra/pdf/".$obraId);
+        }
+
+    }
+
+    public function ObraCreatePdf2(CreatePdfFile $request)
+    {
+        try {
+
+            $file_name = "";
+
+            $obraId = Input::get('obraid');
+
+            $opc = Input::get('opc');
+            $opc2 = Input::get('opc2');
+            $search = Input::get('search');
+            $xid = Input::get('xid');
+
+
+
+            if ($request->hasFile('pdf'))
+            {
+                //dd($request->pdf);
+
+                foreach ($request->pdf as $pdf)
+                {
+                    $file_name = $pdf->getClientOriginalName();
+                    $ext = File::extension($file_name);
+                    if ($ext == "pdf")
+                    {
+                        $pathO = "public/pdfs/";
+                        //dd($pathC);
+                        $filename = $pdf->storeAs($pathO, $file_name);
+                        //dd($filename);
+                        $tmp = new SysObraFile();
+                        $tmp->id_obra = $obraId;
+                        $tmp->name = $file_name;
+                        //dd($tmp);
+                        $tmp->save();
+                    }
+                    else
+                    {
+                        Session::flash('dbCreateFile', 'Artwork');
+                        return redirect("art/obra/pdf2/".$obraId ."/". $opc ."/". $search ."/". $opc2 ."/". $xid);
+                    }
+
+                    //dd($tmp);
+                }
+
+            }
+            //Session::flash('dbCreateFile', 'Artwork');
+            LogSystem::writeSystemLog("The Artwork with ID = ". $obraId." has a new PDF file created, name = ".$file_name."" ,"Art.ArtWorks",Auth::id());
+
+
+
+            return redirect("art/obra/pdf2/".$obraId ."/". $opc ."/". $search ."/". $opc2 ."/". $xid);
         }
         catch(\Exception $e)
         {
@@ -847,4 +968,6 @@ class ObraController extends Controller
             return redirect("admin/index");
         }
     }
+
+
 }

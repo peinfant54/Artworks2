@@ -124,10 +124,22 @@
 
 
             <div class="modal-footer ">
-                <a href="{{ URL::to('art/obra/exportArt/'.$obra->id) }}" title="@lang('obra.ExportMsg')"><i class="material-icons" style="float:left;">picture_as_pdf</i></a>
-                @if($borrar_obra == 1)
-                    <p data-placement="top" data-toggle="tooltip" title="Delete"><button name="delete{{ $obra->id }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" cconclick="BorrarObra({{ $obra->id }})" data-target="#delete{{ $obra->id }}" title="@lang('obra.DeleteMsg'){{$obra->n_inv}}"><span class="glyphicon glyphicon-trash"></span></button></p>
+                <p data-placement="top" data-toggle="tooltip">
+                <a href="{{ URL::to('art/obra/exportArt/'.$obra->id) }}" title="@lang('obra.ExportMsg')">
+                    <i class="material-icons" style="float:left;">picture_as_pdf</i>
+                </a>
+                @if($editar_obra == 1)
+                    <button name="file{{ $obra->id }}" class="btn btn-primary btn-xs" title="@lang('obra.EditFiles') {{$obra->n_inv}}" onClick="window.location.href='{{URL::to('art/obra/pdf2/'.$obra->id .'/' . $opc .'/' . $texto.'/'.$opc2.'/'.$xid )}}'">
+                        <span class="glyphicon glyphicon-file"></span>
+                    </button>
+
                 @endif
+                @if($borrar_obra == 1)
+                    <button name="delete{{ $obra->id }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" cconclick="BorrarObra({{ $obra->id }})" data-target="#delete{{ $obra->id }}" title="@lang('obra.DeleteMsg'){{$obra->n_inv}}">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                @endif
+                </p>
             </div>
 
         </div>
