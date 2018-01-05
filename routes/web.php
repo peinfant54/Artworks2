@@ -137,6 +137,7 @@ Route::post('art/obra/delete','art\obra\ObraController@ObraDestroy')->middleware
 Route::post('art/obra/deletepdf','art\obra\ObraController@ObraPdfDestroy')->middleware('auth');
 Route::post('art/obra/deletepdf2','art\obra\ObraController@ObraPdfDestroy2')->middleware('auth');
 Route::post('art/obra/create','art\obra\ObraController@ObraCreate')->middleware('auth');
+Route::post('art/obra/create2','art\obra\ObraController@ObraCreateArtist')->middleware('auth');
 Route::post('art/obra/createpdf','art\obra\ObraController@ObraCreatePdf')->middleware('auth');
 Route::post('art/obra/createpdf2','art\obra\ObraController@ObraCreatePdf2')->middleware('auth');
 Route::post('art/obra/edit','art\obra\ObraController@ObraEdit')->middleware('auth');

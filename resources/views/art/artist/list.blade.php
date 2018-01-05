@@ -20,7 +20,16 @@
                         @endforeach
                     </div>
 
+
+
                 </div>
+
+                <div style="padding-bottom: 20px; padding-left: 6px;">
+                    @if($xmod->pivot->wwrite>0)
+                        <div class="right"><button class="btn btn-primary right" data-title="New" data-toggle="modal" data-target="#new" name="new"><span class="glyphicon glyphicon-plus"></span>@lang('obra.BtnNew')</button></div>
+                    @endif
+                </div>
+
                 <div class="tz-gallery">
 
                     <div class="row">
@@ -31,15 +40,15 @@
                                     @if($obra->file1)
                                         <a class="lightbox" href="{{asset('storage/Arts_Small/'.$obra->file1)}}" title="
 Título: {{ $obra->titulo }}
-Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}" >
+                                                Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+                                                Técnica: {{ $obra->tecnica }}" >
                                             <img class="lightbox" src="{{asset('storage/Arts_Square/'.$obra->file1)}}" alt="Park" >
                                         </a>
                                     @else
                                         <a class="lightbox" href="{{asset('storage/No_Image.png')}}" title="
 Título: {{ $obra->titulo }}
-Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
-Técnica: {{ $obra->tecnica }}">
+                                                Artísta: {{ $obra->artist->nombre }} {{ $obra->artist->apellido }}
+                                                Técnica: {{ $obra->tecnica }}">
                                             <img src="{{asset('storage/No_Image.png')}}" style="width: 100%" class="img-rounded">
                                         </a>
                                     @endif
@@ -59,8 +68,9 @@ Técnica: {{ $obra->tecnica }}">
                             @if($borrar_obra == 1)
                                 @include ('art.obra.delete' , ['obra' => $obra, 'next' => 1])
                             @endif
+
                         @endforeach
-                   </div>
+                    </div>
                     <div class="left">
                         <button type="button" onclick="window.location='{{ url("art/artist/index") }}'" class="btn btn-primary right btn-volver">
                             <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
@@ -70,6 +80,10 @@ Técnica: {{ $obra->tecnica }}">
                 </div>
 
             </div>
+            @include ('art.artist.newobra', ['artistaid' => $idartist])
+            <script type="text/javascript">
+
+            </script>
 
         </div>
 
